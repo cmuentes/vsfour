@@ -6,8 +6,8 @@
   "sharedDataFolderName": ".semafour-shared",
   "win32MutexName": "semafour",
   "licenseName": "MIT",
-  "licenseUrl": "https://github.com/{{GITHUB_USERNAME}}/semafour/blob/main/LICENSE.txt",
-  "serverLicenseUrl": "https://github.com/{{GITHUB_USERNAME}}/semafour/blob/main/LICENSE.txt",
+  "licenseUrl": "https://github.com/cmuentes/semafour/blob/main/LICENSE.txt",
+  "serverLicenseUrl": "https://github.com/cmuentes/semafour/blob/main/LICENSE.txt",
   "serverGreeting": [],
   "serverLicense": [],
   "serverLicensePrompt": "",
@@ -31,7 +31,7 @@
   "linuxDesktopName": "com.awanaintelligence.Semafour.desktop",
   "linuxIconName": "semafour",
   "licenseFileName": "LICENSE.txt",
-  "reportIssueUrl": "https://github.com/{{GITHUB_USERNAME}}/semafour/issues/new",
+  "reportIssueUrl": "https://github.com/cmuentes/semafour/issues/new",
   "nodejsArtifactFeed": "",
   "electronArtifactFeed": "",
   "urlProtocol": "semafour",
@@ -87,6 +87,75 @@
       }
     }
   ],
+  "defaultChatAgent": {
+    "extensionId": "awanaintelligence.semafour",
+    "chatExtensionId": "awanaintelligence.semafour",
+    "chatExtensionOutputId": "awanaintelligence.semafour.Semafour Chat.log",
+    "chatExtensionOutputExtensionStateCommand": "semafour.debug.extensionState",
+    "documentationUrl": "https://github.com/cmuentes/semafour",
+    "termsStatementUrl": "https://github.com/cmuentes/semafour",
+    "privacyStatementUrl": "https://github.com/cmuentes/semafour",
+    "skusDocumentationUrl": "https://github.com/cmuentes/semafour",
+    "optimizeUsageDocumentationUrl": "https://github.com/cmuentes/semafour",
+    "publicCodeMatchesUrl": "https://github.com/cmuentes/semafour",
+    "managePlanUrl": "https://github.com/cmuentes/semafour",
+    "upgradePlanUrl": "https://github.com/cmuentes/semafour",
+    "signUpUrl": "https://github.com/cmuentes/semafour",
+    "provider": {
+      "default": {
+        "id": "semafour",
+        "name": "Semafour"
+      },
+      "enterprise": {
+        "id": "semafour-enterprise",
+        "name": "Semafour"
+      },
+      "google": {
+        "id": "semafour-google",
+        "name": "Semafour"
+      },
+      "apple": {
+        "id": "semafour-apple",
+        "name": "Semafour"
+      },
+      "microsoft": {
+        "id": "semafour-microsoft",
+        "name": "Semafour"
+      }
+    },
+    "providerExtensionId": "vscode.github-authentication",
+    "providerUriSetting": "github-enterprise.uri",
+    "providerScopes": [
+      [
+        "read:user",
+        "user:email",
+        "repo",
+        "workflow"
+      ],
+      [
+        "user:email"
+      ],
+      [
+        "read:user"
+      ]
+    ],
+    "entitlementUrl": "",
+    "entitlementSignupLimitedUrl": "",
+    "chatQuotaExceededContext": "semafour.chat.quotaExceeded",
+    "completionsQuotaExceededContext": "semafour.completions.quotaExceeded",
+    "walkthroughCommand": "semafour.open.walkthrough",
+    "completionsMenuCommand": "semafour.toggleStatusMenu",
+    "chatRefreshTokenCommand": "semafour.refreshToken",
+    "generateCommitMessageCommand": "semafour.git.generateCommitMessage",
+    "resolveMergeConflictsCommand": "semafour.git.resolveMergeConflicts",
+    "completionsAdvancedSetting": "semafour.advanced",
+    "completionsEnablementSetting": "semafour.enable",
+    "nextEditSuggestionsSetting": "semafour.nextEditSuggestions.enabled",
+    "tokenEntitlementUrl": "https://github.com/cmuentes/semafour",
+    "mcpRegistryDataUrl": "https://github.com/cmuentes/semafour",
+    "mcpConnectorsUrl": "https://github.com/cmuentes/semafour",
+    "managedSettingsUrl": "https://github.com/cmuentes/semafour"
+  },
   "trustedExtensionAuthAccess": {
     "github": [
       "awanaintelligence.semafour"
@@ -189,7 +258,8 @@
     "telemetry.enableTelemetry": false,
     "update.mode": "none",
     "extensions.verifySignature": false,
-    "workbench.startupEditor": "none"
+    "workbench.startupEditor": "none",
+    "workbench.welcomePage.experimental.onboarding": false
   },
   "extensionEnabledApiProposals": {
     "awanaintelligence.semafour": [

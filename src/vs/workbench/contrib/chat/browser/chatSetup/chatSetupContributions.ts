@@ -36,7 +36,9 @@ import { GitHubPaths, IDefaultAccountService } from '../../../../../platform/def
 import { IProductService } from '../../../../../platform/product/common/productService.js';
 import { ITelemetryService } from '../../../../../platform/telemetry/common/telemetry.js';
 import { ToggleTitleBarConfigAction } from '../../../../browser/parts/titlebar/titlebarActions.js';
-import { ACCOUNTS_SHARED_SIGN_IN_GROUP } from '../../../../common/activity.js';
+// [SEMAFOUR-START: disable-copilot-setup-ui]
+// import { ACCOUNTS_SHARED_SIGN_IN_GROUP } from '../../../../common/activity.js';
+// [SEMAFOUR-END]
 import { IWorkbenchContribution } from '../../../../common/contributions.js';
 import { IViewDescriptorService, ViewContainerLocation } from '../../../../common/views.js';
 import { ChatEntitlement, ChatEntitlementContext, ChatEntitlementContextKeys, ChatEntitlementRequests, ChatEntitlementService, IChatEntitlementService, isProUser } from '../../../../services/chat/common/chatEntitlementService.js';
@@ -378,12 +380,14 @@ export class ChatSetupContribution extends Disposable implements IWorkbenchContr
 				super({
 					id: 'workbench.action.chat.triggerSetupFromAccounts',
 					title: localize2('triggerChatSetupFromAccounts', "Sign in to use GitHub Copilot..."),
-					menu: {
-						id: MenuId.AccountsContext,
-						group: ACCOUNTS_SHARED_SIGN_IN_GROUP,
-						// Keep Copilot sign-in available after prior setup and alongside non-Copilot models.
-						when: ChatSetupFromAccountsWhen,
-					}
+					// [SEMAFOUR-START: disable-copilot-setup-ui]
+					// menu: {
+					// 	id: MenuId.AccountsContext,
+					// 	group: ACCOUNTS_SHARED_SIGN_IN_GROUP,
+					// 	// Keep Copilot sign-in available after prior setup and alongside non-Copilot models.
+					// 	when: ChatSetupFromAccountsWhen,
+					// }
+					// [SEMAFOUR-END]
 				});
 			}
 
