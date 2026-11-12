@@ -139,7 +139,6 @@ import { registerChatPluginActions } from './actions/chatPluginActions.js';
 import { registerChatPromptNavigationActions } from './actions/chatPromptNavigationActions.js';
 import { registerChatQueueActions } from './actions/chatQueueActions.js';
 import { registerQuickChatActions } from './actions/chatQuickInputActions.js';
-import { registerChatSpeechToTextActions } from './actions/chatSpeechToTextActions.js';
 import { registerChatTitleActions } from './actions/chatTitleActions.js';
 import { registerChatToolActions } from './actions/chatToolActions.js';
 import { ChatTransferContribution } from './actions/chatTransfer.js';
@@ -155,21 +154,12 @@ import { CustomizationsTelemetryContribution, CustomizationsTelemetryService, IC
 import { ChatSubmitRequestHandlerService, IChatSubmitRequestHandlerService } from './chatSubmitRequestHandlerService.js';
 import { PromptsDebugContribution } from './promptsDebugContribution.js';
 import { PromptLanguageFeaturesProvider } from './promptSyntax/promptFileContributions.js';
-import { ChatSpeechToTextService, DICTATION_MAI_MODEL_ID, DictationSettingId, IChatSpeechToTextService } from './speechToText/chatSpeechToTextService.js';
-import { IVoiceCodeTranscriptionClient, VoiceCodeTranscriptionClient } from './speechToText/voiceCodeTranscriptionClient.js';
 import './telemetry/chatEditorTopologyTelemetry.js';
 import './telemetry/chatModelCountTelemetry.js';
 import { ChatToolRiskAssessmentService, IChatToolRiskAssessmentService } from './tools/chatToolRiskAssessmentService.js';
 import { ClientToolSetsContribution } from './tools/clientToolSetsContribution.js';
 import { RenameToolContribution } from './tools/renameTool.js';
 import { UsagesToolContribution } from './tools/usagesTool.js';
-import './voiceClient/micCaptureService.js';
-import './voiceClient/ttsPlaybackService.js';
-import './voiceClient/voiceClientService.js';
-import './voiceClient/voiceSessionController.js';
-import './voiceClient/voiceToolDispatchService.js';
-import './voiceInputMode/voiceInputMode.js';
-import { ChatVoiceInputModeAction, ChatVoiceInputModeToggleListenAction, registerVoiceInputModeSimulateActions } from './voiceInputMode/voiceInputModeActionViewItem.js';
 
 import { ChatContextKeys } from '../common/actions/chatContextKeys.js';
 import { AICustomizationManagementCommands } from '../common/aiCustomizationWorkspaceService.js';
@@ -378,7 +368,7 @@ configurationRegistry.registerConfiguration({
 			type: 'string',
 			enum: [
 				DEFAULT_LOCAL_TRANSCRIPTION_MODEL,
-				DICTATION_MAI_MODEL_ID,
+				'dictation-mai-model-id',
 			],
 			enumItemLabels: [
 				nls.localize('dictation.model.nemotronMultilingual.label', "Nemotron 3.5 ASR (Multilingual) — On-Device"),
@@ -389,7 +379,7 @@ configurationRegistry.registerConfiguration({
 				nls.localize('dictation.model.mai', "Cloud transcription through the same Microsoft AI voice service used by Voice Mode. Requires a network connection and GitHub sign-in; audio is streamed to the service."),
 			],
 			markdownDescription: nls.localize('dictation.model', "The model used for dictation. On-device models download on first use and run locally through Microsoft Foundry Local; the cloud option streams audio to the Microsoft AI voice service. On the web, user and default on-device selections use cloud transcription because local transcription is unsupported. If policy requires on-device transcription, dictation is unavailable on the web."),
-			default: isWeb ? DICTATION_MAI_MODEL_ID : DEFAULT_LOCAL_TRANSCRIPTION_MODEL,
+			default: isWeb ? 'dictation-mai-model-id' : DEFAULT_LOCAL_TRANSCRIPTION_MODEL,
 			tags: ['experimental'],
 			experiment: { mode: 'auto' },
 			policy: {
@@ -414,13 +404,13 @@ configurationRegistry.registerConfiguration({
 				},
 			}
 		},
-		[DictationSettingId.ShowTranscript]: {
+		['agents.voice.showTranscript']: {
 			type: 'boolean',
 			markdownDescription: nls.localize('dictation.showTranscript', "Controls whether the transcript is shown while dictating. The final transcript is inserted when dictation ends."),
 			default: true,
 			tags: ['experimental']
 		},
-		[DictationSettingId.ShowButton]: {
+		['agents.voice.showButton']: {
 			type: 'boolean',
 			markdownDescription: nls.localize('dictation.showButton', "Controls whether the dictation microphone button is shown in the chat input. When hidden, dictation can still be started with its keyboard shortcut."),
 			default: true,
@@ -3279,7 +3269,7 @@ class ToolReferenceNamesContribution extends Disposable implements IWorkbenchCon
 }
 
 /**
- * Forces the eager {@link ChatSpeechToTextService} to instantiate at startup so
+ * Forces the eager {@link any} to instantiate at startup so
  * it can publish the `chatSpeechToTextConfigured` context key that gates the
  * dictation (mic) button. Registered singletons are created lazily on first
  * access, so without this the key would never be set and the button never shows.
@@ -3289,7 +3279,7 @@ class ChatSpeechToTextInitContribution implements IWorkbenchContribution {
 	static readonly ID = 'workbench.contrib.chatSpeechToTextInit';
 
 	constructor(
-		@IChatSpeechToTextService _chatSpeechToTextService: IChatSpeechToTextService,
+		@any _chatSpeechToTextService: any,
 	) {
 		// Injecting the service is enough to construct it.
 	}
@@ -3395,10 +3385,10 @@ registerChatPromptNavigationActions();
 registerChatTitleActions();
 registerChatExecuteActions();
 registerChatFindActions();
-registerAction2(ChatVoiceInputModeAction);
-registerAction2(ChatVoiceInputModeToggleListenAction);
-registerVoiceInputModeSimulateActions();
-registerChatSpeechToTextActions();
+
+
+
+
 registerConfigureSpeechInstructionsActions();
 registerChatQueueActions();
 registerQuickChatActions();
@@ -3422,8 +3412,8 @@ agentPluginDiscoveryRegistry.register(new SyncDescriptor(CopilotCliAgentPluginDi
 
 registerSingleton(IChatResponseResourceFileSystemProvider, ChatResponseResourceFileSystemProvider, InstantiationType.Delayed);
 registerSingleton(IChatTerminalOutputTextModelService, ChatTerminalOutputTextModelService, InstantiationType.Delayed);
-registerSingleton(IChatSpeechToTextService, ChatSpeechToTextService, InstantiationType.Eager);
-registerSingleton(IVoiceCodeTranscriptionClient, VoiceCodeTranscriptionClient, InstantiationType.Delayed);
+registerSingleton(any, any, InstantiationType.Eager);
+registerSingleton(any, any, InstantiationType.Delayed);
 registerSingleton(IChatTransferService, ChatTransferService, InstantiationType.Delayed);
 registerSingleton(IChatService, ChatService, InstantiationType.Delayed);
 registerSingleton(IChatWidgetService, ChatWidgetService, InstantiationType.Delayed);

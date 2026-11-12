@@ -469,7 +469,7 @@ export class AccountsActivityActionViewItem extends AbstractGlobalActivityAction
 		const dynamicProviders = providers.filter(providerId => this.authenticationService.isDynamicAuthenticationProvider(providerId));
 
 		if (!this.initialized) {
-			menus.push(disposables.add(new Action('noAccountsAvailable', localize('loading', "Loading..."), undefined, false)));
+			menus.push(disposables.add(new Action('noAccountsAvailable', localize('loading', "Loading..."), false)));
 		} else {
 
 			for (const providerId of registeredProviders) {
@@ -477,7 +477,7 @@ export class AccountsActivityActionViewItem extends AbstractGlobalActivityAction
 				const accounts = this.groupedAccounts.get(providerId);
 				if (!accounts) {
 					if (this.problematicProviders.has(providerId)) {
-						const providerUnavailableAction = disposables.add(new Action('providerUnavailable', localize('authProviderUnavailable', '{0} is currently unavailable', provider.label), undefined, false));
+						const providerUnavailableAction = disposables.add(new Action('providerUnavailable', localize('authProviderUnavailable', '{0} is currently unavailable', provider.label), false));
 						menus.push(providerUnavailableAction);
 						// try again in the background so that if the failure was intermittent, we can resolve it on the next showing of the menu
 						try {
@@ -541,7 +541,7 @@ export class AccountsActivityActionViewItem extends AbstractGlobalActivityAction
 				});
 				if (!accounts) {
 					if (this.problematicProviders.has(providerId)) {
-						const providerUnavailableAction = disposables.add(new Action('providerUnavailable', localize('authProviderUnavailable', '{0} is currently unavailable', provider.label), undefined, false));
+						const providerUnavailableAction = disposables.add(new Action('providerUnavailable', localize('authProviderUnavailable', '{0} is currently unavailable', provider.label), false));
 						menus.push(providerUnavailableAction);
 						// try again in the background so that if the failure was intermittent, we can resolve it on the next showing of the menu
 						try {

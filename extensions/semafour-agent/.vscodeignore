@@ -1,0 +1,10 @@
+.vscode/**
+.vscode-test/**
+src/**
+test/**
+.gitignore
+.npmrc
+**/*.map
+**/*.ts
+**/*.tsbuildinfo
+!src/agent-manager/friendly-words.d.ts

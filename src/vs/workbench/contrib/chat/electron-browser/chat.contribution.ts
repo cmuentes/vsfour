@@ -35,7 +35,6 @@ import { IUnattendedRestartService } from '../../../services/lifecycle/common/un
 import { ACTION_ID_NEW_CHAT, CHAT_OPEN_ACTION_ID, IChatViewOpenOptions } from '../browser/actions/chatActions.js';
 import '../browser/aiCustomization/copilotCanvases.contribution.js';
 import './codexCustomizationSettings.contribution.js';
-import './agentSessions/computerUseHelperApp.contribution.js';
 import { AgentSessionProviders, getAgentSessionProviderName } from '../browser/agentSessions/agentSessions.js';
 import { IAgentSessionsService } from '../browser/agentSessions/agentSessionsService.js';
 import { ChatViewPaneTarget, IChatWidgetService } from '../browser/chat.js';
@@ -52,7 +51,6 @@ import { registerChatExportZipAction } from './actions/chatExportZip.js';
 import { registerExportAgentTracesDbAction } from './actions/exportAgentTracesDb.js';
 import { registerInstallDictationModelAction } from './actions/installDictationModelAction.js';
 import { confirmSessionShutdown, getChatUnattendedRestartBlocker, getEffectiveSessionShutdownReason, shouldWarnForInFlightSessionShutdown, shouldWarnForSessionShutdown } from './chatLifecycle.js';
-import { HoldToVoiceChatInChatViewAction, InlineVoiceChatAction, KeywordActivationContribution, QuickVoiceChatAction, ReadChatResponseAloud, StartVoiceChatAction, StopListeningAction, StopListeningAndSubmitAction, StopReadAloud, StopReadChatItemAloud, VoiceChatInChatViewAction } from './actions/voiceChatActions.js';
 import { OpenWorkspaceInAgentsWindowAction, OpenWorkspaceInAgentsContribution, OpenAgentsWindowAction, OpenChatSessionInAgentsWindowAction, CopilotHarnessIntroductionContribution, ToggleOpenInAgentsWindowTitleBarAction, OpenWorkspaceInAgentsWindowChatTitleAction, OpenWorkspaceInAgentsWindowTitleBarAction, ResetCopilotHarnessIntroductionAction } from './agentSessions/agentSessionsActions.js';
 import { AgentsWindowInvitationContribution } from './agentSessions/agentsWindowInvitation.js';
 import { AgentHostEditorActivity, IAgentHostEditorActivityService } from './agentSessions/agentHostEditorActivity.js';
@@ -247,26 +245,26 @@ registerAction2(OpenChatSessionInAgentsWindowAction);
 if (!product.quality) {
 	registerAction2(ResetCopilotHarnessIntroductionAction);
 }
-registerAction2(StartVoiceChatAction);
 
-registerAction2(VoiceChatInChatViewAction);
-registerAction2(HoldToVoiceChatInChatViewAction);
-registerAction2(QuickVoiceChatAction);
-registerAction2(InlineVoiceChatAction);
 
-registerAction2(StopListeningAction);
-registerAction2(StopListeningAndSubmitAction);
 
-registerAction2(ReadChatResponseAloud);
-registerAction2(StopReadChatItemAloud);
-registerAction2(StopReadAloud);
+
+
+
+
+
+
+
+
+
+
 
 registerChatDeveloperActions();
 registerChatExportZipAction();
 registerExportAgentTracesDbAction();
-registerInstallDictationModelAction();
 
-registerWorkbenchContribution2(KeywordActivationContribution.ID, KeywordActivationContribution, WorkbenchPhase.AfterRestored);
+
+registerWorkbenchContribution2(any.ID, any, WorkbenchPhase.AfterRestored);
 registerWorkbenchContribution2(NativeBuiltinToolsContribution.ID, NativeBuiltinToolsContribution, WorkbenchPhase.AfterRestored);
 registerWorkbenchContribution2(ChatCommandLineHandler.ID, ChatCommandLineHandler, WorkbenchPhase.BlockRestore);
 registerWorkbenchContribution2(ChatSuspendThrottlingHandler.ID, ChatSuspendThrottlingHandler, WorkbenchPhase.AfterRestored);

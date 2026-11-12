@@ -128,7 +128,6 @@ import { getChatPetListPadding, IChatPetPlatformOccupation } from './chatPetWidg
 import { IChatPetWidgetService } from './chatPetWidgetService.js';
 import { IChatPetService } from '../chatPetService.js';
 import { ChatPetAchievementIds, hasChatPetImageAttachment } from '../chatPetAchievements.js';
-import { stopDictationForEditor } from '../speechToText/dictationSession.js';
 import { ChatUserInteraction } from '../chatUserInteractionTelemetry.js';
 import { ChatContentMarkdownRenderer } from './chatContentMarkdownRenderer.js';
 
@@ -3614,7 +3613,7 @@ export class ChatWidget extends Disposable implements IChatWidget {
 		this._participantRedirectInFlight = true;
 		try {
 			if (!options.preserveInput) {
-				await stopDictationForEditor(this.inputEditor);
+				
 			}
 			if (this._store.isDisposed || this.viewModel !== source) {
 				throw new CancellationError();
@@ -3710,7 +3709,7 @@ export class ChatWidget extends Disposable implements IChatWidget {
 				// preserveInput submissions (e.g. /compact or programmatic maintenance
 				// requests) leave the input draft untouched, so they must not stop an
 				// unrelated dictation and flush its final transcript into that draft.
-				await stopDictationForEditor(this.inputEditor);
+				
 			}
 			// Dictation may flush its final transcript while stopping. Snapshot the
 			// owned source only after that update, immediately before submission.

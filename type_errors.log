@@ -1,0 +1,774 @@
+src/vs/code/electron-main/app.ts(1478,92): error TS2693: 'any' only refers to a type, but is being used as a value here.
+src/vs/workbench/browser/parts/globalCompositeBar.ts(472,100): error TS2345: Argument of type 'boolean' is not assignable to parameter of type 'string'.
+src/vs/workbench/browser/parts/globalCompositeBar.ts(480,176): error TS2345: Argument of type 'boolean' is not assignable to parameter of type 'string'.
+src/vs/workbench/browser/parts/globalCompositeBar.ts(544,176): error TS2345: Argument of type 'boolean' is not assignable to parameter of type 'string'.
+src/vs/workbench/browser/parts/globalCompositeBar.ts(817,352): error TS2554: Expected 21 arguments, but got 22.
+src/vs/workbench/contrib/chat/browser/chat.shared.contribution.ts(3282,4): error TS2693: 'any' only refers to a type, but is being used as a value here.
+src/vs/workbench/contrib/chat/browser/chat.shared.contribution.ts(3415,19): error TS2693: 'any' only refers to a type, but is being used as a value here.
+src/vs/workbench/contrib/chat/browser/chat.shared.contribution.ts(3415,24): error TS2693: 'any' only refers to a type, but is being used as a value here.
+src/vs/workbench/contrib/chat/browser/chat.shared.contribution.ts(3416,19): error TS2693: 'any' only refers to a type, but is being used as a value here.
+src/vs/workbench/contrib/chat/browser/chat.shared.contribution.ts(3416,24): error TS2693: 'any' only refers to a type, but is being used as a value here.
+src/vs/workbench/contrib/chat/browser/widget/input/chatInputPart.ts(1170,4): error TS2693: 'any' only refers to a type, but is being used as a value here.
+src/vs/workbench/contrib/chat/browser/widget/input/chatInputPart.ts(4174,10): error TS6133: 'hasDraftTarget' is declared but its value is never read.
+src/vs/workbench/contrib/chat/browser/widget/input/chatInputPart.ts(4406,54): error TS2693: 'any' only refers to a type, but is being used as a value here.
+src/vs/workbench/contrib/chat/browser/widget/input/chatInputPart.ts(4440,54): error TS2304: Cannot find name 'DictationDownloadActionViewItem'.
+src/vs/workbench/contrib/chat/browser/widget/input/chatInputPart.ts(4443,54): error TS2304: Cannot find name 'DictationActionViewItem'.
+src/vs/workbench/contrib/chat/browser/widget/input/chatInputPart.ts(4450,54): error TS2552: Cannot find name 'VoiceModeActionViewItem'. Did you mean 'HiddenActionViewItem'?
+src/vs/workbench/contrib/chat/browser/widgetHosts/viewPane/chatViewPane.ts(88,36): error TS2307: Cannot find module '../../voiceClient/micCaptureService.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/browser/widgetHosts/viewPane/chatViewPane.ts(89,37): error TS2307: Cannot find module '../../voiceClient/ttsPlaybackService.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/browser/widgetHosts/viewPane/chatViewPane.ts(90,41): error TS2307: Cannot find module '../../voiceClient/voiceSessionController.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/browser/widgetHosts/viewPane/chatViewPane.ts(91,61): error TS2307: Cannot find module '../../voiceInputMode/voiceInputMode.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/browser/widgetHosts/viewPane/chatViewPane.ts(92,92): error TS2307: Cannot find module '../../voiceClient/voiceGlow.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/browser/widgetHosts/viewPane/chatViewPane.ts(93,43): error TS2307: Cannot find module '../../voiceClient/voiceGlowController.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/browser/widgetHosts/viewPane/chatViewPane.ts(94,34): error TS2307: Cannot find module '../../voiceClient/voiceInputUtils.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/browser/widgetHosts/viewPane/chatViewPane.ts(95,63): error TS2307: Cannot find module '../../voiceClient/voiceToolDispatchService.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/browser/widgetHosts/viewPane/chatViewPane.ts(696,33): error TS7006: Parameter 't' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/browser/widgetHosts/viewPane/chatViewPane.ts(714,43): error TS7006: Parameter 't' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/electron-browser/actions/installDictationModelAction.ts(19,52): error TS2307: Cannot find module '../../browser/speechToText/chatSpeechToTextService.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/electron-browser/actions/voiceChatActions.ts(49,53): error TS2307: Cannot find module '../../browser/voiceInputMode/voiceInputModeContextKeys.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/electron-browser/chat.contribution.ts(52,10): error TS6133: 'registerInstallDictationModelAction' is declared but its value is never read.
+src/vs/workbench/contrib/chat/electron-browser/chat.contribution.ts(267,32): error TS2693: 'any' only refers to a type, but is being used as a value here.
+src/vs/workbench/contrib/chat/electron-browser/chat.contribution.ts(267,40): error TS2693: 'any' only refers to a type, but is being used as a value here.
+src/vs/workbench/contrib/chat/test/browser/actions/chatSpeechToTextActions.test.ts(17,132): error TS2307: Cannot find module '../../../browser/actions/chatSpeechToTextActions.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/actions/chatSpeechToTextActions.test.ts(19,65): error TS2307: Cannot find module '../../../browser/speechToText/chatSpeechToTextService.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/actions/chatSpeechToTextActions.test.ts(20,45): error TS2307: Cannot find module '../../../browser/speechToText/dictationOnboarding.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/actions/chatSpeechToTextActions.test.ts(78,17): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/actions/chatSpeechToTextActions.test.ts(79,22): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/actions/chatSpeechToTextActions.test.ts(80,22): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/actions/chatSpeechToTextActions.test.ts(81,19): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/actions/chatSpeechToTextActions.test.ts(92,13): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/actions/chatSpeechToTextActions.test.ts(96,13): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/chatSpeechToTextService.test.ts(15,241): error TS2307: Cannot find module '../../browser/speechToText/chatSpeechToTextService.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/chatSpeechToTextService.test.ts(16,42): error TS2307: Cannot find module '../../browser/speechToText/dictationLanguage.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/chatSpeechToTextService.test.ts(21,77): error TS2307: Cannot find module '../../browser/speechToText/voiceCodeTranscriptionClient.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/chatSpeechToTextService.test.ts(265,16): error TS7006: Parameter 'turnId' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/chatSpeechToTextService.test.ts(756,18): error TS7006: Parameter 'turnId' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/dictationDownloadRing.test.ts(11,42): error TS2307: Cannot find module '../../browser/speechToText/chatSpeechToTextService.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/dictationDownloadRing.test.ts(12,39): error TS2307: Cannot find module '../../browser/speechToText/dictationDownloadRing.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/dictationDownloadRing.test.ts(26,22): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/dictationDownloadRing.test.ts(27,22): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/dictationMicGlow.test.ts(8,39): error TS2307: Cannot find module '../../browser/speechToText/chatSpeechToTextService.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/dictationMicGlow.test.ts(9,89): error TS2307: Cannot find module '../../browser/speechToText/dictationMicGlow.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/dictationOnboarding.test.ts(15,114): error TS2307: Cannot find module '../../browser/speechToText/dictationOnboarding.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/dictationOnboarding.test.ts(160,51): error TS7006: Parameter 'deviceId' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/dictationSession.test.ts(19,141): error TS2307: Cannot find module '../../browser/speechToText/chatSpeechToTextService.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/dictationSession.test.ts(20,140): error TS2307: Cannot find module '../../browser/speechToText/dictationSession.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/dictationSession.test.ts(57,16): error TS7006: Parameter '_window' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/micButtonHovers.test.ts(11,65): error TS2307: Cannot find module '../../browser/speechToText/chatSpeechToTextService.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/micButtonHovers.test.ts(12,51): error TS2307: Cannot find module '../../browser/speechToText/dictationDownloadRing.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/micButtonHovers.test.ts(13,69): error TS2307: Cannot find module '../../browser/speechToText/micButtonHovers.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/micButtonMenuActions.test.ts(12,80): error TS2307: Cannot find module '../../browser/speechToText/micButtonMenuActions.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/micButtonMenuActions.test.ts(25,38): error TS7006: Parameter 'action' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/micButtonMenuActions.test.ts(45,31): error TS7006: Parameter 'action' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/micButtonMenuActions.test.ts(59,31): error TS7006: Parameter 'action' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/micButtonMenuActions.test.ts(70,38): error TS7006: Parameter 'action' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/micButtonMenuActions.test.ts(89,31): error TS7006: Parameter 'action' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/speechToText/voiceCodeTranscriptionClient.test.ts(15,46): error TS2307: Cannot find module '../../../browser/speechToText/voiceCodeTranscriptionClient.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/speechToText/voiceCodeTranscriptionClient.test.ts(134,36): error TS7006: Parameter 'transcription' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/speechToText/voiceCodeTranscriptionClient.test.ts(152,36): error TS7006: Parameter 'transcription' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/speechToText/voiceCodeTranscriptionClient.test.ts(167,28): error TS7006: Parameter 'error' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/speechToText/voiceCodeTranscriptionClient.test.ts(169,31): error TS7006: Parameter 'code' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/speechToText/voiceCodeTranscriptionClient.test.ts(193,28): error TS7006: Parameter 'error' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/speechToText/voiceCodeTranscriptionClient.test.ts(211,31): error TS7006: Parameter 'code' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/micCaptureService.test.ts(13,59): error TS2307: Cannot find module '../../../browser/voiceClient/micCaptureService.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/micCaptureService.test.ts(61,29): error TS2741: Property 'dispose' is missing in type '(Anonymous class)' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/micCaptureService.test.ts(62,23): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/micCaptureService.test.ts(63,5): error TS2554: Expected 0 arguments, but got 3.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/micCaptureService.test.ts(64,11): error TS2339: Property 'prepare' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/micCaptureService.test.ts(65,17): error TS2339: Property 'startCapture' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/micCaptureService.test.ts(67,17): error TS2339: Property 'pttDown' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/micCaptureService.test.ts(69,11): error TS2339: Property 'isMuted' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/micCaptureService.test.ts(71,11): error TS2339: Property 'isMuted' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/micCaptureService.test.ts(72,11): error TS2339: Property 'abortPtt' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/micCaptureService.test.ts(74,17): error TS2339: Property 'pttDown' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/micCaptureService.test.ts(116,29): error TS2741: Property 'dispose' is missing in type '(Anonymous class)' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/micCaptureService.test.ts(117,23): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/micCaptureService.test.ts(121,4): error TS2554: Expected 0 arguments, but got 3.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/micCaptureService.test.ts(125,11): error TS2339: Property 'prepare' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/micCaptureService.test.ts(127,38): error TS2339: Property 'pttDown' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/micCaptureService.test.ts(129,25): error TS2339: Property 'isCapturing' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(19,141): error TS2307: Cannot find module '../../../browser/voiceClient/voiceClientService.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(20,36): error TS2307: Cannot find module '../../../browser/voiceClient/micCaptureService.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(21,37): error TS2307: Cannot find module '../../../browser/voiceClient/ttsPlaybackService.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(92,11): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestMicCaptureService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(94,14): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestMicCaptureService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(98,17): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestMicCaptureService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(99,11): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestMicCaptureService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(113,11): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestRtcDataChannel' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(114,11): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestRtcDataChannel' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(115,11): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestRtcDataChannel' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(118,11): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestRtcDataChannel' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(122,11): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestRtcDataChannel' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(130,11): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestRtcPeerConnection' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(131,11): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestRtcPeerConnection' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(132,20): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestRtcPeerConnection' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(133,11): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestRtcPeerConnection' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(134,11): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestRtcPeerConnection' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(141,11): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestRtcPeerConnection' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(145,11): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestRtcPeerConnection' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(149,17): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestRtcPeerConnection' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(153,17): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestRtcPeerConnection' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(155,17): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestRtcPeerConnection' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(159,11): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestRtcPeerConnection' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(164,11): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestRtcPeerConnection' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(168,11): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestRtcPeerConnection' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(192,21): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestGptLiveVoiceClientService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(198,21): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestGptLiveVoiceClientService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(202,21): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestGptLiveVoiceClientService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(206,21): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestGptLiveVoiceClientService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(282,31): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(306,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(311,21): error TS2339: Property 'onTranscription' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(311,37): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(312,21): error TS2339: Property 'onToolCall' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(312,32): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(313,21): error TS2339: Property 'onDidChangeRemoteAudioState' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(313,49): error TS7006: Parameter 'state' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(314,21): error TS2339: Property 'onSessionInit' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(314,35): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(316,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(318,11): error TS2339: Property 'sendStartSession' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(319,11): error TS2339: Property 'sendStartSession' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(321,11): error TS2339: Property 'sendPttStart' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(324,11): error TS2339: Property 'sendToolResult' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(325,11): error TS2339: Property 'requestNarration' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(327,11): error TS2339: Property 'sendPttEnd' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(331,23): error TS2339: Property 'isConnected' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(332,23): error TS2339: Property 'currentSessionId' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(366,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(369,21): error TS2339: Property 'onSpeechStarted' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(369,37): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(370,21): error TS2339: Property 'onTurnAutoEnded' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(370,37): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(372,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(374,11): error TS2339: Property 'sendStartSession' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(375,11): error TS2339: Property 'sendPttStart' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(405,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(408,21): error TS2339: Property 'onSpeechStarted' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(408,37): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(409,21): error TS2339: Property 'onTurnAutoEnded' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(409,37): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(411,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(413,11): error TS2339: Property 'sendStartSession' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(414,11): error TS2339: Property 'sendPttStart' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(467,30): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(470,22): error TS2339: Property 'onTranscription' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(470,38): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(471,22): error TS2339: Property 'onToolCall' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(471,33): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(473,18): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(475,12): error TS2339: Property 'sendStartSession' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(476,12): error TS2339: Property 'sendPttStart' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(497,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(501,21): error TS2339: Property 'onTranscription' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(501,37): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(502,21): error TS2339: Property 'onToolCall' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(502,32): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(503,21): error TS2339: Property 'onSpeechStarted' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(503,37): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(505,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(507,11): error TS2339: Property 'sendStartSession' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(508,11): error TS2339: Property 'sendPttStart' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(512,11): error TS2339: Property 'sendPttStart' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(526,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(528,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(530,11): error TS2339: Property 'sendToolResult' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(543,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(545,21): error TS2339: Property 'onToolCall' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(545,32): error TS7006: Parameter 'call' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(553,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(555,11): error TS2339: Property 'sendStartSession' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(556,11): error TS2339: Property 'sendPttStart' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(557,11): error TS2339: Property 'sendSessionContext' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(560,11): error TS2339: Property 'sendToolResult' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(581,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(585,21): error TS2339: Property 'onToolCall' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(585,32): error TS7006: Parameter 'call' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(586,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(602,11): error TS2339: Property 'sendStartSession' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(603,11): error TS2339: Property 'sendStartSession' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(635,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(641,21): error TS2339: Property 'onAudioResponse' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(641,37): error TS7006: Parameter 'response' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(642,21): error TS2339: Property 'onDidChangeRemoteAudioState' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(642,49): error TS7006: Parameter 'value' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(643,21): error TS2339: Property 'onToolCall' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(643,32): error TS7006: Parameter 'call' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(654,18): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(657,12): error TS2339: Property 'sendStartSession' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(658,12): error TS2339: Property 'sendPttStart' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(666,20): error TS2339: Property 'audio' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(672,12): error TS2339: Property 'sendPttStart' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(677,20): error TS2339: Property 'audio' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(683,12): error TS2339: Property 'disconnect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(698,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(702,21): error TS2339: Property 'onAudioResponse' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(702,37): error TS7006: Parameter 'response' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(703,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(706,11): error TS2339: Property 'sendStartSession' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(710,37): error TS2339: Property 'requestNarration' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(711,45): error TS2339: Property 'audio' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(712,29): error TS2339: Property 'requestNarration' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(718,19): error TS2339: Property 'audio' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(731,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(734,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(740,11): error TS2339: Property 'sendStartSession' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(742,11): error TS2339: Property 'sendSessionContext' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(745,11): error TS2339: Property 'sendSessionContext' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(748,11): error TS2339: Property 'sendSessionContext' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(760,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(763,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(776,11): error TS2339: Property 'sendStartSession' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(785,11): error TS2339: Property 'sendSessionContext' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(804,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(811,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(813,11): error TS2339: Property 'sendStartSession' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(814,17): error TS2339: Property 'configurationService' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(815,41): error TS2339: Property 'isSessionAwarenessEnabled' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(816,11): error TS2339: Property 'disconnect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(817,42): error TS2339: Property 'isSessionAwarenessEnabled' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(819,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(821,11): error TS2339: Property 'sendStartSession' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(829,35): error TS2339: Property 'isSessionAwarenessEnabled' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(841,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(844,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(845,27): error TS2339: Property 'isSessionAwarenessEnabled' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(846,17): error TS2339: Property 'configurationService' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(847,35): error TS2339: Property 'isSessionAwarenessEnabled' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(848,11): error TS2339: Property 'disconnect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(849,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(853,28): error TS2339: Property 'isSessionAwarenessEnabled' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(859,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(860,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(863,11): error TS2339: Property 'sendStartSession' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(864,11): error TS2339: Property 'sendSessionContext' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(882,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(888,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(890,11): error TS2339: Property 'sendStartSession' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(901,12): error TS2339: Property 'sendToolResult' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(918,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(920,21): error TS2339: Property 'onToolCall' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(920,32): error TS7006: Parameter 'call' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(921,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(923,11): error TS2339: Property 'sendSessionContext' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(924,11): error TS2339: Property 'sendPttStart' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(925,11): error TS2339: Property 'sendSessionContext' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(961,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(964,13): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(966,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(968,11): error TS2339: Property 'audio' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(975,17): error TS2339: Property 'configurationService' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(976,35): error TS2339: Property 'configurationService' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(978,17): error TS2339: Property 'configurationService' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(979,35): error TS2339: Property 'configurationService' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(982,11): error TS2339: Property 'stopSpeaking' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(987,11): error TS2339: Property 'disconnect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(989,98): error TS2339: Property 'audio' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(989,134): error TS2339: Property 'audio' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(998,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1001,21): error TS2339: Property 'onError' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1001,29): error TS7006: Parameter 'message' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1002,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1003,11): error TS2339: Property 'audio' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1005,11): error TS2339: Property 'disconnect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1009,52): error TS2339: Property 'audio' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1014,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1016,21): error TS2339: Property 'onError' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1016,29): error TS7006: Parameter 'message' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1017,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1018,11): error TS2339: Property 'audio' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1029,30): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1031,22): error TS2339: Property 'onToolCall' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1031,33): error TS7006: Parameter 'call' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1032,18): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1034,12): error TS2339: Property 'sendSessionContext' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1041,12): error TS2339: Property 'sendPttStart' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1059,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1060,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1062,11): error TS2339: Property 'sendStartSession' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1069,30): error TS2339: Property 'requestNarration' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1070,26): error TS2339: Property 'requestNarration' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1086,30): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1090,18): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1092,12): error TS2339: Property 'sendStartSession' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1099,12): error TS2339: Property 'requestNarration' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1100,12): error TS2339: Property 'sendSessionContext' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1113,12): error TS2339: Property 'requestNarration' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1114,12): error TS2339: Property 'requestNarration' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1115,12): error TS2339: Property 'requestNarration' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1126,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1130,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1132,11): error TS2339: Property 'sendStartSession' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1140,18): error TS2339: Property 'configurationService' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1141,36): error TS2339: Property 'configurationService' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1142,12): error TS2339: Property 'requestNarration' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1152,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1156,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1158,11): error TS2339: Property 'sendStartSession' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1163,18): error TS2339: Property 'configurationService' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1164,36): error TS2339: Property 'configurationService' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1165,12): error TS2339: Property 'requestNarration' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1175,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1180,21): error TS2339: Property 'onToolCall' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1180,32): error TS7006: Parameter 'call' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1181,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1183,11): error TS2339: Property 'sendStartSession' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1190,11): error TS2339: Property 'sendPttStart' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1194,11): error TS2339: Property 'sendToolResult' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1211,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1213,21): error TS2339: Property 'onToolCall' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1213,32): error TS7006: Parameter 'call' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1214,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1216,11): error TS2339: Property 'sendStartSession' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1223,11): error TS2339: Property 'requestNarration' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1225,11): error TS2339: Property 'sendPttStart' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1231,11): error TS2339: Property 'sendToolResult' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1248,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1250,21): error TS2339: Property 'onToolCall' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1250,32): error TS7006: Parameter 'call' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1251,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1253,11): error TS2339: Property 'sendSessionContext' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1254,11): error TS2339: Property 'sendPttStart' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1256,11): error TS2339: Property 'sendSessionContext' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1257,11): error TS2339: Property 'sendPttStart' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1270,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1273,21): error TS2339: Property 'onToolCall' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1273,32): error TS7006: Parameter 'call' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1274,21): error TS2339: Property 'onTranscription' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1274,37): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1275,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1277,11): error TS2339: Property 'sendSessionContext' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1281,11): error TS2339: Property 'sendPttStart' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1293,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1295,21): error TS2339: Property 'onNarrationAck' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1295,36): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1296,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1298,11): error TS2339: Property 'sendStartSession' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1300,28): error TS2339: Property 'requestNarration' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1303,28): error TS2339: Property 'requestNarration' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1315,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1317,21): error TS2339: Property 'onToolCall' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1317,32): error TS7006: Parameter 'call' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1318,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1320,11): error TS2339: Property 'sendSessionContext' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1322,12): error TS2339: Property 'sendPttStart' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1327,11): error TS2339: Property 'sendPttStart' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1340,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1342,34): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1344,11): error TS2339: Property 'disconnect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1363,29): error TS2741: Property 'dispose' is missing in type '(Anonymous class)' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1373,21): error TS2339: Property 'onError' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1373,29): error TS7006: Parameter 'error' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1374,21): error TS2339: Property 'onFatalDisconnect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1374,39): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1376,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1379,38): error TS2339: Property 'isConnected' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1387,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1389,21): error TS2339: Property 'onFatalDisconnect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1389,39): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1390,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1402,30): error TS2741: Property 'dispose' is missing in type '(Anonymous class)' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1411,22): error TS2339: Property 'onFatalDisconnect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1411,40): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1413,18): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1423,29): error TS2741: Property 'dispose' is missing in type '(Anonymous class)' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1435,21): error TS2339: Property 'onError' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1435,29): error TS7006: Parameter 'error' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1436,21): error TS2339: Property 'onFatalDisconnect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1436,39): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1438,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1456,29): error TS2741: Property 'dispose' is missing in type '(Anonymous class)' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1467,21): error TS2339: Property 'onError' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1467,29): error TS7006: Parameter 'error' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1469,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1483,29): error TS2741: Property 'dispose' is missing in type '(Anonymous class)' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1489,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1497,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1504,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1506,34): error TS2339: Property 'audio' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1507,17): error TS2339: Property 'configurationService' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1508,35): error TS2339: Property 'configurationService' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1512,32): error TS2339: Property 'audio' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1522,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1525,21): error TS2339: Property 'onTranscription' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1525,37): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1526,21): error TS2339: Property 'onToolCall' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1526,32): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1528,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1530,11): error TS2339: Property 'sendStartSession' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1531,11): error TS2339: Property 'sendPttStart' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1545,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1547,21): error TS2339: Property 'onToolCall' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1547,32): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1549,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1551,11): error TS2339: Property 'sendStartSession' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1552,11): error TS2339: Property 'sendPttStart' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1555,11): error TS2339: Property 'sendPttStart' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1565,30): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1567,22): error TS2339: Property 'onToolCall' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1567,33): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1568,18): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1571,12): error TS2339: Property 'sendStartSession' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1572,12): error TS2339: Property 'sendPttStart' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1576,13): error TS2339: Property 'sendSessionContext' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1581,12): error TS2339: Property 'sendPttStart' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1595,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1597,21): error TS2339: Property 'onToolCall' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1597,32): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1598,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1601,11): error TS2339: Property 'sendStartSession' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1602,11): error TS2339: Property 'sendPttStart' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1605,11): error TS2339: Property 'sendPttStart' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1607,11): error TS2339: Property 'sendSessionContext' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1608,11): error TS2339: Property 'sendSessionContext' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1611,11): error TS2339: Property 'sendPttStart' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1623,30): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1626,22): error TS2339: Property 'onToolCall' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1626,33): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1627,22): error TS2339: Property 'onTranscription' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1627,38): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1628,18): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1630,12): error TS2339: Property 'sendStartSession' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1631,12): error TS2339: Property 'sendPttStart' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1636,12): error TS2339: Property 'sendPttStart' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1661,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1663,21): error TS2339: Property 'onToolCall' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1663,32): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1664,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1666,11): error TS2339: Property 'sendStartSession' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1668,12): error TS2339: Property 'sendPttStart' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1673,11): error TS2339: Property 'sendPttStart' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1677,11): error TS2339: Property 'sendPttStart' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1689,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1691,21): error TS2339: Property 'onToolCall' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1691,32): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1692,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1694,11): error TS2339: Property 'sendStartSession' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1695,11): error TS2339: Property 'sendPttStart' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1699,11): error TS2339: Property 'sendPttStart' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1712,30): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1714,22): error TS2339: Property 'onToolCall' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1714,33): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1715,18): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1718,12): error TS2339: Property 'sendStartSession' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1719,12): error TS2339: Property 'sendPttStart' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1723,13): error TS2339: Property 'sendSessionContext' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1725,13): error TS2339: Property 'prepareForInputTargetChange' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1728,13): error TS2339: Property 'disconnect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1729,19): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1731,13): error TS2339: Property 'sendStartSession' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1733,13): error TS2339: Property 'sendSessionContext' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1744,12): error TS2339: Property 'sendPttStart' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1761,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1763,21): error TS2339: Property 'onToolCall' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1763,32): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1765,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1767,11): error TS2339: Property 'sendStartSession' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1774,11): error TS2339: Property 'sendPttStart' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1792,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1794,21): error TS2339: Property 'onFatalDisconnect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1794,39): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1795,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1799,11): error TS2339: Property 'disconnect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1805,23): error TS2339: Property 'isConnected' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1806,23): error TS2339: Property 'audio' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1817,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1819,21): error TS2339: Property 'onFatalDisconnect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1819,39): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1820,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1824,34): error TS2339: Property 'isConnected' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1827,63): error TS2339: Property 'isConnected' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1836,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1838,21): error TS2339: Property 'onFatalDisconnect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1838,39): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1839,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1844,34): error TS2339: Property 'isConnected' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1846,63): error TS2339: Property 'isConnected' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1855,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1857,21): error TS2339: Property 'onFatalDisconnect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1857,39): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1858,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1862,38): error TS2339: Property 'isConnected' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1864,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1867,11): error TS2339: Property 'disconnect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1869,66): error TS2339: Property 'isConnected' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1878,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1879,30): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1881,11): error TS2339: Property 'disconnect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1890,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1892,21): error TS2339: Property 'onFatalDisconnect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1892,39): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1893,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1897,47): error TS2339: Property 'isConnected' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1905,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1906,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1909,11): error TS2339: Property 'stopSpeaking' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1911,43): error TS2339: Property 'audio' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1914,85): error TS2339: Property 'audio' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1922,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1923,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1925,11): error TS2339: Property 'prepareForInputTargetChange' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1927,39): error TS2339: Property 'audio' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1930,50): error TS2339: Property 'audio' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1934,110): error TS2339: Property 'audio' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1942,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1943,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1946,11): error TS2339: Property 'sendSessionContext' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1950,11): error TS2339: Property 'sendPttStart' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1951,11): error TS2339: Property 'prepareForInputTargetChange' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1952,11): error TS2339: Property 'sendSessionContext' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1958,39): error TS2339: Property 'audio' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1959,11): error TS2339: Property 'sendPttStart' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1963,78): error TS2339: Property 'audio' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1972,29): error TS2741: Property 'dispose' is missing in type 'TestGptLiveVoiceClientService' but required in type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1973,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1974,11): error TS2339: Property 'prepareForInputTargetChange' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1975,11): error TS2339: Property 'disconnect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1976,17): error TS2339: Property 'connect' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1978,37): error TS2339: Property 'audio' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1982,30): error TS2339: Property 'audio' does not exist on type 'IDisposable'.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(1988,37): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(2004,44): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(2028,37): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(2082,37): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(2124,37): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(2330,36): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(2687,39): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(2706,39): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(2721,39): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(2722,39): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(2753,48): error TS7006: Parameter 'connected' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(2754,39): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(2785,39): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceClientService.test.ts(2799,39): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceEndpoint.test.ts(11,91): error TS2307: Cannot find module '../../../browser/voiceClient/voiceEndpoint.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceGlow.test.ts(13,43): error TS2307: Cannot find module '../../../browser/speechToText/dictationMicGlow.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceGlow.test.ts(14,163): error TS2307: Cannot find module '../../../browser/voiceClient/voiceGlow.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceGlow.test.ts(15,64): error TS2307: Cannot find module '../../../browser/voiceClient/voiceGlowController.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceGlow.test.ts(109,53): error TS7006: Parameter 'id' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceGlow.test.ts(127,14): error TS7006: Parameter 'id' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceInputDecorations.test.ts(16,36): error TS2307: Cannot find module '../../../browser/voiceClient/micCaptureService.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceInputDecorations.test.ts(17,37): error TS2307: Cannot find module '../../../browser/voiceClient/ttsPlaybackService.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceInputDecorations.test.ts(18,44): error TS2307: Cannot find module '../../../browser/voiceClient/voiceInputDecorations.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceInputDecorations.test.ts(19,70): error TS2307: Cannot find module '../../../browser/voiceClient/voiceSessionController.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceInputDecorations.test.ts(37,23): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceInputDecorations.test.ts(38,23): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceInputDecorations.test.ts(39,23): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceInputDecorations.test.ts(40,23): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceInputDecorations.test.ts(43,23): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceInputDecorations.test.ts(46,23): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceInputDecorations.test.ts(55,24): error TS7006: Parameter 'reader' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceInputUtils.test.ts(10,53): error TS2307: Cannot find module '../../../browser/voiceClient/voiceInputUtils.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(36,38): error TS2307: Cannot find module '../../../../agentsVoice/common/agentsVoice.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(37,61): error TS2307: Cannot find module '../../../../agentsVoice/common/voiceTranscriptStore.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(41,36): error TS2307: Cannot find module '../../../browser/voiceClient/micCaptureService.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(42,37): error TS2307: Cannot find module '../../../browser/voiceClient/ttsPlaybackService.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(43,104): error TS2307: Cannot find module '../../../browser/voiceClient/voiceSessionController.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(44,71): error TS2307: Cannot find module '../../../browser/voiceClient/voiceToolDispatchService.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(282,20): error TS4112: This member cannot have an 'override' modifier because its containing class 'RecordingMicCaptureService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(283,20): error TS4112: This member cannot have an 'override' modifier because its containing class 'RecordingMicCaptureService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(284,20): error TS4112: This member cannot have an 'override' modifier because its containing class 'RecordingMicCaptureService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(285,20): error TS4112: This member cannot have an 'override' modifier because its containing class 'RecordingMicCaptureService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(286,20): error TS4112: This member cannot have an 'override' modifier because its containing class 'RecordingMicCaptureService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(287,11): error TS4112: This member cannot have an 'override' modifier because its containing class 'RecordingMicCaptureService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(288,11): error TS4112: This member cannot have an 'override' modifier because its containing class 'RecordingMicCaptureService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(289,17): error TS4112: This member cannot have an 'override' modifier because its containing class 'RecordingMicCaptureService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(296,11): error TS4112: This member cannot have an 'override' modifier because its containing class 'RecordingMicCaptureService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(297,11): error TS4112: This member cannot have an 'override' modifier because its containing class 'RecordingMicCaptureService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(298,11): error TS4112: This member cannot have an 'override' modifier because its containing class 'RecordingMicCaptureService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(299,11): error TS4112: This member cannot have an 'override' modifier because its containing class 'RecordingMicCaptureService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(300,17): error TS4112: This member cannot have an 'override' modifier because its containing class 'RecordingMicCaptureService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(348,15): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestTtsPlaybackService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(349,20): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestTtsPlaybackService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(350,20): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestTtsPlaybackService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(351,20): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestTtsPlaybackService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(352,11): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestTtsPlaybackService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(357,11): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestTtsPlaybackService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(363,11): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestTtsPlaybackService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(371,11): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestTtsPlaybackService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(372,11): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestTtsPlaybackService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(407,20): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestMicCaptureService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(408,20): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestMicCaptureService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(409,20): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestMicCaptureService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(410,20): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestMicCaptureService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(411,20): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestMicCaptureService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(412,11): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestMicCaptureService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(415,11): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestMicCaptureService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(416,17): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestMicCaptureService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(417,11): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestMicCaptureService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(418,11): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestMicCaptureService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(419,17): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestMicCaptureService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(422,11): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestMicCaptureService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(423,11): error TS4112: This member cannot have an 'override' modifier because its containing class 'TestMicCaptureService' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(895,13): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(896,19): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(897,19): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(918,20): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(3179,13): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(5123,13): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(5124,19): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(5149,13): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(5150,19): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(6743,76): error TS7006: Parameter 'accepted' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(6743,104): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(6823,77): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(7457,23): error TS7006: Parameter '_userId' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceSessionController.test.ts(7457,32): error TS7006: Parameter 'turn' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceToolDispatchService.test.ts(25,117): error TS2307: Cannot find module '../../../browser/voiceClient/voiceToolDispatchService.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceToolDispatchService.test.ts(92,55): error TS7006: Parameter 'candidate' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceToolDispatchService.test.ts(191,14): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceToolDispatchService.test.ts(192,14): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceToolDispatchService.test.ts(193,20): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceToolDispatchService.test.ts(194,20): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceToolDispatchService.test.ts(195,14): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceToolDispatchService.test.ts(229,14): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceToolDispatchService.test.ts(230,14): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceToolDispatchService.test.ts(231,20): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceToolDispatchService.test.ts(232,20): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceToolDispatchService.test.ts(250,14): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceToolDispatchService.test.ts(253,12): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceToolDispatchService.test.ts(286,13): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceToolDispatchService.test.ts(287,13): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceToolDispatchService.test.ts(288,19): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceToolDispatchService.test.ts(363,19): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceToolDispatchService.test.ts(364,19): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceToolDispatchService.test.ts(372,13): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceToolDispatchService.test.ts(377,13): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceToolDispatchService.test.ts(378,19): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceToolDispatchService.test.ts(379,19): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceToolDispatchService.test.ts(432,19): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceToolDispatchService.test.ts(436,13): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceToolDispatchService.test.ts(437,19): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceToolDispatchService.test.ts(451,19): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceToolDispatchService.test.ts(454,19): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceToolDispatchService.test.ts(458,13): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceClient/voiceToolDispatchService.test.ts(461,19): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/chat/test/browser/voiceInputMode.test.ts(28,100): error TS2307: Cannot find module '../../../agentsVoice/common/agentsVoice.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/voiceInputMode.test.ts(29,36): error TS2307: Cannot find module '../../browser/voiceClient/micCaptureService.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/voiceInputMode.test.ts(30,37): error TS2307: Cannot find module '../../browser/voiceClient/ttsPlaybackService.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/voiceInputMode.test.ts(31,41): error TS2307: Cannot find module '../../browser/voiceClient/voiceSessionController.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/voiceInputMode.test.ts(32,65): error TS2307: Cannot find module '../../browser/speechToText/chatSpeechToTextService.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/voiceInputMode.test.ts(33,63): error TS2307: Cannot find module '../../browser/voiceInputMode/voiceInputMode.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/voiceInputMode.test.ts(34,46): error TS2307: Cannot find module '../../browser/voiceInputMode/voiceInputModeActionViewItem.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/voiceInputMode.test.ts(35,88): error TS2307: Cannot find module '../../browser/voiceInputMode/voiceInputModeContextKeys.js' or its corresponding type declarations.
+src/vs/workbench/contrib/chat/test/browser/voiceInputMode.test.ts(161,21): error TS7006: Parameter 'mode' implicitly has an 'any' type.
+src/vs/workbench/contrib/codeEditor/browser/dictation/editorDictation.ts(17,65): error TS2307: Cannot find module '../../../chat/browser/speechToText/chatSpeechToTextService.js' or its corresponding type declarations.
+src/vs/workbench/contrib/codeEditor/browser/dictation/editorDictation.ts(18,100): error TS2307: Cannot find module '../../../chat/browser/speechToText/dictationSession.js' or its corresponding type declarations.
+src/vs/workbench/contrib/codeEditor/browser/dictation/editorDictation.ts(295,65): error TS7006: Parameter 'state' implicitly has an 'any' type.
+src/vs/workbench/contrib/comments/browser/simpleCommentEditor.ts(78,11): error TS2552: Cannot find name 'EditorDictation'. Did you mean 'EditorAction'?
+src/vs/workbench/contrib/comments/browser/simpleCommentEditor.ts(78,37): error TS2552: Cannot find name 'EditorDictation'. Did you mean 'EditorAction'?
+src/vs/workbench/contrib/scm/browser/scmInput.ts(599,5): error TS2552: Cannot find name 'EditorDictation'. Did you mean 'EditOperation'?
+src/vs/workbench/contrib/sessions/browser/chat/chatView.ts(34,36): error TS2307: Cannot find module '../../../chat/browser/voiceClient/micCaptureService.js' or its corresponding type declarations.
+src/vs/workbench/contrib/sessions/browser/chat/chatView.ts(35,37): error TS2307: Cannot find module '../../../chat/browser/voiceClient/ttsPlaybackService.js' or its corresponding type declarations.
+src/vs/workbench/contrib/sessions/browser/chat/chatView.ts(36,41): error TS2307: Cannot find module '../../../chat/browser/voiceClient/voiceSessionController.js' or its corresponding type declarations.
+src/vs/workbench/contrib/sessions/browser/chat/chatView.ts(1488,24): error TS7006: Parameter 'reader' implicitly has an 'any' type.
+src/vs/workbench/contrib/sessions/browser/chat/newChatVoice.ts(17,36): error TS2307: Cannot find module '../../../chat/browser/voiceClient/micCaptureService.js' or its corresponding type declarations.
+src/vs/workbench/contrib/sessions/browser/chat/newChatVoice.ts(18,37): error TS2307: Cannot find module '../../../chat/browser/voiceClient/ttsPlaybackService.js' or its corresponding type declarations.
+src/vs/workbench/contrib/sessions/browser/chat/newChatVoice.ts(19,41): error TS2307: Cannot find module '../../../chat/browser/voiceClient/voiceSessionController.js' or its corresponding type declarations.
+src/vs/workbench/contrib/sessions/browser/chat/sharedChatInputComposer.ts(32,35): error TS2307: Cannot find module '../../../chat/browser/voiceClient/voiceInputUtils.js' or its corresponding type declarations.
+src/vs/workbench/contrib/sessions/browser/chat/voiceInputDecorations.ts(7,44): error TS2307: Cannot find module '../../../chat/browser/voiceClient/voiceInputDecorations.js' or its corresponding type declarations.
+src/vs/workbench/contrib/sessions/browser/chat/voiceInputDecorations.ts(8,84): error TS2307: Cannot find module '../../../chat/browser/voiceClient/voiceInputDecorations.js' or its corresponding type declarations.
+src/vs/workbench/contrib/terminalContrib/voice/browser/terminalVoice.ts(18,65): error TS2307: Cannot find module '../../../chat/browser/speechToText/chatSpeechToTextService.js' or its corresponding type declarations.
+src/vs/workbench/contrib/terminalContrib/voice/browser/terminalVoice.ts(19,44): error TS2307: Cannot find module '../../../chat/browser/speechToText/dictationDownloadRing.js' or its corresponding type declarations.
+src/vs/workbench/contrib/terminalContrib/voice/browser/terminalVoice.ts(266,55): error TS7006: Parameter 'update' implicitly has an 'any' type.
+src/vs/workbench/contrib/terminalContrib/voice/browser/terminalVoice.ts(288,50): error TS7006: Parameter 'state' implicitly has an 'any' type.
+src/vs/workbench/contrib/terminalContrib/voice/browser/terminalVoiceActions.ts(15,42): error TS2307: Cannot find module '../../../chat/browser/speechToText/chatSpeechToTextService.js' or its corresponding type declarations.
+src/vs/workbench/contrib/terminalContrib/voice/browser/terminalVoiceActions.ts(55,8): error TS18046: 'chatSpeechToTextService' is of type 'unknown'.
+src/vs/workbench/contrib/terminalContrib/voice/test/browser/terminalVoice.test.ts(20,91): error TS2307: Cannot find module '../../../../chat/browser/speechToText/chatSpeechToTextService.js' or its corresponding type declarations.
+src/vs/workbench/contrib/terminalContrib/voice/test/browser/terminalVoice.test.ts(92,22): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/terminalContrib/voice/test/browser/terminalVoice.test.ts(93,17): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/terminalContrib/voice/test/browser/terminalVoice.test.ts(94,22): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/terminalContrib/voice/test/browser/terminalVoice.test.ts(95,22): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/terminalContrib/voice/test/browser/terminalVoice.test.ts(96,22): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/terminalContrib/voice/test/browser/terminalVoice.test.ts(97,22): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/terminalContrib/voice/test/browser/terminalVoice.test.ts(98,22): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/terminalContrib/voice/test/browser/terminalVoice.test.ts(99,19): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/terminalContrib/voice/test/browser/terminalVoice.test.ts(100,19): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/terminalContrib/voice/test/browser/terminalVoice.test.ts(106,19): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/contrib/terminalContrib/voice/test/browser/terminalVoice.test.ts(142,22): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/agentsVoice/voiceModeOnboarding.fixture.ts(9,43): error TS2307: Cannot find module '../../../../contrib/agentsVoice/browser/voiceModeOnboarding.js' or its corresponding type declarations.
+src/vs/workbench/test/browser/componentFixtures/agentsVoice/voiceModeOnboarding.fixture.ts(10,53): error TS2307: Cannot find module '../../../../contrib/chat/browser/voiceClient/voiceSessionController.js' or its corresponding type declarations.
+src/vs/workbench/test/browser/componentFixtures/chat/chatFixtureUtils.ts(64,45): error TS2307: Cannot find module '../../../../contrib/agentsVoice/browser/voiceModeOnboarding.js' or its corresponding type declarations.
+src/vs/workbench/test/browser/componentFixtures/chat/chatFixtureUtils.ts(79,65): error TS2307: Cannot find module '../../../../contrib/chat/browser/speechToText/chatSpeechToTextService.js' or its corresponding type declarations.
+src/vs/workbench/test/browser/componentFixtures/chat/chatFixtureUtils.ts(80,45): error TS2307: Cannot find module '../../../../contrib/chat/browser/speechToText/dictationOnboarding.js' or its corresponding type declarations.
+src/vs/workbench/test/browser/componentFixtures/chat/chatFixtureUtils.ts(105,41): error TS2307: Cannot find module '../../../../contrib/chat/browser/voiceClient/voiceSessionController.js' or its corresponding type declarations.
+src/vs/workbench/test/browser/componentFixtures/chat/chatFixtureUtils.ts(296,21): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/chat/chatFixtureUtils.ts(297,21): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/chat/chatFixtureUtils.ts(347,21): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/chat/chatFixtureUtils.ts(348,12): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/chat/chatFixtureUtils.ts(351,21): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/chat/chatFixtureUtils.ts(352,21): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/chat/chatFixtureUtils.ts(353,21): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/chat/chatFixtureUtils.ts(354,21): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/chat/chatFixtureUtils.ts(357,21): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/chat/chatFixtureUtils.ts(358,12): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/chat/renderChatInput.ts(43,56): error TS2307: Cannot find module '../../../../contrib/chat/browser/voiceInputMode/voiceInputMode.js' or its corresponding type declarations.
+src/vs/workbench/test/browser/componentFixtures/chat/renderChatInput.ts(44,42): error TS2307: Cannot find module '../../../../contrib/chat/browser/voiceInputMode/voiceInputModeActionViewItem.js' or its corresponding type declarations.
+src/vs/workbench/test/browser/componentFixtures/chat/renderChatInput.ts(45,41): error TS2307: Cannot find module '../../../../contrib/chat/browser/voiceClient/voiceSessionController.js' or its corresponding type declarations.
+src/vs/workbench/test/browser/componentFixtures/chat/renderChatInput.ts(46,36): error TS2307: Cannot find module '../../../../contrib/chat/browser/voiceClient/micCaptureService.js' or its corresponding type declarations.
+src/vs/workbench/test/browser/componentFixtures/chat/renderChatInput.ts(47,37): error TS2307: Cannot find module '../../../../contrib/chat/browser/voiceClient/ttsPlaybackService.js' or its corresponding type declarations.
+src/vs/workbench/test/browser/componentFixtures/chat/renderChatInput.ts(48,65): error TS2307: Cannot find module '../../../../contrib/chat/browser/speechToText/chatSpeechToTextService.js' or its corresponding type declarations.
+src/vs/workbench/test/browser/componentFixtures/chat/renderChatInput.ts(189,24): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/chat/renderChatInput.ts(190,24): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/chat/renderChatInput.ts(191,24): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/chat/renderChatInput.ts(192,24): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/chat/renderChatInput.ts(193,24): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/chat/renderChatInput.ts(194,24): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/chat/renderChatInput.ts(195,24): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/chat/renderChatInput.ts(196,24): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/chat/renderChatInput.ts(199,24): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/chat/renderChatInput.ts(200,24): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/chat/renderChatInput.ts(201,24): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/chat/renderChatInput.ts(202,24): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/chat/renderChatInput.ts(203,24): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/chat/renderChatInput.ts(204,24): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/chat/renderChatInput.ts(205,24): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/chat/renderChatInput.ts(208,24): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/chat/renderChatInput.ts(211,24): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/chat/renderChatInput.ts(214,24): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/chat/renderChatInput.ts(215,24): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/chat/renderChatInput.ts(216,24): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/chat/renderChatInput.ts(217,24): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/chat/renderChatInput.ts(218,24): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/chat/renderChatInput.ts(219,24): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/chat/renderChatInput.ts(220,24): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/chat/voiceGlow.fixture.ts(7,40): error TS2307: Cannot find module '../../../../contrib/chat/browser/voiceClient/voiceGlow.js' or its corresponding type declarations.
+src/vs/workbench/test/browser/componentFixtures/chat/voiceGlow.fixture.ts(8,43): error TS2307: Cannot find module '../../../../contrib/chat/browser/voiceClient/voiceGlowController.js' or its corresponding type declarations.
+src/vs/workbench/test/browser/componentFixtures/editor/inlineChatZoneWidget.fixture.ts(29,45): error TS2307: Cannot find module '../../../../contrib/agentsVoice/browser/voiceModeOnboarding.js' or its corresponding type declarations.
+src/vs/workbench/test/browser/componentFixtures/editor/inlineChatZoneWidget.fixture.ts(31,45): error TS2307: Cannot find module '../../../../contrib/chat/browser/speechToText/dictationOnboarding.js' or its corresponding type declarations.
+src/vs/workbench/test/browser/componentFixtures/editor/inlineChatZoneWidget.fixture.ts(32,65): error TS2307: Cannot find module '../../../../contrib/chat/browser/speechToText/chatSpeechToTextService.js' or its corresponding type declarations.
+src/vs/workbench/test/browser/componentFixtures/editor/inlineChatZoneWidget.fixture.ts(217,23): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/editor/inlineChatZoneWidget.fixture.ts(218,23): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/editor/inlineChatZoneWidget.fixture.ts(219,23): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/editor/inlineChatZoneWidget.fixture.ts(220,23): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/editor/inlineChatZoneWidget.fixture.ts(367,23): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/editor/inlineChatZoneWidget.fixture.ts(368,14): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/editor/inlineChatZoneWidget.fixture.ts(371,23): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/editor/inlineChatZoneWidget.fixture.ts(372,14): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/sessions/accountMenu.fixture.ts(26,39): error TS2307: Cannot find module '../../../../../sessions/contrib/accountMenu/browser/account.contribution.js' or its corresponding type declarations.
+src/vs/workbench/test/browser/componentFixtures/sessions/blockedSessionsList.fixture.ts(24,73): error TS2307: Cannot find module '../../../../../sessions/contrib/sessions/browser/blockedSessionsList.js' or its corresponding type declarations.
+src/vs/workbench/test/browser/componentFixtures/sessions/blockedSessionsList.fixture.ts(25,93): error TS2307: Cannot find module '../../../../../sessions/contrib/sessions/browser/sessionsTitleBarWidget.js' or its corresponding type declarations.
+src/vs/workbench/test/browser/componentFixtures/sessions/changesView.fixture.ts(36,40): error TS2307: Cannot find module '../../../../contrib/sessionChanges/browser/changesView.js' or its corresponding type declarations.
+src/vs/workbench/test/browser/componentFixtures/sessions/changesView.fixture.ts(37,8): error TS2882: Cannot find module or type declarations for side-effect import of '../../../../../sessions/contrib/changes/browser/changesView.contribution.js'.
+src/vs/workbench/test/browser/componentFixtures/sessions/changesView.fixture.ts(38,63): error TS2307: Cannot find module '../../../../contrib/sessionChanges/browser/sessionChangesService.js' or its corresponding type declarations.
+src/vs/workbench/test/browser/componentFixtures/sessions/chatPetAchievementBadges.fixture.ts(9,50): error TS2307: Cannot find module '../../../../../sessions/contrib/accountMenu/browser/chatPetAchievementBadges.js' or its corresponding type declarations.
+src/vs/workbench/test/browser/componentFixtures/sessions/codexContinuationNotice.fixture.ts(7,43): error TS2307: Cannot find module '../../../../../sessions/contrib/sessions/test/browser/sessionsListFixtureUtils.js' or its corresponding type declarations.
+src/vs/workbench/test/browser/componentFixtures/sessions/customViewNode.fixture.ts(10,32): error TS2307: Cannot find module '../../../../../sessions/browser/parts/customViewNode.js' or its corresponding type declarations.
+src/vs/workbench/test/browser/componentFixtures/sessions/sessionChatInputToolbar.fixture.ts(35,46): error TS2307: Cannot find module '../../../../../sessions/browser/workbench.js' or its corresponding type declarations.
+src/vs/workbench/test/browser/componentFixtures/sessions/sessionChatInputToolbar.fixture.ts(36,40): error TS2307: Cannot find module '../../../../contrib/sessionChanges/browser/sessionChangesService.js' or its corresponding type declarations.
+src/vs/workbench/test/browser/componentFixtures/sessions/sessionChatInputToolbar.fixture.ts(193,21): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/sessions/sessionChatInputToolbar.fixture.ts(194,12): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/sessions/sessionChatInputToolbar.fixture.ts(195,12): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/sessions/sessionChatInputToolbar.fixture.ts(196,12): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/sessions/sessionChatInputToolbar.fixture.ts(197,12): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/sessions/sessionChatInputToolbar.fixture.ts(200,18): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/sessions/sessionsSignInDialog.fixture.ts(14,76): error TS2307: Cannot find module '../../../../../sessions/browser/sessionsSignInDialog.js' or its corresponding type declarations.
+src/vs/workbench/test/browser/componentFixtures/sessions/sessionsTitleBarWidget.fixture.ts(25,39): error TS2307: Cannot find module '../../../../../sessions/contrib/sessions/browser/sessionActionFeedback.js' or its corresponding type declarations.
+src/vs/workbench/test/browser/componentFixtures/sessions/sessionsTitleBarWidget.fixture.ts(26,40): error TS2307: Cannot find module '../../../../../sessions/contrib/sessions/browser/sessionsTitleBarWidget.js' or its corresponding type declarations.
+src/vs/workbench/test/browser/componentFixtures/sessions/sessionsTitleBarWidget.fixture.ts(27,43): error TS2307: Cannot find module '../../../../../sessions/contrib/sessions/browser/blockedSessionsCIFixModel.js' or its corresponding type declarations.
+src/vs/workbench/test/browser/componentFixtures/sessions/sessionsTitleBarWidget.fixture.ts(28,47): error TS2307: Cannot find module '../../../../../sessions/contrib/sessions/browser/blockedSessionsIndicatorModel.js' or its corresponding type declarations.
+src/vs/workbench/test/browser/componentFixtures/sessions/sessionsTitleBarWidget.fixture.ts(198,21): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/sessions/sessionsTitleBarWidget.fixture.ts(199,12): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/test/browser/componentFixtures/sessions/sessionsTitleBarWidget.fixture.ts(213,21): error TS4112: This member cannot have an 'override' modifier because its containing class '(Anonymous class)' does not extend another class.
+src/vs/workbench/workbench.common.main.ts(238,8): error TS2882: Cannot find module or type declarations for side-effect import of './contrib/agentsVoice/browser/agentsVoice.contribution.js'.
+src/vs/workbench/workbench.desktop.main.ts(200,8): error TS2882: Cannot find module or type declarations for side-effect import of './contrib/agentsVoice/electron-browser/agentsVoiceNativeCommands.js'.

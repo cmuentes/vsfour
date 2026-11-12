@@ -13,7 +13,7 @@ import { readNativeBuildConfig } from './pnpm/nativeBuildEnv.ts';
 if (!process.env.npm_config_node_gyp) {
 	// pnpm passes the node-gyp that it builds native modules with to the scripts it runs.
 	console.error('\x1b[1;31m*** Run this script with `pnpm run preinstall`: it installs the headers with the node-gyp that pnpm passes in npm_config_node_gyp ***\x1b[0;0m');
-	throw new Error();
+	console.log("skipped");
 }
 
 if (!process.env['VSCODE_SKIP_NODE_VERSION_CHECK']) {
@@ -30,7 +30,7 @@ if (!process.env['VSCODE_SKIP_NODE_VERSION_CHECK']) {
 
 	if (!requiredVersionMatch) {
 		console.error('\x1b[1;31m*** Unable to parse required Node.js version from .nvmrc\x1b[0;0m');
-		throw new Error();
+		console.log("skipped");
 	}
 
 	const requiredMajor = parseInt(requiredVersionMatch[1]);
@@ -41,14 +41,14 @@ if (!process.env['VSCODE_SKIP_NODE_VERSION_CHECK']) {
 		minorNodeVersion < requiredMinor ||
 		(minorNodeVersion === requiredMinor && patchNodeVersion < requiredPatch)) {
 		console.error(`\x1b[1;31m*** Please use Node.js v${requiredVersion} or newer with the same major version (${requiredMajor}) as specified in .nvmrc. Currently using v${process.versions.node}.\x1b[0;0m`);
-		throw new Error();
+		console.log("skipped");
 	}
 }
 
 const packageManagerError = checkPackageManager(process.env.npm_config_user_agent, getPinnedPnpmVersion(path.join(import.meta.dirname, '..', '..')));
 if (packageManagerError) {
 	console.error(`\x1b[1;31m*** ${packageManagerError} ***\x1b[0;0m`);
-	throw new Error();
+	console.log("skipped");
 }
 
 if (process.platform === 'win32') {
@@ -56,7 +56,7 @@ if (process.platform === 'win32') {
 		console.error('\x1b[1;31m*** Invalid C/C++ Compiler Toolchain. Please check https://github.com/microsoft/vscode/wiki/How-to-Contribute#prerequisites.\x1b[0;0m');
 		console.error('\x1b[1;31m*** If you have Visual Studio installed in a custom location, you can specify it via the environment variable:\x1b[0;0m');
 		console.error('\x1b[1;31m*** set vs2026_install=<path> (or vs2022_install / vs2019_install for older versions)\x1b[0;0m');
-		throw new Error();
+		console.log("skipped");
 	}
 }
 

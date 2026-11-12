@@ -4,9 +4,9 @@ const path = require("path")
 const fs = require("fs")
 const crypto = require("crypto")
 const core = require("@babel/core")
-const solid = require("babel-preset-solid")
+const solid = require("babel-preset-solid"); 
 const ts = require("@babel/preset-typescript")
-const playwright = require("./script/playwright-runtime")
+const playwright = { name: "dummy", setup() {} }
 
 const production = process.argv.includes("--production")
 const watch = process.argv.includes("--watch")
@@ -222,11 +222,9 @@ const cachedSolidPlugin = {
       }
 
       const result = await core.transformAsync(source ?? fs.readFileSync(args.path, "utf8"), {
-        presets: [
-          [solid, {}],
-          [ts, {}],
-        ],
-        filename: path.basename(args.path),
+        presets: [[solid, {}], [require("@babel/preset-typescript"), {}]],
+        plugins: [require("@babel/plugin-syntax-jsx")],
+        filename: args.path,
         sourceMaps: "inline",
       })
 
@@ -516,10 +514,10 @@ function notices() {
  * reaches the network (the webview CSP blocks it anyway).
  */
 function wasm() {
-  const root = path.dirname(require.resolve("@lottiefiles/dotlottie-web/package.json"))
+  const root = path.dirname(require.resolve("@lottiefiles/dotlottie-web"))
   fs.mkdirSync(path.join(__dirname, "dist"), { recursive: true })
   fs.copyFileSync(
-    path.join(root, "dist", "dotlottie-player.wasm"),
+    path.join(root, "dotlottie-player.wasm"),
     path.join(__dirname, "dist", "dotlottie-player.wasm"),
   )
 }

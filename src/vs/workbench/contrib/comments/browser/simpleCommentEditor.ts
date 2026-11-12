@@ -13,7 +13,6 @@ import { ICommandService } from '../../../../platform/commands/common/commands.j
 
 // Allowed Editor Contributions:
 import { MenuPreventer } from '../../codeEditor/browser/menuPreventer.js';
-import { EditorDictation } from '../../codeEditor/browser/dictation/editorDictation.js';
 import { ContextMenuController } from '../../../../editor/contrib/contextmenu/browser/contextmenu.js';
 import { SuggestController } from '../../../../editor/contrib/suggest/browser/suggestController.js';
 import { SnippetController2 } from '../../../../editor/contrib/snippet/browser/snippetController2.js';
