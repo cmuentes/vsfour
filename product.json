@@ -87,75 +87,7 @@
       }
     }
   ],
-  "defaultChatAgent": {
-    "extensionId": "awanaintelligence.semafour",
-    "chatExtensionId": "awanaintelligence.semafour",
-    "chatExtensionOutputId": "awanaintelligence.semafour.Semafour Chat.log",
-    "chatExtensionOutputExtensionStateCommand": "semafour.debug.extensionState",
-    "documentationUrl": "https://github.com/cmuentes/semafour",
-    "termsStatementUrl": "https://github.com/cmuentes/semafour",
-    "privacyStatementUrl": "https://github.com/cmuentes/semafour",
-    "skusDocumentationUrl": "https://github.com/cmuentes/semafour",
-    "optimizeUsageDocumentationUrl": "https://github.com/cmuentes/semafour",
-    "publicCodeMatchesUrl": "https://github.com/cmuentes/semafour",
-    "managePlanUrl": "https://github.com/cmuentes/semafour",
-    "upgradePlanUrl": "https://github.com/cmuentes/semafour",
-    "signUpUrl": "https://github.com/cmuentes/semafour",
-    "provider": {
-      "default": {
-        "id": "semafour",
-        "name": "Semafour"
-      },
-      "enterprise": {
-        "id": "semafour-enterprise",
-        "name": "Semafour"
-      },
-      "google": {
-        "id": "semafour-google",
-        "name": "Semafour"
-      },
-      "apple": {
-        "id": "semafour-apple",
-        "name": "Semafour"
-      },
-      "microsoft": {
-        "id": "semafour-microsoft",
-        "name": "Semafour"
-      }
-    },
-    "providerExtensionId": "vscode.github-authentication",
-    "providerUriSetting": "github-enterprise.uri",
-    "providerScopes": [
-      [
-        "read:user",
-        "user:email",
-        "repo",
-        "workflow"
-      ],
-      [
-        "user:email"
-      ],
-      [
-        "read:user"
-      ]
-    ],
-    "entitlementUrl": "",
-    "entitlementSignupLimitedUrl": "",
-    "chatQuotaExceededContext": "semafour.chat.quotaExceeded",
-    "completionsQuotaExceededContext": "semafour.completions.quotaExceeded",
-    "walkthroughCommand": "semafour.open.walkthrough",
-    "completionsMenuCommand": "semafour.toggleStatusMenu",
-    "chatRefreshTokenCommand": "semafour.refreshToken",
-    "generateCommitMessageCommand": "semafour.git.generateCommitMessage",
-    "resolveMergeConflictsCommand": "semafour.git.resolveMergeConflicts",
-    "completionsAdvancedSetting": "semafour.advanced",
-    "completionsEnablementSetting": "semafour.enable",
-    "nextEditSuggestionsSetting": "semafour.nextEditSuggestions.enabled",
-    "tokenEntitlementUrl": "https://github.com/cmuentes/semafour",
-    "mcpRegistryDataUrl": "https://github.com/cmuentes/semafour",
-    "mcpConnectorsUrl": "https://github.com/cmuentes/semafour",
-    "managedSettingsUrl": "https://github.com/cmuentes/semafour"
-  },
+  "builtInExtensionsEnabledWithAutoUpdates": [],
   "trustedExtensionAuthAccess": {
     "github": [
       "awanaintelligence.semafour"
@@ -253,6 +185,7 @@
   "configurationDefaults": {
     "chat.disableAIFeatures": true,
     "chat.commandCenter.enabled": false,
+    "workbench.secondarySideBar.defaultVisibility": "visible",
     "telemetry.telemetryLevel": "off",
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,

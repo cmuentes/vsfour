@@ -63,3 +63,11 @@ dist
 # Local Agent Config
 kilo.jsonc
 **/kilo.jsonc
+kilo.jsonc
+**/kilo.jsonc
+.kilocode/
+.kilo/
+extensions/semafour-agent/dist/
+extensions/semafour-agent/bin/
+extensions/semafour-agent/node_modules/
+extensions/semafour-agent/audio-wav/
