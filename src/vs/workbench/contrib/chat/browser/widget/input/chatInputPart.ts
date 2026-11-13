@@ -1167,8 +1167,6 @@ export class ChatInputPart extends Disposable implements IHistoryNavigationWidge
 		@IChatSessionsService private readonly chatSessionsService: IChatSessionsService,
 		@IChatContextService private readonly chatContextService: IChatContextService,
 		@IAgentSessionsService private readonly agentSessionsService: IAgentSessionsService,
-		@any private readonly speechToTextService: any,
-		
 		@IChatInputNoticeHubService private readonly chatInputNoticeHubService: IChatInputNoticeHubService,
 		@IWorkspaceContextService private readonly workspaceContextService: IWorkspaceContextService,
 		@ISCMService private readonly scmService: ISCMService,
@@ -4073,18 +4071,9 @@ export class ChatInputPart extends Disposable implements IHistoryNavigationWidge
 
 		const dictationRecording = ChatContextKeys.speechToTextRecording.bindTo(this.contextKeyService);
 		const dictationPreparing = ChatContextKeys.speechToTextPreparing.bindTo(this.contextKeyService);
-		const isDictationInputActive = observableFromEvent(
-			this,
-			Event.any(this.speechToTextService.onDidChangeState, this.speechToTextService.onDidChangePreparingModel, /* onDidChangeDictationEditor */),
-			() => /* isDictationActiveForEditor */(this._inputEditor),
-		);
-		const updateDictationContextKeys = () => {
-			const active = false;
-			dictationRecording.set(active && false);
-			dictationPreparing.set(active && this.speechToTextService.isPreparingModel);
-		};
-		
-		updateDictationContextKeys();
+		dictationRecording.set(false);
+		dictationPreparing.set(false);
+		const isDictationInputActive = constObservable(false);
 
 		SuggestController.get(this._inputEditor)?.forceRenderingAbove();
 		options.overflowWidgetsDomNode?.classList.add('hideSuggestTextIcons');

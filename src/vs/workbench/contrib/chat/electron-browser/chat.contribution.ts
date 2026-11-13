@@ -49,7 +49,6 @@ import { IPluginGitService } from '../common/plugins/pluginGitService.js';
 import { registerChatDeveloperActions } from './actions/chatDeveloperActions.js';
 import { registerChatExportZipAction } from './actions/chatExportZip.js';
 import { registerExportAgentTracesDbAction } from './actions/exportAgentTracesDb.js';
-import { registerInstallDictationModelAction } from './actions/installDictationModelAction.js';
 import { confirmSessionShutdown, getChatUnattendedRestartBlocker, getEffectiveSessionShutdownReason, shouldWarnForInFlightSessionShutdown, shouldWarnForSessionShutdown } from './chatLifecycle.js';
 import { OpenWorkspaceInAgentsWindowAction, OpenWorkspaceInAgentsContribution, OpenAgentsWindowAction, OpenChatSessionInAgentsWindowAction, CopilotHarnessIntroductionContribution, ToggleOpenInAgentsWindowTitleBarAction, OpenWorkspaceInAgentsWindowChatTitleAction, OpenWorkspaceInAgentsWindowTitleBarAction, ResetCopilotHarnessIntroductionAction } from './agentSessions/agentSessionsActions.js';
 import { AgentsWindowInvitationContribution } from './agentSessions/agentsWindowInvitation.js';
@@ -263,8 +262,6 @@ registerChatDeveloperActions();
 registerChatExportZipAction();
 registerExportAgentTracesDbAction();
 
-
-registerWorkbenchContribution2(any.ID, any, WorkbenchPhase.AfterRestored);
 registerWorkbenchContribution2(NativeBuiltinToolsContribution.ID, NativeBuiltinToolsContribution, WorkbenchPhase.AfterRestored);
 registerWorkbenchContribution2(ChatCommandLineHandler.ID, ChatCommandLineHandler, WorkbenchPhase.BlockRestore);
 registerWorkbenchContribution2(ChatSuspendThrottlingHandler.ID, ChatSuspendThrottlingHandler, WorkbenchPhase.AfterRestored);

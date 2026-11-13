@@ -3268,23 +3268,6 @@ class ToolReferenceNamesContribution extends Disposable implements IWorkbenchCon
 	}
 }
 
-/**
- * Forces the eager {@link any} to instantiate at startup so
- * it can publish the `chatSpeechToTextConfigured` context key that gates the
- * dictation (mic) button. Registered singletons are created lazily on first
- * access, so without this the key would never be set and the button never shows.
- */
-class ChatSpeechToTextInitContribution implements IWorkbenchContribution {
-
-	static readonly ID = 'workbench.contrib.chatSpeechToTextInit';
-
-	constructor(
-		@any _chatSpeechToTextService: any,
-	) {
-		// Injecting the service is enough to construct it.
-	}
-}
-
 AccessibleViewRegistry.register(new ChatTerminalOutputAccessibleView());
 AccessibleViewRegistry.register(new ChatBackgroundShellOutputAccessibleView());
 AccessibleViewRegistry.register(new ChatResponseAccessibleView());
@@ -3305,7 +3288,6 @@ Registry.as<IEditorFactoryRegistry>(EditorExtensions.EditorFactory).registerEdit
 
 registerWorkbenchContribution2(CopilotTelemetryContribution.ID, CopilotTelemetryContribution, WorkbenchPhase.BlockRestore);
 registerWorkbenchContribution2(EditorChatUsageContribution.ID, EditorChatUsageContribution, WorkbenchPhase.BlockRestore);
-registerWorkbenchContribution2(ChatSpeechToTextInitContribution.ID, ChatSpeechToTextInitContribution, WorkbenchPhase.BlockRestore);
 registerWorkbenchContribution2(ChatResolverContribution.ID, ChatResolverContribution, WorkbenchPhase.BlockStartup);
 registerWorkbenchContribution2(ChatDebugResolverContribution.ID, ChatDebugResolverContribution, WorkbenchPhase.BlockStartup);
 registerWorkbenchContribution2(PromptsDebugContribution.ID, PromptsDebugContribution, WorkbenchPhase.BlockRestore);
@@ -3412,8 +3394,6 @@ agentPluginDiscoveryRegistry.register(new SyncDescriptor(CopilotCliAgentPluginDi
 
 registerSingleton(IChatResponseResourceFileSystemProvider, ChatResponseResourceFileSystemProvider, InstantiationType.Delayed);
 registerSingleton(IChatTerminalOutputTextModelService, ChatTerminalOutputTextModelService, InstantiationType.Delayed);
-registerSingleton(any, any, InstantiationType.Eager);
-registerSingleton(any, any, InstantiationType.Delayed);
 registerSingleton(IChatTransferService, ChatTransferService, InstantiationType.Delayed);
 registerSingleton(IChatService, ChatService, InstantiationType.Delayed);
 registerSingleton(IChatWidgetService, ChatWidgetService, InstantiationType.Delayed);
