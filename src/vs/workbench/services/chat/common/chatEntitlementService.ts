@@ -390,7 +390,7 @@ export class ChatEntitlementService extends Disposable implements IChatEntitleme
 
 	constructor(
 		@IInstantiationService instantiationService: IInstantiationService,
-		@IProductService productService: IProductService,
+		@IProductService private readonly productService: IProductService,
 		@IWorkbenchEnvironmentService environmentService: IWorkbenchEnvironmentService,
 		@IContextKeyService private readonly contextKeyService: IContextKeyService,
 		@IConfigurationService private readonly configurationService: IConfigurationService,
@@ -455,7 +455,8 @@ export class ChatEntitlementService extends Disposable implements IChatEntitleme
 			return;
 		}
 
-		if (!productService.defaultChatAgent) {
+		if (!this.productService.defaultChatAgent) {
+			ChatEntitlementContextKeys.Setup.hidden.bindTo(this.contextKeyService).set(true);
 			return; // we need a default chat agent configured going forward from here
 		}
 
@@ -730,7 +731,9 @@ export class ChatEntitlementService extends Disposable implements IChatEntitleme
 		} else {
 			// No ChatEntitlementContext (e.g. no defaultChatAgent in product.json).
 			// Set the context key directly as a fallback.
-			ChatEntitlementContextKeys.Setup.hidden.bindTo(this.contextKeyService).set(hidden);
+			const builtinChatUnavailable = !this.productService.defaultChatAgent
+				|| this.configurationService.getValue(ChatAIDisabledSettingId) === true;
+			ChatEntitlementContextKeys.Setup.hidden.bindTo(this.contextKeyService).set(hidden || builtinChatUnavailable);
 		}
 	}
 
