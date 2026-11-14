@@ -3,7 +3,7 @@
 	"displayName": "Semafour",
 	"description": "Open Source AI coding agent that generates code from natural language, automates tasks, and runs terminal commands. Features inline autocomplete, browser automation, automated refactoring, and custom modes for planning, coding, and debugging. Supports 500+ AI models including Claude (Anthropic), Gemini, Grok, GPT, Codex and GLM.",
 	"version": "7.8.28",
-	"icon": "assets/icons/logo-outline-black.png",
+	"icon": "assets/icons/semafour-outline.png",
 	"galleryBanner": {
 		"color": "#FFFFFF",
 		"theme": "light"
@@ -94,8 +94,8 @@
 				{
 					"id": "kilo-code-ActivityBar",
 					"title": "Semafour",
-					"icon": "assets/icons/kilo-light.png",
-					"darkIcon": "assets/icons/kilo-dark.png"
+"icon": "assets/icons/semafour-light.png",
+				"darkIcon": "assets/icons/semafour-dark.png"
 				}
 			]
 		},
@@ -196,8 +196,8 @@
 				"title": "Open in Tab",
 				"category": "Kilo Code",
 				"icon": {
-					"light": "assets/icons/kilo-light.svg",
-					"dark": "assets/icons/kilo-dark.svg"
+					"light": "assets/icons/semafour-light.svg",
+					"dark": "assets/icons/semafour-dark.svg"
 				}
 			},
 			{
@@ -416,8 +416,8 @@
 				"title": "Generate Commit Message",
 				"category": "Kilo Code",
 				"icon": {
-					"light": "assets/icons/kilo-light.svg",
-					"dark": "assets/icons/kilo-dark.svg"
+					"light": "assets/icons/semafour-light.svg",
+					"dark": "assets/icons/semafour-dark.svg"
 				}
 			},
 			{
