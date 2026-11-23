@@ -596,7 +596,6 @@ export class SCMInputWidget {
 				CopyPasteController.ID,
 				DragAndDropController.ID,
 				DropIntoEditorController.ID,
-				EditorDictation.ID,
 				FormatOnType.ID,
 				ContentHoverController.ID,
 				GlyphHoverController.ID,

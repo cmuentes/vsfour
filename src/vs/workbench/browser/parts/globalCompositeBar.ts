@@ -50,7 +50,6 @@ import { IBaseActionViewItemOptions } from '../../../base/browser/ui/actionbar/a
 import { ICommandService } from '../../../platform/commands/common/commands.js';
 import { IDefaultAccountService } from '../../../platform/defaultAccount/common/defaultAccount.js';
 import { WORKBENCH_MENU_MOTION_CLASS, workbenchMenuCloseAnimation } from '../actions/menuMotion.js';
-import { ICodexAccountService } from '../../services/agentHost/browser/codexAccountService.js';
 
 export class GlobalCompositeBar extends Disposable {
 
@@ -469,7 +468,7 @@ export class AccountsActivityActionViewItem extends AbstractGlobalActivityAction
 		const dynamicProviders = providers.filter(providerId => this.authenticationService.isDynamicAuthenticationProvider(providerId));
 
 		if (!this.initialized) {
-			menus.push(disposables.add(new Action('noAccountsAvailable', localize('loading', "Loading..."), false)));
+			menus.push(disposables.add(new Action('noAccountsAvailable', localize('loading', "Loading..."), undefined, false)));
 		} else {
 
 			for (const providerId of registeredProviders) {
@@ -477,7 +476,7 @@ export class AccountsActivityActionViewItem extends AbstractGlobalActivityAction
 				const accounts = this.groupedAccounts.get(providerId);
 				if (!accounts) {
 					if (this.problematicProviders.has(providerId)) {
-						const providerUnavailableAction = disposables.add(new Action('providerUnavailable', localize('authProviderUnavailable', '{0} is currently unavailable', provider.label), false));
+						const providerUnavailableAction = disposables.add(new Action('providerUnavailable', localize('authProviderUnavailable', '{0} is currently unavailable', provider.label), undefined, false));
 						menus.push(providerUnavailableAction);
 						// try again in the background so that if the failure was intermittent, we can resolve it on the next showing of the menu
 						try {
@@ -541,7 +540,7 @@ export class AccountsActivityActionViewItem extends AbstractGlobalActivityAction
 				});
 				if (!accounts) {
 					if (this.problematicProviders.has(providerId)) {
-						const providerUnavailableAction = disposables.add(new Action('providerUnavailable', localize('authProviderUnavailable', '{0} is currently unavailable', provider.label), false));
+						const providerUnavailableAction = disposables.add(new Action('providerUnavailable', localize('authProviderUnavailable', '{0} is currently unavailable', provider.label), undefined, false));
 						menus.push(providerUnavailableAction);
 						// try again in the background so that if the failure was intermittent, we can resolve it on the next showing of the menu
 						try {
@@ -802,7 +801,6 @@ export class SimpleAccountActivityActionViewItem extends AccountsActivityActionV
 		@IActivityService activityService: IActivityService,
 		@IInstantiationService instantiationService: IInstantiationService,
 		@ICommandService commandService: ICommandService,
-		@ICodexAccountService codexAccountService: ICodexAccountService,
 		@IDefaultAccountService defaultAccountService: IDefaultAccountService,
 	) {
 		super(() => simpleActivityContextMenuActions(storageService, true),
@@ -814,7 +812,7 @@ export class SimpleAccountActivityActionViewItem extends AccountsActivityActionV
 				}),
 				hoverOptions,
 				compact: true,
-			}, () => undefined, actions => actions, themeService, lifecycleService, hoverService, contextMenuService, menuService, contextKeyService, authenticationService, environmentService, productService, configurationService, keybindingService, secretStorageService, logService, activityService, instantiationService, commandService, codexAccountService, defaultAccountService);
+			}, () => undefined, actions => actions, themeService, lifecycleService, hoverService, contextMenuService, menuService, contextKeyService, authenticationService, environmentService, productService, configurationService, keybindingService, secretStorageService, logService, activityService, instantiationService, commandService, defaultAccountService);
 	}
 }
 

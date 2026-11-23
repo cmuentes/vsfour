@@ -46,7 +46,6 @@ import { TextToSpeechInProgress as GlobalTextToSpeechInProgress, HasSpeechProvid
 import { CHAT_CATEGORY } from '../../browser/actions/chatActions.js';
 import { IChatExecuteActionContext } from '../../browser/actions/chatExecuteActions.js';
 import { IChatWidget, IChatWidgetService, IQuickChatService } from '../../browser/chat.js';
-import { SegmentedVoiceInputModePillInactive } from '../../browser/voiceInputMode/voiceInputModeContextKeys.js';
 import { IChatAgentService } from '../../common/participants/chatAgents.js';
 import { ChatContextKeys } from '../../common/actions/chatContextKeys.js';
 import { IChatResponseModel } from '../../common/model/chatModel.js';
@@ -527,11 +526,11 @@ export class QuickVoiceChatAction extends VoiceChatWithHoldModeAction {
 	}
 }
 
-const primaryVoiceActionMenu = (when: ContextKeyExpression | undefined, chatLocationOnlyWhen?: ContextKeyExpression | undefined) => {
+const primaryVoiceActionMenu = (when: ContextKeyExpression | undefined) => {
 	return [
 		{
 			id: MenuId.ChatExecute,
-			when: ContextKeyExpr.and(ChatContextKeys.location.isEqualTo(ChatAgentLocation.Chat), when, chatLocationOnlyWhen),
+			when: ContextKeyExpr.and(ChatContextKeys.location.isEqualTo(ChatAgentLocation.Chat), when),
 			group: 'navigation',
 			order: 3
 		},
@@ -575,7 +574,7 @@ export class StartVoiceChatAction extends Action2 {
 				ChatContextKeys.speechToTextConfigured.negate(),	// built-in on-device dictation wins: hide the extension mic when it's available so only one mic shows
 				ScopedChatSynthesisInProgress.negate(),	// hide when text to speech is in progress
 				AnyScopedVoiceChatInProgress?.negate(),	// hide when voice chat is in progress
-			), SegmentedVoiceInputModePillInactive)	// only hide in the main Chat location, where the segmented toggle provides a replacement; keep the mic in inline/quick chat
+			))
 		});
 	}
 
@@ -610,7 +609,7 @@ export class StopListeningAction extends Action2 {
 			},
 			icon: spinningLoading,
 			precondition: GlobalVoiceChatInProgress, // need global context here because of `f1: true`
-			menu: primaryVoiceActionMenu(AnyScopedVoiceChatInProgress, SegmentedVoiceInputModePillInactive)
+			menu: primaryVoiceActionMenu(AnyScopedVoiceChatInProgress)
 		});
 	}
 

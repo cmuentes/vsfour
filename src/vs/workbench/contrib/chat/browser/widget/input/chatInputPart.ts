@@ -132,7 +132,7 @@ import { IChatAttachmentWidgetInstance, IChatAttachmentWidgetRegistry } from '..
 import { DefaultChatAttachmentWidget, ElementChatAttachmentWidget, FileAttachmentWidget, ImageAttachmentWidget, BrowserViewAttachmentWidget, NotebookCellOutputChatAttachmentWidget, PasteAttachmentWidget, PromptFileAttachmentWidget, PromptTextAttachmentWidget, SCMHistoryItemAttachmentWidget, SCMHistoryItemChangeAttachmentWidget, SCMHistoryItemChangeRangeAttachmentWidget, TerminalCommandAttachmentWidget, ToolSetOrToolItemAttachmentWidget } from '../../attachments/chatAttachmentWidgets.js';
 import { ChatImplicitContexts } from '../../attachments/chatImplicitContext.js';
 import { ImplicitContextAttachmentWidget, isImplicitContextAlreadyAttached } from '../../attachments/implicitContextAttachment.js';
-import { IChatWidget, IChatWidgetService, IChatWidgetViewModelChangeEvent, ISessionTypePickerDelegate, isIChatResourceViewContext, isIChatViewViewContext } from '../../chat.js';
+import { IChatWidget, IChatWidgetViewModelChangeEvent, ISessionTypePickerDelegate, isIChatResourceViewContext, isIChatViewViewContext } from '../../chat.js';
 import { ChatEditingShowChangesAction, ViewPreviousEditsAction } from '../../chatEditing/chatEditingActions.js';
 import { resizeImage } from '../../chatImageUtils.js';
 import { ChatSessionPickerActionItem, IChatSessionPickerDelegate } from '../../chatSessions/chatSessionPickerActionItem.js';
@@ -1175,9 +1175,7 @@ export class ChatInputPart extends Disposable implements IHistoryNavigationWidge
 		@IChatAttachmentWidgetRegistry private readonly _chatAttachmentWidgetRegistry: IChatAttachmentWidgetRegistry,
 		@IChatInputNotificationService private readonly chatInputNotificationService: IChatInputNotificationService,
 		@IChatPhoneInputPresenter private readonly chatPhoneInputPresenter: IChatPhoneInputPresenter,
-		
-		@IChatWidgetService private readonly chatWidgetService: IChatWidgetService,
-		
+
 		@IChatService private readonly chatService: IChatService,
 		@IWorkbenchEnvironmentService private readonly environmentService: IWorkbenchEnvironmentService,
 		@IChatPetService private readonly chatPetService: IChatPetService,
@@ -4073,7 +4071,6 @@ export class ChatInputPart extends Disposable implements IHistoryNavigationWidge
 		const dictationPreparing = ChatContextKeys.speechToTextPreparing.bindTo(this.contextKeyService);
 		dictationRecording.set(false);
 		dictationPreparing.set(false);
-		const isDictationInputActive = constObservable(false);
 
 		SuggestController.get(this._inputEditor)?.forceRenderingAbove();
 		options.overflowWidgetsDomNode?.classList.add('hideSuggestTextIcons');
@@ -4155,15 +4152,6 @@ export class ChatInputPart extends Disposable implements IHistoryNavigationWidge
 		const hoverDelegate = this._register(createInstantHoverDelegate());
 
 		const { location } = this.getWidgetLocationInfo(widget);
-		const focusedWidget = observableFromEvent(this, this.chatWidgetService.onDidChangeFocusedSession, () => this.chatWidgetService.lastFocusedWidget);
-		const voiceSessionResource = observableFromEvent(this, widget.onDidChangeViewModel, () => widget.viewModel?.sessionResource);
-		const isVoiceInputActive = derived(this, reader => focusedWidget.read(reader) === widget);
-		const isVoiceSessionActive = derived(this, reader => {
-			const target = (null as any).targetSession.read(reader);
-			const hasDraftTarget = false; //  = (null as any).false /* hasDraftTarget */.read(reader);
-			const resource = voiceSessionResource.read(reader);
-			return /* isVoiceSessionActiveForInput */(isVoiceInputActive.read(reader), target, false /* hasDraftTarget */, resource, this.options.ownsDraftVoiceSession?.read(reader));
-		});
 
 		const inputPickerCompactStates = new Map<string, ISettableObservable<boolean>>();
 		const inputPickerMinimalStates = new Map<string, ISettableObservable<boolean>>();
@@ -4391,13 +4379,6 @@ export class ChatInputPart extends Disposable implements IHistoryNavigationWidge
 				if (action.id === CHAT_ATTACH_CONTEXT_ACTION_ID && action instanceof MenuItemAction) {
 					return this.attachContextActionViewItem = this.instantiationService.createInstance(MenuEntryActionViewItem, action, options);
 				}
-				if (action.id === 'ChatVoiceInputModeAction.ID') {
-					return this.instantiationService.createInstance(any, action, {
-						isActive: isVoiceInputActive,
-						isDictationActive: isDictationInputActive,
-						isVoiceActive: isVoiceSessionActive,
-					});
-				}
 				if ((action.id === ChatSubmitAction.ID || action.id === ChatEditingSessionSubmitAction.ID) && action instanceof MenuItemAction) {
 					const submitLabel = this.options.hostSubmit?.label;
 					return this.instantiationService.createInstance(class extends MenuEntryActionViewItem {
@@ -4424,19 +4405,6 @@ export class ChatInputPart extends Disposable implements IHistoryNavigationWidge
 							}
 						}
 					}, action, options);
-				}
-				if ((action.id === 'any.id' || action.id === 'any.id') && action instanceof MenuItemAction) {
-					return this.instantiationService.createInstance(DictationDownloadActionViewItem, action, options);
-				}
-				if (action.id === 'any.id' && action instanceof MenuItemAction) {
-					return this.instantiationService.createInstance(DictationActionViewItem, action, options, isDictationInputActive);
-				}
-				// Voice Mode mic button: add a right-click context menu (Select
-				// Microphone / Disable Voice Mode) mirroring dictation. While
-				// listening the toolbar swaps the start action for the
-				// push-to-talk stop action, so cover both so the menu stays put.
-				if ((action.id === 'agentsVoice.startVoiceInChat' || action.id === 'agentsVoice.pttStopInChat') && action instanceof MenuItemAction) {
-					return this.instantiationService.createInstance(VoiceModeActionViewItem, action, options);
 				}
 				return undefined;
 			},

@@ -403,21 +403,13 @@ export default defineThemedFixtureGroup({ path: 'chat/input/' }, {
 		additionalThemes: ['darkHighContrast', 'lightHighContrast'],
 		render: context => renderChatInput(context, { voiceControl: 'voiceIdle', focusVoiceControl: 'voice' }),
 	}),
-	VoiceInputModeDictationFocused: defineComponentFixture({
-		additionalThemes: ['darkHighContrast', 'lightHighContrast'],
-		render: context => renderChatInput(context, { voiceInputMode: true, focusVoiceControl: 'dictation' }),
-	}),
-	VoiceInputModeVoiceFocused: defineComponentFixture({
-		additionalThemes: ['darkHighContrast', 'lightHighContrast'],
-		render: context => renderChatInput(context, { voiceInputMode: true, focusVoiceControl: 'voice' }),
-	}),
-	// The segmented voice pill at the chat view's minimum width: the pickers
-	// collapse into the overflow menu so the send button and the voice pill stay
+	// The input at the chat view's minimum width: the pickers
+	// collapse into the overflow menu so the send button stays
 	// inside the input (#331228).
 	NarrowWithVoiceInputMode: defineComponentFixture({
 		virtualTime: { enabled: false },
 		render: async context => {
-			await renderChatInput(context, { voiceInputMode: true, width: 150 });
+			await renderChatInput(context, { width: 150 });
 			const inputContainer = context.container.querySelector<HTMLElement>('.chat-input-container');
 			const inputToolbar = context.container.querySelector<HTMLElement>('.chat-input-toolbar');
 			const submit = context.container.querySelector<HTMLElement>('.chat-execute-toolbar .chat-submit-button');

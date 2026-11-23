@@ -40,12 +40,6 @@ import { FixtureMenuService, registerChatFixtureServices } from './chatFixtureUt
 import { IChatPetService } from '../../../../contrib/chat/browser/chatPetService.js';
 import { IChatPetWidgetService } from '../../../../contrib/chat/browser/widget/chatPetWidgetService.js';
 import { configureChatPetFixtureFileRoot, FixtureChatPetService, assertChatPetInScreenshot } from './chatPetFixtureUtils.js';
-import { IVoiceInputModeService, VoiceInputMode } from '../../../../contrib/chat/browser/voiceInputMode/voiceInputMode.js';
-import { ChatVoiceInputModeAction } from '../../../../contrib/chat/browser/voiceInputMode/voiceInputModeActionViewItem.js';
-import { IVoiceSessionController } from '../../../../contrib/chat/browser/voiceClient/voiceSessionController.js';
-import { IMicCaptureService } from '../../../../contrib/chat/browser/voiceClient/micCaptureService.js';
-import { ITtsPlaybackService } from '../../../../contrib/chat/browser/voiceClient/ttsPlaybackService.js';
-import { ChatSpeechToTextState, IChatSpeechToTextService } from '../../../../contrib/chat/browser/speechToText/chatSpeechToTextService.js';
 import { PlaceholderTextContribution } from '../../../../../editor/contrib/placeholderText/browser/placeholderTextContribution.js';
 import '../../../../../editor/contrib/placeholderText/browser/placeholderText.css';
 
@@ -139,8 +133,7 @@ export interface ChatInputFixtureOptions {
 	readonly combinedModePermissionsPicker?: boolean;
 	/** Renders a standalone dictation / Voice Mode control in the given state. */
 	readonly voiceControl?: VoiceControlState;
-	readonly voiceInputMode?: boolean;
-	/** Gives the matching standalone control or segmented control cell keyboard focus. */
+	/** Gives the matching standalone control keyboard focus. */
 	readonly focusVoiceControl?: 'dictation' | 'voice';
 	/**
 	 * Docks a notification above the input. Drives the real notification service,
@@ -183,42 +176,6 @@ export async function renderChatInput(context: ComponentFixtureContext, fixtureO
 			}());
 			if (chatPetService) {
 				reg.defineInstance(IChatPetService, chatPetService);
-			}
-			if (fixtureOptions.voiceInputMode) {
-				reg.defineInstance(IVoiceInputModeService, new class extends mock<IVoiceInputModeService>() {
-					override readonly selectedMode = constObservable<VoiceInputMode>('voice');
-					override readonly voiceAvailable = constObservable(true);
-					override readonly dictationAvailable = constObservable(true);
-					override readonly handsFree = constObservable(true);
-					override readonly simulatedVoiceState = constObservable(undefined);
-					override readonly simulatedHandsFree = constObservable(undefined);
-					override readonly simulatedVersion = constObservable(undefined);
-					override readonly simulatedHover = constObservable(false);
-				}());
-				reg.defineInstance(IVoiceSessionController, new class extends mock<IVoiceSessionController>() {
-					override readonly targetSession = constObservable<URI | undefined>(undefined);
-					override readonly hasDraftTarget = constObservable(false);
-					override readonly isConnected = constObservable(false);
-					override readonly isConnecting = constObservable(false);
-					override readonly isReconnecting = constObservable(false);
-					override readonly isMuted = constObservable(false);
-					override readonly voiceState = constObservable('idle' as const);
-				}());
-				reg.defineInstance(IMicCaptureService, new class extends mock<IMicCaptureService>() {
-					override readonly analyserNode = undefined;
-				}());
-				reg.defineInstance(ITtsPlaybackService, new class extends mock<ITtsPlaybackService>() {
-					override readonly analyserNode = undefined;
-				}());
-				reg.defineInstance(IChatSpeechToTextService, new class extends mock<IChatSpeechToTextService>() {
-					override readonly onDidChangeState = Event.None;
-					override readonly onDidChangePreparingModel = Event.None;
-					override readonly onDidChangeDownloadingModel = Event.None;
-					override readonly state = ChatSpeechToTextState.Idle;
-					override readonly isConfigured = true;
-					override readonly isPreparingModel = false;
-					override readonly isDownloadingModel = false;
-				}());
 			}
 			if (models.length > 0) {
 				const modelsById = new Map(models.map(model => [model.identifier, model]));
@@ -289,11 +246,8 @@ export async function renderChatInput(context: ComponentFixtureContext, fixtureO
 	menuService.addItem(MenuId.ChatInput, { command: { id: 'workbench.action.chat.attachContext', title: '+', icon: Codicon.addCompact }, group: 'navigation', order: -1 });
 	menuService.addItem(MenuId.ChatInput, { command: { id: 'workbench.action.chat.openModePicker', title: 'Agent' }, group: 'navigation', order: 1 });
 	menuService.addItem(MenuId.ChatInput, { command: { id: 'workbench.action.chat.openModelPicker', title: 'GPT-5.3-Codex' }, group: 'navigation', order: 3 });
-	if (!fixtureOptions.voiceInputMode || !isSessionsWindow) {
+	if (!isSessionsWindow) {
 		menuService.addItem(MenuId.ChatInput, { command: { id: 'workbench.action.chat.configureTools', title: '', icon: Codicon.settingsCompact }, group: 'navigation', order: 100 });
-	}
-	if (fixtureOptions.voiceInputMode) {
-		menuService.addItem(MenuId.ChatExecute, { command: { id: ChatVoiceInputModeAction.ID, title: 'Voice Input Mode' }, group: 'navigation', order: 2 });
 	}
 	if (voiceControl) {
 		// Order 2 puts the voice control between the pickers and Send, where the
@@ -426,9 +380,7 @@ export async function renderChatInput(context: ComponentFixtureContext, fixtureO
 
 	if (focusVoiceControl) {
 		const focusTarget = session.querySelector<HTMLElement>(
-			fixtureOptions.voiceInputMode
-				? `.chat-voice-input-mode-cell.${focusVoiceControl}:not(.collapsed)`
-				: '.chat-execute-toolbar .action-item:not(.chat-submit-button) > .action-label'
+			'.chat-execute-toolbar .action-item:not(.chat-submit-button) > .action-label'
 		);
 		if (!focusTarget) {
 			throw new Error('Expected a visible voice control to focus.');

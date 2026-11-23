@@ -61,7 +61,6 @@ import { TestPathService, TestProgressService, TestRemoteAgentService } from '..
 import { IAgentSdkSetupService } from '../../../../services/agentHost/browser/agentSdkSetupService.js';
 import { ICodexAccountService } from '../../../../services/agentHost/browser/codexAccountService.js';
 import { IRemoteAgentService } from '../../../../services/remote/common/remoteAgentService.js';
-import { IVoiceModeOnboardingService } from '../../../../contrib/agentsVoice/browser/voiceModeOnboarding.js';
 import { IChatAccessibilityService, IChatWidget, IChatWidgetService } from '../../../../contrib/chat/browser/chat.js';
 import { IChatResponseFileChangesService } from '../../../../contrib/chat/browser/chatResponseFileChangesService.js';
 import { ChatPetHorizontalPosition, IChatPetService } from '../../../../contrib/chat/browser/chatPetService.js';
@@ -76,8 +75,6 @@ import { IChatContextPickService } from '../../../../contrib/chat/browser/attach
 import { IChatContextService } from '../../../../contrib/chat/browser/contextContrib/chatContextService.js';
 import { IChatImageCarouselService } from '../../../../contrib/chat/browser/chatImageCarouselService.js';
 import { IChatInputNotification, IChatInputNotificationService } from '../../../../contrib/chat/browser/widget/input/chatInputNotificationService.js';
-import { ChatSpeechToTextState, IChatSpeechToTextService } from '../../../../contrib/chat/browser/speechToText/chatSpeechToTextService.js';
-import { IDictationOnboardingService } from '../../../../contrib/chat/browser/speechToText/dictationOnboarding.js';
 import { IChatInputNoticeHubService } from '../../../../contrib/chat/browser/widget/input/chatInputNoticeHub.js';
 import { ChatSubmitRequestHandlerService, IChatSubmitRequestHandlerService } from '../../../../contrib/chat/browser/chatSubmitRequestHandlerService.js';
 import { IChatStatusItemService } from '../../../../contrib/chat/browser/chatStatus/chatStatusItemService.js';
@@ -342,20 +339,6 @@ export function registerChatFixtureServices(reg: ServiceRegistration, options: I
 		override getChangesForRequest() { return undefined; }
 		override getFileEditsForRequest() { return undefined; }
 		override openChangesForRequest() { }
-	}());
-	reg.defineInstance(IDictationOnboardingService, new class extends mock<IDictationOnboardingService>() {
-		override readonly isVisible = false;
-		override registerHost() { return Disposable.None; }
-	}());
-	reg.defineInstance(IChatSpeechToTextService, new class extends mock<IChatSpeechToTextService>() {
-		override readonly onDidChangeState = Event.None;
-		override readonly onDidChangePreparingModel = Event.None;
-		override readonly state = ChatSpeechToTextState.Idle;
-		override readonly isPreparingModel = false;
-	}());
-	reg.defineInstance(IVoiceModeOnboardingService, new class extends mock<IVoiceModeOnboardingService>() {
-		override readonly isVisible = false;
-		override registerHost() { return Disposable.None; }
 	}());
 	reg.defineInstance(IChatInputNoticeHubService, new class extends mock<IChatInputNoticeHubService>() {
 		override registerHost() { return Disposable.None; }

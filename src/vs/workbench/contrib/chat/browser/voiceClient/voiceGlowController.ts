@@ -5,7 +5,13 @@
 
 import { IDisposable } from '../../../../../base/common/lifecycle.js';
 
-export class VoiceGlowController implements IDisposable {
+export interface IVoiceGlowController extends IDisposable {
+	refreshTheme(): void;
+	clear(): void;
+	render(intensity: number, reducedMotion: boolean): void;
+}
+
+export class VoiceGlowController implements IVoiceGlowController {
 	refreshTheme(): void { }
 
 	clear(): void { }
