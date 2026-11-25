@@ -179,6 +179,8 @@ async function main(buildDir?: string, outDir?: string): Promise<void> {
 		throw new Error(`App path does not exist: ${appPath}`);
 	}
 
+	fs.mkdirSync(outDir, { recursive: true });
+
 	console.log(`Creating DMG for ${product.nameLong}...`);
 	console.log(`  App path: ${appPath}`);
 	console.log(`  Output directory: ${outDir}`);
