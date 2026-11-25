@@ -170,11 +170,13 @@ const buildScriptHash = crypto
 
 // Content key for one source file. The transform output depends only on the
 // file name (for the inline source map), the source text, and the toolchain.
+// The full path is part of the key (not just the basename) so a build in
+// another repo or worktree that shares the cache directory and toolchain can
+// never serve this build a cached transform written for a different file.
 function key(source, file) {
-  const { name, ext } = path.parse(file)
   return crypto
     .createHash("sha256")
-    .update(name + ext)
+    .update(file)
     .update("\0")
     .update(source)
     .update("\0")
@@ -423,7 +425,7 @@ function getExtensionConfig() {
     sourcesContent: false,
     platform: "node",
     outfile: "dist/extension.js",
-    external: ["vscode"],
+    external: ["vscode", "fsevents"],
     logLevel: "silent",
     plugins: [playwright, ...(watch ? [esbuildProblemMatcherPlugin] : [])],
   }
