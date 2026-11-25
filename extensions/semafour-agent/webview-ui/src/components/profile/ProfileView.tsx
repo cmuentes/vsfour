@@ -1,140 +1,58 @@
-import { Component, Show, createSignal, createMemo, createEffect, onMount } from "solid-js"
-import { Button } from "@kilocode/kilo-ui/button"
-import { Card } from "@kilocode/kilo-ui/card"
-import { Icon } from "@kilocode/kilo-ui/icon"
-import { Select } from "@kilocode/kilo-ui/select"
-import { Tooltip } from "@kilocode/kilo-ui/tooltip"
+import { Component, createSignal, onMount, Show } from "solid-js"
 import { useVSCode } from "../../context/vscode"
 import { useLanguage } from "../../context/language"
-import DeviceAuthCard from "./DeviceAuthCard"
-import type { ProfileData, ProviderUsageData, DeviceAuthState } from "../../types/messages"
+import type { ProviderUsageData } from "../../types/messages"
 import { ProviderUsageCards } from "./ProviderUsageCards"
-
-export type { ProfileData }
+import SessionList from "../history/SessionList"
+import { Button } from "@kilocode/kilo-ui/button"
 
 export interface ProfileViewProps {
-  profileData: ProfileData | null | undefined
-  deviceAuth: DeviceAuthState
   providerUsage?: ProviderUsageData
   providerUsageLoading?: boolean
   providerUsageError?: string
-  onLogin: () => void
   onRequestProviderUsage?: () => void
   onRefreshProviderUsage?: () => void
-}
-
-const formatBalance = (amount: number): string => {
-  return `$${amount.toFixed(2)}`
-}
-
-const PERSONAL = "personal"
-
-interface OrgOption {
-  value: string
-  label: string
-  description?: string
+  localUsage?: number
+  localUsageLoading?: boolean
+  localUsageError?: string
+  onRequestLocalUsage?: () => void
+  onSelectSession?: (id: string) => void
 }
 
 const ProfileView: Component<ProfileViewProps> = (props) => {
   const vscode = useVSCode()
   const language = useLanguage()
-  const [target, setTarget] = createSignal<string | null>(null)
+  const [showHistory, setShowHistory] = createSignal(false)
 
-  const personal = createMemo(() => props.profileData?.profile.hasPersonalAccount !== false)
-
-  // Load current profile and usage when navigating to this view.
   onMount(() => {
-    vscode.postMessage({ type: "refreshProfile" })
+    // #region agent log
+    fetch("http://127.0.0.1:7448/ingest/6ebf811e-dd9f-4455-b1f4-a3a97f8cc1fa", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "bfbe94" },
+      body: JSON.stringify({
+        sessionId: "bfbe94",
+        runId: "post-fix",
+        hypothesisId: "A",
+        location: "ProfileView.tsx:onMount",
+        message: "Profile surface mounted",
+        data: {
+          requestsLocalUsage: typeof props.onRequestLocalUsage === "function",
+          hasLocalUsage: props.localUsage !== undefined,
+          loading: props.localUsageLoading === true,
+        },
+        timestamp: Date.now(),
+      }),
+    }).catch(() => {})
+    // #endregion
     props.onRequestProviderUsage?.()
+    props.onRequestLocalUsage?.()
   })
-
-  // Reset pending target whenever profileData changes (success or failure both send a fresh profile)
-  createEffect(() => {
-    props.profileData // track
-    setTarget(null)
-  })
-
-  const orgOptions = createMemo<OrgOption[]>(() => {
-    const orgs = props.profileData?.profile.organizations ?? []
-    if (orgs.length === 0) return []
-    return [
-      ...(personal() ? [{ value: PERSONAL, label: language.t("profile.personalAccount") }] : []),
-      ...orgs.map((org) => ({ value: org.id, label: org.name, description: org.role })),
-    ]
-  })
-
-  const currentId = createMemo(() => {
-    return props.profileData?.currentOrgId ?? (personal() ? PERSONAL : orgOptions()[0]?.value)
-  })
-
-  const switching = createMemo(() => {
-    const t = target()
-    if (t === null) return false
-    return currentId() !== t
-  })
-
-  const currentOrg = createMemo(() => {
-    return orgOptions().find((o) => o.value === currentId())
-  })
-
-  const selectOrg = (option: OrgOption | undefined) => {
-    if (!option) return
-    if (option.value === currentId()) return
-    setTarget(option.value)
-    vscode.postMessage({
-      type: "setOrganization",
-      organizationId: option.value === PERSONAL ? null : option.value,
-    })
-  }
-
-  const handleLogin = () => {
-    props.onLogin()
-  }
-
-  const handleLogout = () => {
-    vscode.postMessage({ type: "logout" })
-  }
-
-  const handleRefresh = () => {
-    vscode.postMessage({ type: "refreshProfile" })
-  }
-
-  const handleDashboard = () => {
-    vscode.postMessage({ type: "openExternal", url: "https://app.kilo.ai/profile" })
-  }
 
   const openExternal = (url: string) => {
     vscode.postMessage({ type: "openExternal", url })
   }
 
-  const handleTopUp = () => {
-    vscode.postMessage({ type: "openExternal", url: "https://app.kilo.ai/credits" })
-  }
-
-  const handleGetPass = () => {
-    vscode.postMessage({ type: "openExternal", url: "https://kilo.ai/pricing/kilo-pass" })
-  }
-
-  const handleCancelLogin = () => {
-    vscode.postMessage({ type: "cancelLogin" })
-  }
-
-  const usage = () => (
-    <ProviderUsageCards
-      data={props.providerUsage}
-      loading={props.providerUsageLoading ?? !props.providerUsage}
-      error={props.providerUsageError}
-      onRefresh={() => props.onRefreshProviderUsage?.()}
-      onOpen={openExternal}
-      kiloPass={props.profileData?.kiloPass}
-      showKiloPass={
-        !!props.profileData &&
-        (props.profileData.currentOrgId ?? null) === null &&
-        props.profileData.profile.hasPersonalAccount !== false
-      }
-      onGetKiloPass={handleGetPass}
-    />
-  )
+  const formatTokens = (tokens: number) => new Intl.NumberFormat(language.locale()).format(tokens)
 
   return (
     <div style={{ display: "flex", "flex-direction": "column", height: "100%", "min-height": 0, overflow: "hidden" }}>
@@ -151,171 +69,112 @@ const ProfileView: Component<ProfileViewProps> = (props) => {
           {language.t("profile.title")}
         </h2>
       </div>
-      <div
-        data-profile-scroll
-        style={{
-          flex: 1,
-          "min-height": 0,
-          "overflow-y": "auto",
-          "overflow-x": "hidden",
-          padding: "16px",
-          "max-width": "480px",
-          margin: "0 auto",
-          width: "100%",
-          "box-sizing": "border-box",
-        }}
-      >
-        <Show
-          when={props.profileData}
-          fallback={
-            <div style={{ display: "flex", "flex-direction": "column", gap: "12px" }}>
+      <Show
+        when={showHistory()}
+        fallback={
+          <div
+            data-profile-scroll
+            style={{
+              flex: 1,
+              "min-height": 0,
+              "overflow-y": "auto",
+              "overflow-x": "hidden",
+              padding: "16px",
+              "max-width": "480px",
+              margin: "0 auto",
+              width: "100%",
+              "box-sizing": "border-box",
+            }}
+          >
+            <div style={{ "margin-bottom": "16px" }}>
+              <div
+                style={{
+                  "font-size": "var(--kilo-font-size-13)",
+                  "font-weight": "600",
+                  color: "var(--text-base)",
+                  "margin-bottom": "4px",
+                }}
+              >
+                {language.t("profile.localUsage.title")}
+              </div>
+              <div
+                style={{
+                  "font-size": "var(--kilo-font-size-12)",
+                  color: "var(--text-weak, var(--vscode-descriptionForeground))",
+                  "margin-bottom": "8px",
+                }}
+              >
+                {language.t("profile.localUsage.description")}
+              </div>
               <Show
-                when={props.deviceAuth.status !== "idle"}
+                when={props.localUsage === undefined && props.localUsageLoading}
                 fallback={
-                  <>
-                    <p
-                      style={{
-                        "font-size": "var(--kilo-font-size-13)",
-                        color: "var(--vscode-descriptionForeground)",
-                        margin: "0 0 8px 0",
-                      }}
-                    >
-                      {language.t("profile.notLoggedIn")}
-                    </p>
-                    <Button variant="primary" onClick={handleLogin}>
-                      {language.t("profile.action.login")}
-                    </Button>
-                  </>
+                  <Show
+                    when={props.localUsage !== undefined}
+                    fallback={
+                      <div style={{ "font-size": "var(--kilo-font-size-12)", color: "var(--text-weak)" }}>
+                        {props.localUsageError ?? language.t("profile.localUsage.empty")}
+                      </div>
+                    }
+                  >
+                    <div style={{ display: "flex", "align-items": "baseline", gap: "6px" }}>
+                      <span
+                        style={{ "font-size": "var(--kilo-font-size-24)", "font-weight": "700", color: "var(--text-base)" }}
+                      >
+                        {formatTokens(props.localUsage!)}
+                      </span>
+                      <span style={{ "font-size": "var(--kilo-font-size-12)", color: "var(--text-weak)" }}>
+                        {language.t("profile.localUsage.tokens")}
+                      </span>
+                    </div>
+                  </Show>
                 }
               >
-                <DeviceAuthCard
-                  status={props.deviceAuth.status}
-                  code={props.deviceAuth.code}
-                  verificationUrl={props.deviceAuth.verificationUrl}
-                  expiresIn={props.deviceAuth.expiresIn}
-                  error={props.deviceAuth.error}
-                  onCancel={handleCancelLogin}
-                  onRetry={handleLogin}
-                />
+                <div style={{ "font-size": "var(--kilo-font-size-12)", color: "var(--text-weak)" }}>
+                  {language.t("profile.localUsage.loading")}
+                </div>
+              </Show>
+              <Show when={props.onSelectSession}>
+                <div style={{ "margin-top": "12px" }}>
+                  <Button variant="secondary" size="small" icon="history" onClick={() => setShowHistory(true)}>
+                    {language.t("profile.history.show")}
+                  </Button>
+                </div>
               </Show>
             </div>
-          }
-        >
-          {(data) => (
-            <div style={{ display: "flex", "flex-direction": "column", gap: "12px" }}>
-              {/* User header */}
-              <Card>
-                <p
-                  style={{
-                    "font-size": "var(--kilo-font-size-14)",
-                    "font-weight": "600",
-                    color: "var(--vscode-foreground)",
-                    margin: "0 0 4px 0",
-                  }}
-                >
-                  {data().profile.name || data().profile.email}
-                </p>
-                <p
-                  style={{
-                    "font-size": "var(--kilo-font-size-12)",
-                    color: "var(--vscode-descriptionForeground)",
-                    margin: 0,
-                  }}
-                >
-                  {data().profile.email}
-                </p>
-              </Card>
-
-              {/* Organization selector */}
-              <Show when={orgOptions().length > 0}>
-                <Card>
-                  <p
-                    style={{
-                      "font-size": "var(--kilo-font-size-11)",
-                      "text-transform": "uppercase",
-                      "letter-spacing": "0.5px",
-                      color: "var(--vscode-descriptionForeground)",
-                      margin: "0 0 8px 0",
-                    }}
-                  >
-                    Account
-                  </p>
-                  <Select
-                    options={orgOptions()}
-                    current={currentOrg()}
-                    value={(o) => o.value}
-                    label={(o) => o.label}
-                    onSelect={selectOrg}
-                    variant="secondary"
-                    size="small"
-                    triggerVariant="settings"
-                    disabled={switching()}
-                  />
-                </Card>
-              </Show>
-
-              {/* Balance */}
-              <Show when={data().balance}>
-                {(balance) => (
-                  <Card style={{ display: "flex", "flex-direction": "column", gap: "12px" }}>
-                    <div style={{ display: "flex", "align-items": "center", "justify-content": "space-between" }}>
-                      <div>
-                        <p
-                          style={{
-                            "font-size": "var(--kilo-font-size-11)",
-                            "text-transform": "uppercase",
-                            "letter-spacing": "0.5px",
-                            color: "var(--vscode-descriptionForeground)",
-                            margin: "0 0 4px 0",
-                          }}
-                        >
-                          {language.t("profile.balance.title")}
-                        </p>
-                        <p
-                          style={{
-                            "font-size": "var(--kilo-font-size-18)",
-                            "font-weight": "600",
-                            color: "var(--vscode-foreground)",
-                            margin: 0,
-                          }}
-                        >
-                          {formatBalance(balance().balance)}
-                        </p>
-                      </div>
-                      <Tooltip value={language.t("profile.balance.refresh")} placement="left">
-                        <Button variant="ghost" size="small" onClick={handleRefresh}>
-                          ↻ {language.t("common.refresh")}
-                        </Button>
-                      </Tooltip>
-                    </div>
-                  </Card>
-                )}
-              </Show>
-
-              {/* Action buttons */}
-              <div style={{ display: "flex", gap: "8px" }}>
-                <Button variant="secondary" onClick={handleDashboard} style={{ flex: "1" }}>
-                  {language.t("profile.action.dashboard")}
-                </Button>
-                <Button variant="secondary" onClick={handleTopUp} style={{ flex: "1" }}>
-                  {language.t("profile.action.topUp")}
-                </Button>
-                <Button
-                  variant="ghost"
-                  onClick={handleLogout}
-                  style={{ flex: "1", color: "var(--vscode-errorForeground)" }}
-                >
-                  {language.t("profile.action.logout")}
-                </Button>
-              </div>
-
-              {usage()}
-            </div>
-          )}
-        </Show>
-
-        <Show when={!props.profileData}>{usage()}</Show>
-      </div>
+            <ProviderUsageCards
+              data={props.providerUsage}
+              loading={props.providerUsageLoading ?? !props.providerUsage}
+              error={props.providerUsageError}
+              onRefresh={() => props.onRefreshProviderUsage?.()}
+              onOpen={openExternal}
+            />
+          </div>
+        }
+      >
+        <div style={{ flex: 1, "min-height": 0, display: "flex", "flex-direction": "column" }}>
+          <div
+            style={{
+              "flex-shrink": 0,
+              padding: "8px 12px",
+              display: "flex",
+              "align-items": "center",
+              "justify-content": "space-between",
+              "border-bottom": "1px solid var(--border-weak-base)",
+            }}
+          >
+            <span style={{ "font-size": "var(--kilo-font-size-13)", "font-weight": "600", color: "var(--text-base)" }}>
+              {language.t("profile.history.title")}
+            </span>
+            <Button variant="ghost" size="small" icon="chevron-left" onClick={() => setShowHistory(false)}>
+              {language.t("profile.history.hide")}
+            </Button>
+          </div>
+          <div style={{ flex: 1, "min-height": 0, padding: "8px" }}>
+            <SessionList onSelectSession={props.onSelectSession!} />
+          </div>
+        </div>
+      </Show>
     </div>
   )
 }

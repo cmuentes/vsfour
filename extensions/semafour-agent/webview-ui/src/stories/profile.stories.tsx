@@ -6,7 +6,7 @@
 import type { Meta, StoryObj } from "storybook-solidjs-vite"
 import { StoryProviders } from "./StoryProviders"
 import ProfileView from "../components/profile/ProfileView"
-import type { ProfileData, ProviderUsageData, DeviceAuthState } from "../types/messages"
+import type { ProviderUsageData } from "../types/messages"
 
 const meta: Meta = {
   title: "Profile",
@@ -14,37 +14,6 @@ const meta: Meta = {
 }
 export default meta
 type Story = StoryObj
-
-const loggedInProfile: ProfileData = {
-  profile: {
-    email: "user@example.com",
-    name: "Jane Developer",
-    organizations: [
-      { id: "org-1", name: "Acme Corp", role: "admin" },
-      { id: "org-2", name: "Side Project Inc", role: "member" },
-    ],
-  },
-  balance: { balance: 42.5 },
-  kiloPass: null,
-  currentOrgId: null,
-}
-
-const personalProfile: ProfileData = {
-  profile: {
-    email: "solo@example.com",
-    name: "Solo Dev",
-  },
-  balance: { balance: 267.59 },
-  kiloPass: {
-    currentPeriodBaseCreditsUsd: 199,
-    currentPeriodUsageUsd: 73.27,
-    currentPeriodBonusCreditsUsd: 99.5,
-    nextBillingAt: "2026-07-01T00:00:00.000Z",
-  },
-  currentOrgId: null,
-}
-
-const idleAuth: DeviceAuthState = { status: "idle" }
 
 const usage: ProviderUsageData = {
   generatedAt: "2026-06-19T12:00:00.000Z",
@@ -94,33 +63,34 @@ const directUsage: ProviderUsageData = {
 }
 
 const noop = () => {}
-const render = (profileData: ProfileData | null, providerUsage: ProviderUsageData, height: number, error?: string) => (
+const render = (localUsage: number | undefined, providerUsage: ProviderUsageData, height: number, error?: string) => (
   <StoryProviders noPadding>
     <div style={{ width: "420px", height: `${height}px` }}>
       <ProfileView
-        profileData={profileData}
+        localUsage={localUsage}
         providerUsage={providerUsage}
         providerUsageError={error}
-        deviceAuth={idleAuth}
-        onLogin={noop}
+        onRequestProviderUsage={noop}
+        onRefreshProviderUsage={noop}
+        onRequestLocalUsage={noop}
       />
     </div>
   </StoryProviders>
 )
 
 export const LoggedIn: Story = {
-  name: "ProfileView — logged in with orgs",
-  render: () => render(loggedInProfile, usage, 900),
+  name: "ProfileView — local usage",
+  render: () => render(128_400, usage, 900),
 }
 
 export const LoggedInPersonal: Story = {
-  name: "ProfileView — personal account",
-  render: () => render(personalProfile, usage, 900),
+  name: "ProfileView — local and provider usage",
+  render: () => render(42_000, usage, 900),
 }
 
 export const ScrollableUsage: Story = {
   name: "ProfileView — scrollable usage",
-  render: () => render(personalProfile, usage, 480),
+  render: () => render(42_000, usage, 480),
   play: (context: { canvasElement: HTMLElement }) => {
     const pane = context.canvasElement.querySelector<HTMLElement>("[data-profile-scroll]")
     if (pane) pane.scrollTop = pane.scrollHeight
@@ -128,21 +98,20 @@ export const ScrollableUsage: Story = {
 }
 
 export const NotLoggedIn: Story = {
-  name: "ProfileView — not logged in",
-  render: () => render(null, directUsage, 620),
+  name: "ProfileView — direct provider usage",
+  render: () => render(0, directUsage, 620),
 }
 
 export const OrganizationContext: Story = {
-  name: "ProfileView — organization context",
-  render: () =>
-    render({ ...loggedInProfile, currentOrgId: "org-1" }, { generatedAt: usage.generatedAt, items: [] }, 620),
+  name: "ProfileView — empty provider usage",
+  render: () => render(undefined, { generatedAt: usage.generatedAt, items: [] }, 620),
 }
 
 export const StaleAndUnavailable: Story = {
   name: "ProfileView — stale and unavailable usage",
   render: () =>
     render(
-      personalProfile,
+      12_000,
       {
         generatedAt: usage.generatedAt,
         items: [
@@ -168,5 +137,5 @@ export const StaleAndUnavailable: Story = {
 
 export const EmptyUsage: Story = {
   name: "ProfileView — no usage sources",
-  render: () => render(personalProfile, { generatedAt: usage.generatedAt, items: [] }, 480),
+  render: () => render(undefined, { generatedAt: usage.generatedAt, items: [] }, 480),
 }

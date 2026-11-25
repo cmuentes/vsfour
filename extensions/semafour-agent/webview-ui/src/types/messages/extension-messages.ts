@@ -61,7 +61,7 @@ import type {
 } from "./config"
 import type { WorkStyle, WorkStyleState } from "../../../../src/shared/work-style-presets"
 import type { KilocodeNotification, ProfileData } from "./profile"
-import type { ProviderUsageLoadedMessage } from "./provider-usage"
+import type { LocalUsageLoadedMessage, ProviderUsageLoadedMessage } from "./provider-usage"
 import type {
   AgentManagerApplyWorktreeDiffConflict,
   AgentManagerApplyWorktreeDiffStatus,
@@ -1849,6 +1849,7 @@ export type ExtensionMessage =
   | ActionMessage
   | ProfileDataMessage
   | ProviderUsageLoadedMessage
+  | LocalUsageLoadedMessage
   | DeviceAuthStartedMessage
   | DeviceAuthCompleteMessage
   | DeviceAuthFailedMessage

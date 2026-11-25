@@ -53,14 +53,15 @@ const Content = () => {
           <Switch>
             <Match when={profile()}>
               <ProfileView
-                profileData={server.profileData()}
                 providerUsage={server.providerUsage()}
                 providerUsageLoading={server.providerUsageLoading()}
                 providerUsageError={server.providerUsageError()}
-                deviceAuth={server.deviceAuth()}
-                onLogin={server.startLogin}
                 onRequestProviderUsage={server.requestProviderUsage}
                 onRefreshProviderUsage={server.refreshProviderUsage}
+                localUsage={server.localUsage()}
+                localUsageLoading={server.localUsageLoading()}
+                localUsageError={server.localUsageError()}
+                onRequestLocalUsage={server.requestLocalUsage}
               />
             </Match>
             <Match when={!profile()}>

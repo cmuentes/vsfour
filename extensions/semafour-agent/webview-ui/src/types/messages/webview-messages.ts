@@ -9,7 +9,11 @@ import type { PRReviewCommentData, ReviewMessageData } from "../../../../src/sha
 import type { BrowserFeedbackData, BrowserReference } from "../../../../src/shared/browser-feedback"
 import type { BrowserInteraction, BrowserViewport, BrowserViewIdentity } from "../../../../src/shared/browser-stream"
 import type { WorkStyle, WorkStyleState } from "../../../../src/shared/work-style-presets"
-import type { RefreshProviderUsageMessage, RequestProviderUsageMessage } from "./provider-usage"
+import type {
+  RefreshProviderUsageMessage,
+  RequestLocalUsageMessage,
+  RequestProviderUsageMessage,
+} from "./provider-usage"
 import type { AnacondaDesktopWebviewMessage } from "../../../../src/shared/anaconda-desktop-messages"
 import type { RequestMigrationDataMessage, StartMigrationMessage } from "./migration"
 import type { MemoryShowMessage, MemoryOperationMessage, RequestMemoryMessage } from "./memory"
@@ -1784,6 +1788,7 @@ export type WebviewMessage =
   | RefreshProfileRequest
   | RequestProviderUsageMessage
   | RefreshProviderUsageMessage
+  | RequestLocalUsageMessage
   | OpenExternalRequest
   | OpenWebLinkRequest
   | OpenSettingsPanelRequest

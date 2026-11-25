@@ -28,6 +28,10 @@ interface ServerContextValue {
   providerUsageError: Accessor<string | undefined>
   requestProviderUsage: () => void
   refreshProviderUsage: () => void
+  localUsage: Accessor<number | undefined>
+  localUsageLoading: Accessor<boolean>
+  localUsageError: Accessor<string | undefined>
+  requestLocalUsage: () => void
   deviceAuth: Accessor<DeviceAuthState>
   startLogin: () => void
   goToLogin: () => void
@@ -53,6 +57,9 @@ export const ServerProvider: ParentComponent = (props) => {
   const [providerUsage, setProviderUsage] = createSignal<ProviderUsageData>()
   const [providerUsageLoading, setProviderUsageLoading] = createSignal(false)
   const [providerUsageError, setProviderUsageError] = createSignal<string>()
+  const [localUsage, setLocalUsage] = createSignal<number>()
+  const [localUsageLoading, setLocalUsageLoading] = createSignal(false)
+  const [localUsageError, setLocalUsageError] = createSignal<string>()
   const [deviceAuth, setDeviceAuth] = createSignal<DeviceAuthState>(initialDeviceAuth)
   const [vscodeLanguage, setVscodeLanguage] = createSignal<string | undefined>()
   const [languageOverride, setLanguageOverride] = createSignal<string | undefined>()
@@ -83,6 +90,28 @@ export const ServerProvider: ParentComponent = (props) => {
     setProviderUsageError(m.error)
     setProviderUsageLoading(false)
   })
+
+  const localUsageSub = vscode.onMessage((m: ExtensionMessage) => {
+    if (m.type !== "localUsageLoaded") return
+    if (m.reset) {
+      setLocalUsage(undefined)
+      setLocalUsageError(undefined)
+      setLocalUsageLoading(true)
+      vscode.postMessage({ type: "requestLocalUsage" })
+      return
+    }
+    if (m.tokens !== undefined) setLocalUsage(m.tokens)
+    setLocalUsageError(m.error)
+    setLocalUsageLoading(false)
+  })
+
+  const resetLocalUsageForDirectory = () => {
+    if (localUsage() === undefined && !localUsageLoading()) return
+    setLocalUsage(undefined)
+    setLocalUsageError(undefined)
+    setLocalUsageLoading(true)
+    vscode.postMessage({ type: "requestLocalUsage" })
+  }
 
   const resetProviderUsageForDirectory = () => {
     if (providerUsage() === undefined && !providerUsageLoading()) return
@@ -116,6 +145,7 @@ export const ServerProvider: ParentComponent = (props) => {
         case "workspaceDirectoryChanged":
           setWorkspaceDirectory(message.directory)
           resetProviderUsageForDirectory()
+          resetLocalUsageForDirectory()
           break
 
         case "languageChanged":
@@ -178,6 +208,7 @@ export const ServerProvider: ParentComponent = (props) => {
       gitSub()
       fontSub()
       usageSub()
+      localUsageSub()
       unsubscribe()
     })
 
@@ -221,6 +252,12 @@ export const ServerProvider: ParentComponent = (props) => {
     vscode.postMessage({ type: "refreshProviderUsage" })
   }
 
+  const requestLocalUsage = () => {
+    setLocalUsageLoading(true)
+    setLocalUsageError(undefined)
+    vscode.postMessage({ type: "requestLocalUsage" })
+  }
+
   const value: ServerContextValue = {
     connectionState,
     serverInfo,
@@ -234,6 +271,10 @@ export const ServerProvider: ParentComponent = (props) => {
     providerUsageError,
     requestProviderUsage,
     refreshProviderUsage,
+    localUsage,
+    localUsageLoading,
+    localUsageError,
+    requestLocalUsage,
     deviceAuth,
     startLogin,
     goToLogin,

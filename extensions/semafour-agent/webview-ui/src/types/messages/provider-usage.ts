@@ -16,3 +16,14 @@ export interface RequestProviderUsageMessage {
 export interface RefreshProviderUsageMessage {
   type: "refreshProviderUsage"
 }
+
+export interface LocalUsageLoadedMessage {
+  type: "localUsageLoaded"
+  tokens?: number
+  error?: string
+  reset?: boolean
+}
+
+export interface RequestLocalUsageMessage {
+  type: "requestLocalUsage"
+}

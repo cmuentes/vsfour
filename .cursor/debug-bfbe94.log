@@ -1,0 +1,4 @@
+{"sessionId":"bfbe94","runId":"post-fix","hypothesisId":"A","location":"KiloProvider.ts:requestLocalUsage","message":"Profile requested local token total","data":{},"timestamp":1795637045979}
+{"sessionId":"bfbe94","runId":"post-fix","hypothesisId":"A","location":"ProfileView.tsx:onMount","message":"Profile surface mounted","data":{"requestsLocalUsage":true,"hasLocalUsage":false,"loading":false},"timestamp":1795637045978}
+{"sessionId":"bfbe94","runId":"post-fix","hypothesisId":"B","location":"KiloProvider.ts:fetchAndSendLocalUsage","message":"Local usage loaded","data":{"tokens":0},"timestamp":1795637046772}
+{"sessionId":"bfbe94","runId":"post-fix","hypothesisId":"C","location":"KiloProvider.ts:fetchAndSendProviderUsage","message":"Provider usage items","data":{"count":0,"plans":[]},"timestamp":1795637048599}
