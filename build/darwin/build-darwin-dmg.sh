@@ -29,7 +29,7 @@ codesign --verify --deep --strict "$APP_PATH"
 
 echo "==> Creating DMG in $OUT_DIR"
 VSCODE_ARCH=arm64 VSCODE_QUALITY=stable \
-  node --experimental-strip-types build/darwin/create-dmg.ts "$APP_DIR" "$OUT_DIR"
+  node --experimental-strip-types build/darwin/create-dmg.ts "$(dirname "$APP_DIR")" "$OUT_DIR"
 
 FINAL_DMG="$OUT_DIR/Semafour-darwin-arm64.dmg"
 mv -f "$OUT_DIR/VSCode-darwin-arm64.dmg" "$FINAL_DMG"
