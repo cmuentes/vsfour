@@ -215,24 +215,6 @@ const AboutKiloCodeTab: Component<AboutKiloCodeTabProps> = (props) => {
           <span style={linkStyle} onClick={() => open("https://reddit.com/r/kilocode")}>
             Reddit
           </span>
-          , {language.t("settings.aboutKiloCode.feedback.or")}{" "}
-          <span style={linkStyle} onClick={() => open("https://kilo.ai/discord")}>
-            Discord
-          </span>
-          .
-        </p>
-        <p
-          style={{
-            "font-size": "var(--kilo-font-size-12)",
-            color: "var(--vscode-descriptionForeground)",
-            margin: 0,
-            "line-height": "1.5",
-          }}
-        >
-          {language.t("settings.aboutKiloCode.support.prefix")}{" "}
-          <span style={linkStyle} onClick={() => open("https://kilo.ai/support")}>
-            kilo.ai/support
-          </span>
           .
         </p>
       </div>

@@ -16,7 +16,7 @@ export const PLATFORM = "agent-manager" as const
 /** Keep baseline snapshots without interrupting concurrently started agents. */
 export const SNAPSHOT_INITIALIZATION = "wait" as const
 
-/** Kilo config directory name (project-level and inside worktrees). */
+/** Semafour config directory name (project-level and inside worktrees). */
 export const KILO_DIR = ".kilo"
 
 /** Legacy config directory name for backward compatibility reads. */

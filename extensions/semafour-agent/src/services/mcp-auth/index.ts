@@ -6,7 +6,7 @@ export { needsAuthNames } from "./status"
 
 const instances = new WeakMap<KiloConnectionService, McpAuthService>()
 
-/** One `McpAuthService` per connection, shared by the sidebar, Kilo tabs, Settings panel, and the Marketplace panel. */
+/** One `McpAuthService` per connection, shared by the sidebar, Semafour tabs, Settings panel, and the Marketplace panel. */
 export function mcpAuth(connection: KiloConnectionService, opts?: McpAuthOpts): McpAuthService {
   const existing = instances.get(connection)
   if (existing) return existing

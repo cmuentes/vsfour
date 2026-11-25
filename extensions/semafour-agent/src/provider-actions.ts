@@ -9,7 +9,7 @@ import {
   sanitizeCustomProviderConfig,
   withCustomProviderDeletions,
 } from "./shared/custom-provider"
-import { isCustomProviderPackage, KILO_AUTO, KILO_PROVIDER_ID, parseModelString } from "./shared/provider-model"
+import { isCustomProviderPackage, KILO_PROVIDER_ID, parseModelString } from "./shared/provider-model"
 import { configFeatures, serverFeatures } from "./features"
 
 /**
@@ -116,7 +116,7 @@ export async function fetchProviderData(client: KiloClient, dir: string) {
   }
 }
 
-/** An organization's Kilo catalog failed to load, so Kilo has no models to pick. */
+/** An organization's Semafour catalog failed to load, so Semafour has no models to pick. */
 function catalogUnavailable(
   failed: string[] | undefined,
   all: ReadonlyArray<{ id: string; models: Record<string, unknown> }>,
@@ -161,7 +161,7 @@ export function buildActionContext(
       // Shared State.dispose() now has a hard per-disposer timeout, so this
       // wait is bounded without needing a client-side timeout here.
       await client.global.dispose().catch((error: unknown) => {
-        console.warn(`[Kilo New] KiloProvider: global.dispose() after ${reason} failed:`, error)
+        console.warn(`[Semafour New] KiloProvider: global.dispose() after ${reason} failed:`, error)
       })
     },
     fetchAndSendProviders: refresh,
@@ -291,7 +291,7 @@ async function removeAuth(ctx: ActionContext, id: string, configured: boolean) {
     await ctx.client.auth.remove({ providerID: id }, { throwOnError: true })
   } catch (err) {
     if (!configured) throw err
-    console.warn(`[Kilo New] auth.remove failed for configured provider ${id} (non-fatal):`, err)
+    console.warn(`[Semafour New] auth.remove failed for configured provider ${id} (non-fatal):`, err)
   }
 }
 

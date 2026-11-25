@@ -15,14 +15,14 @@ export const anacondaDesktopDict = {
   "provider.anaconda.status.unavailable": "Utilgjengelig",
   "provider.anaconda.state.unsupported": "Anaconda Desktop støttes ikke på {{platform}}.",
   "provider.anaconda.state.notInstalled":
-    "Installer Anaconda Desktop på denne maskinen, og kom deretter tilbake hit. Kilo kjører ikke installasjonsprogrammet for deg.",
+    "Installer Anaconda Desktop på denne maskinen, og kom deretter tilbake hit. Semafour kjører ikke installasjonsprogrammet for deg.",
   "provider.anaconda.state.notRunning":
     "Åpne Anaconda Desktop, fullfør oppsettet og logg inn, og velg deretter Sjekk igjen.",
   "provider.anaconda.state.invalidConfig":
     "Oppsettet av Anaconda Desktop er ufullstendig. Åpne Desktop, fullfør oppsettet, og start det på nytt om nødvendig.",
-  "provider.anaconda.state.signedOut": "Åpne Anaconda Desktop og logg inn før du kobler til Kilo.",
+  "provider.anaconda.state.signedOut": "Åpne Anaconda Desktop og logg inn før du kobler til Semafour.",
   "provider.anaconda.state.unauthorized":
-    "Kilo fikk ikke tilgang til Anaconda Desktop. Åpne Desktop, logg inn på nytt, og start det på nytt om nødvendig.",
+    "Semafour fikk ikke tilgang til Anaconda Desktop. Åpne Desktop, logg inn på nytt, og start det på nytt om nødvendig.",
   "provider.anaconda.state.unavailable":
     "Anaconda Desktop svarer ikke ennå. Åpne det og vent til applikasjonen er ferdig med å starte.",
   "provider.anaconda.state.noModel":
@@ -34,7 +34,7 @@ export const anacondaDesktopDict = {
   "provider.anaconda.state.unhealthy":
     "Den aktive inferensserveren er ikke sunn ennå. Sjekk den i Anaconda Desktop og start serveren på nytt om nødvendig.",
   "provider.anaconda.state.ready":
-    "Kilo fant en sunn lokal tekstgenereringsserver og kan importere de gjeldende tilkoblingsinnstillingene.",
+    "Semafour fant en sunn lokal tekstgenereringsserver og kan importere de gjeldende tilkoblingsinnstillingene.",
   "provider.anaconda.server": "Aktiv inferensserver",
   "provider.anaconda.context": "Kontekstvindu",
   "provider.anaconda.contextValue": "{{count}} tokens",
@@ -51,7 +51,7 @@ export const anacondaDesktopDict = {
   "provider.anaconda.action.continue": "Fortsett likevel",
   "provider.anaconda.action.manage": "Administrer / Oppdater",
   "provider.anaconda.toast.refreshed.title": "Anaconda Desktop oppdatert",
-  "provider.anaconda.toast.refreshed.description": "Den aktive lokale serveren og modellene er oppdatert i Kilo.",
+  "provider.anaconda.toast.refreshed.description": "Den aktive lokale serveren og modellene er oppdatert i Semafour.",
   "settings.providers.note.anacondaDesktop": "Kjør en modell som serveres lokalt av Anaconda Desktop.",
   "settings.providers.tag.local": "Lokal",
 } as const
@@ -125,7 +125,7 @@ export const dict = {
   "provider.connect.status.waiting": "Venter på autorisering...",
   "provider.connect.status.failed": "Autorisering mislyktes: {{error}}",
   "provider.connect.apiKey.description":
-    "Skriv inn din {{provider}} API-nøkkel for å koble til kontoen din og bruke {{provider}}-modeller i Kilo.",
+    "Skriv inn din {{provider}} API-nøkkel for å koble til kontoen din og bruke {{provider}}-modeller i Semafour.",
   "provider.connect.apiKey.description.local":
     "Connect to your local {{provider}} server. Leave the API key empty if the server does not require one (default for localhost).",
   "provider.connect.atomicChat.description":
@@ -148,14 +148,14 @@ export const dict = {
   "provider.connect.oauth.code.visit.prefix": "Besøk ",
   "provider.connect.oauth.code.visit.link": "denne lenken",
   "provider.connect.oauth.code.visit.suffix":
-    " for å hente autorisasjonskoden din for å koble til kontoen din og bruke {{provider}}-modeller i Kilo.",
+    " for å hente autorisasjonskoden din for å koble til kontoen din og bruke {{provider}}-modeller i Semafour.",
   "provider.connect.oauth.code.label": "{{method}} autorisasjonskode",
   "provider.connect.oauth.code.placeholder": "Autorisasjonskode",
   "provider.connect.oauth.code.required": "Autorisasjonskode er påkrevd",
   "provider.connect.oauth.auto.visit.prefix": "Besøk ",
   "provider.connect.oauth.auto.visit.link": "denne lenken",
   "provider.connect.oauth.auto.visit.suffix":
-    " og skriv inn koden nedenfor for å koble til kontoen din og bruke {{provider}}-modeller i Kilo.",
+    " og skriv inn koden nedenfor for å koble til kontoen din og bruke {{provider}}-modeller i Semafour.",
   "provider.connect.oauth.auto.confirmationCode": "Bekreftelseskode",
   "provider.connect.toast.connected.title": "{{provider}} tilkoblet",
   "provider.connect.toast.connected.description": "{{provider}}-modeller er nå tilgjengelige.",
@@ -265,7 +265,7 @@ export const dict = {
   "speechToText.tooltip.transcribing": "Transkriberer... Klikk for å avbryte.",
   "speechToText.tooltip.error": "Taleinndata mislyktes. Klikk for å tømme.",
   "speechToText.error.title": "Taleinndata mislyktes",
-  "speechToText.error.loginRequired": "Logg på Kilo for å bruke taleinndata.",
+  "speechToText.error.loginRequired": "Logg på Semafour for å bruke taleinndata.",
   "speechToText.error.emptyTranscript": "Ingen tale ble oppdaget.",
 
   "prompt.toast.promptSendFailed.title": "Kunne ikke sende forespørsel",
@@ -312,7 +312,7 @@ export const dict = {
     "Dette kjører hele kommandoen uten begrensninger for filsystem og nettverk, kun for denne kommandoen. Git må skrive til .git, som er skrivebeskyttet i sandkassen og ligger utenfor arbeidstreet i et koblet worktree. Bash-tillatelsesregler og automatisk godkjenning godkjenner aldri denne forespørselen automatisk.",
   "ui.permission.manageAutoApprove": "Administrer regler for automatisk godkjenning",
   "ui.permission.reject": "Avvis",
-  "ui.permission.feedbackPlaceholder": "Fortell Kilo hva den skal gjøre annerledes",
+  "ui.permission.feedbackPlaceholder": "Fortell Semafour hva den skal gjøre annerledes",
   "ui.permission.feedbackHint": "Enter for å avvise, Esc for å avbryte",
   "ui.permission.doomLoop.prompt": "Mulig løkke oppdaget for verktøyet {{tool}}. Fortsette kjøringen?",
   "ui.permission.doomLoop.rule": "Fortsett {{tool}}-kall",
@@ -359,7 +359,7 @@ export const dict = {
   "session.messages.loadEarlier": "Last inn tidligere meldinger",
   "session.messages.loading": "Laster meldinger...",
 
-  "sidebar.topBar.label": "Kilo Code-navigasjon",
+  "sidebar.topBar.label": "Semafour-navigasjon",
   "sidebar.topBar.newTask": "Ny Oppgave",
   "sidebar.topBar.history": "Historikk",
   "sidebar.topBar.agentManager": "Agent Manager",
@@ -469,7 +469,7 @@ export const dict = {
     "Standardmodell og resonneringsinnsats for task-tool-underagenter. La stå tom for å arve den kallende agentens modell.",
   "settings.models.hidePromptTraining.title": "Skjul modeller som trener på ledetekster",
   "settings.models.hidePromptTraining.description":
-    "Skjul Kilo Gateway-modeller der leverandørene kan bruke ledetekstene dine til trening.",
+    "Skjul Semafour Gateway-modeller der leverandørene kan bruke ledetekstene dine til trening.",
   "settings.providers.modeModels": "Modell per modus",
   "settings.providers.modeModels.description":
     "Overstyr standardmodellen for bestemte moduser. Hvis ikke angitt, brukes den globale standardmodellen.",
@@ -604,7 +604,7 @@ export const dict = {
   "feedback.dialog.github": "Rapporter et problem på GitHub",
   "feedback.dialog.discord": "Bli med i Discord-fellesskapet vårt",
   "feedback.dialog.support": "Kundestøtte",
-  "workStyle.onboarding.welcome": "Velkommen til Kilo",
+  "workStyle.onboarding.welcome": "Velkommen til Semafour",
   "workStyle.onboarding.title": "Velg hvordan du vil arbeide",
   "workStyle.onboarding.settingsNote": "Du kan endre disse alternativene når som helst under",
   "workStyle.onboarding.settings": "Innstillinger.",
@@ -614,7 +614,7 @@ export const dict = {
   "workStyle.choice.visibility": "Synlighet",
   "workStyle.choice.human-in-the-loop.eyebrow": "Menneskelig kontroll",
   "workStyle.choice.human-in-the-loop.title": "Gjennomgå først",
-  "workStyle.choice.human-in-the-loop.description": "Kilo tar pause og viser deg planen sin mens den arbeider.",
+  "workStyle.choice.human-in-the-loop.description": "Semafour tar pause og viser deg planen sin mens den arbeider.",
   "workStyle.choice.human-in-the-loop.permissions": "Ber om tillatelse før filer redigeres eller kommandoer kjøres.",
   "workStyle.choice.human-in-the-loop.bash": "Ber om tillatelse til alle terminalkommandoer.",
   "workStyle.choice.human-in-the-loop.visibility": "Utvider resonnering, kommandoer og redigeringer for gjennomgang.",
@@ -636,7 +636,7 @@ export const dict = {
   "deviceAuth.toast.codeCopied": "Kode kopiert til utklippstavlen",
   "deviceAuth.toast.errorCopied": "Feil kopiert til utklippstavlen",
   "deviceAuth.status.initiating": "Starter pålogging...",
-  "deviceAuth.title": "Logg inn på Kilo Code",
+  "deviceAuth.title": "Logg inn på Semafour",
   "deviceAuth.step1": "Trinn 1: Åpne denne URLen",
   "deviceAuth.action.copyUrl": "Kopier URL",
   "deviceAuth.action.openBrowser": "Åpne nettleser",
@@ -659,7 +659,7 @@ export const dict = {
 
   "profile.title": "Profil",
   "profile.notLoggedIn": "Ikke pålogget",
-  "profile.action.login": "Logg inn med Kilo Code",
+  "profile.action.login": "Logg inn med Semafour",
   "profile.balance.title": "Saldo",
   "profile.balance.refresh": "Oppdater saldo",
   "profile.usage.title": "Abonnementer og forbruk",
@@ -675,7 +675,7 @@ export const dict = {
   "profile.usage.plan.unknown": "Abonnement: Status ukjent",
   "profile.usage.action.manage": "Administrer",
   "profile.usage.action.managePlan": "Administrer {{plan}}",
-  "profile.usage.routing": "Abonnementsfakturering er aktiv. Kilo Gateway-ruting er {{state}}.",
+  "profile.usage.routing": "Abonnementsfakturering er aktiv. Semafour Gateway-ruting er {{state}}.",
   "profile.usage.routingState.disabled": "deaktivert",
   "profile.usage.routingState.missing": "fraværende",
   "profile.usage.routingState.replaced": "erstattet",
@@ -701,11 +701,11 @@ export const dict = {
   "profile.usage.status.exhausted": "Oppbrukt",
   "profile.action.dashboard": "Kontrollpanel",
   "profile.action.topUp": "Fyll på",
-  "profile.pass.subscribe": "Få Kilo Pass for å legge til kreditt og tjene bonuser",
+  "profile.pass.subscribe": "Få Semafour Pass for å legge til kreditt og tjene bonuser",
   "profile.pass.bonus": "Bonus",
   "profile.pass.usage": "Denne månedens forbruk",
   "profile.pass.paid": "Betalt",
-  "profile.pass.meter": "Månedlig Kilo Pass-forbruk",
+  "profile.pass.meter": "Månedlig Semafour Pass-forbruk",
   "profile.pass.renews": "Fornyes",
   "profile.action.logout": "Logg ut",
 
@@ -727,10 +727,10 @@ export const dict = {
 
   "settings.experimental.title": "Eksperimentelt",
   "settings.language.title": "Språk",
-  "settings.aboutKiloCode.title": "Om Kilo Code",
+  "settings.aboutKiloCode.title": "Om Semafour",
 
   "session.messages.welcome":
-    "Kilo Code er en AI-kodingsassistent. Be den om å bygge funksjoner, fikse feil eller forklare kodebasen din.",
+    "Semafour er en AI-kodingsassistent. Be den om å bygge funksjoner, fikse feil eller forklare kodebasen din.",
   "session.workspaceScope.description":
     "Kilo-chatten bruker bare «{{folder}}», den første mappen i dette arbeidsområdet.",
   "session.workspaceScope.alternatives":
@@ -823,7 +823,7 @@ export const dict = {
   "settings.aboutKiloCode.importSettings.invalidConfig": "Filen inneholder ikke gyldige Kilo-innstillinger.",
   "settings.aboutKiloCode.importSettings.tooLarge": "Filen er for stor. Innstillingsfiler må være under 1 MB.",
   "settings.aboutKiloCode.importSettings.newerVersion":
-    "Denne filen ble eksportert fra en nyere versjon av Kilo. Noen innstillinger kan bli ignorert.",
+    "Denne filen ble eksportert fra en nyere versjon av Semafour. Noen innstillinger kan bli ignorert.",
   "settings.aboutKiloCode.importSettings.success":
     "Innstillinger importert. Gjennomgå endringene ovenfor, og klikk deretter på Lagre.",
 
@@ -839,7 +839,7 @@ export const dict = {
   "settings.agentBehaviour.subtab.skills": "Ferdigheter",
 
   "settings.browser.description":
-    "Konfigurer innebygd nettleserautomatisering drevet av Playwright. Kilo kan navigere, samhandle med og ta skjermbilder av nettsider i øktene dine.",
+    "Konfigurer innebygd nettleserautomatisering drevet av Playwright. Semafour kan navigere, samhandle med og ta skjermbilder av nettsider i øktene dine.",
   "settings.browser.enable.title": "Aktiver nettleserautomatisering",
   "settings.browser.enable.description":
     "Aktiver den øktspesifikke nettleseren i Agent Manager for lokale applikasjoner og offentlige HTTPS-sider.",
@@ -849,7 +849,7 @@ export const dict = {
   "settings.browser.headless.title": "Headless-modus",
   "settings.browser.headless.description": "Kjør i headless-modus (uten synlig nettleservindu).",
 
-  "settings.language.description": 'Velg språket for Kilo Code-grensesnittet. "Auto" bruker VS Codes visningsspråk.',
+  "settings.language.description": 'Velg språket for Semafour-grensesnittet. "Auto" bruker VS Codes visningsspråk.',
   "settings.language.auto": "Auto (VS Code-språk)",
   "settings.language.current": "Nåværende:",
 
@@ -869,10 +869,10 @@ export const dict = {
     "Spill av lyder når økter fullføres, det oppstår en feil eller det trengs innspill fra deg",
   "settings.notifications.workbench.title": "Aktiver VS Code-varsler",
   "settings.notifications.workbench.description":
-    "Vis VS Code-varsler når Kilo fullfører en oppgave eller trenger innspill fra deg",
+    "Vis VS Code-varsler når Semafour fullfører en oppgave eller trenger innspill fra deg",
   "settings.notifications.os.title": "Aktiver OS-varsler",
   "settings.notifications.os.description":
-    "Vis opprinnelige operativsystemvarsler når Kilo fullfører en oppgave eller trenger innspill fra deg mens VS Code ikke er aktiv.",
+    "Vis opprinnelige operativsystemvarsler når Semafour fullfører en oppgave eller trenger innspill fra deg mens VS Code ikke er aktiv.",
   "settings.notifications.testSound": "Test",
   "settings.notifications.testOS": "Test",
   "settings.notifications.testOS.testing": "Sender testvarsel…",
@@ -895,7 +895,7 @@ export const dict = {
   "settings.experimental.batch.description": "Aktiver batchbehandling av verktøykall",
   "settings.experimental.imageGeneration.title": "Bildegenerering",
   "settings.experimental.imageGeneration.description": "Aktiver AI-bildegenerering",
-  "settings.agentBehaviour.sharedAgentBoard.title": "Kilo Swarm",
+  "settings.agentBehaviour.sharedAgentBoard.title": "Semafour Swarm",
   "settings.agentBehaviour.sharedAgentBoard.description":
     "Del en tavle mellom en hovedøkt og underagentene som utfører oppgavene dens, inkludert nestede underagenter. Bruk den til parallelle løsningsforsøk eller arbeidsoppgaver som utfyller hverandre, ikke til alle oppgaver.",
   "settings.experimental.imageGenerationModel.title": "Bildemodell",
@@ -907,7 +907,7 @@ export const dict = {
   "settings.models.speechToTextModel.customPlaceholder": "whisper-1",
   "settings.models.speechToTextBaseUrl.title": "Tale-til-tekst-basis-URL",
   "settings.models.speechToTextBaseUrl.description":
-    "Bruk et OpenAI-kompatibelt transkripsjons-API i stedet for Kilo Gateway. Modeller leses fra /models, og lyd sendes til /audio/transcriptions. La feltet stå tomt for å bruke Kilo Gateway.",
+    "Bruk et OpenAI-kompatibelt transkripsjons-API i stedet for Semafour Gateway. Modeller leses fra /models, og lyd sendes til /audio/transcriptions. La feltet stå tomt for å bruke Semafour Gateway.",
   "settings.models.speechToTextBaseUrl.placeholder": "https://api.openai.com/v1",
   "settings.models.speechToTextApiKey.title": "Tale-til-tekst-API-nøkkel",
   "settings.models.speechToTextApiKey.description":
@@ -916,9 +916,9 @@ export const dict = {
   "settings.models.speechToText.disabledDescription":
     "Aktiver og logg på Kilo-leverandøren for å bruke Speech to Text, eller angi en egen transkripsjons-basis-URL nedenfor.",
   "settings.models.speechToText.remoteDescription":
-    "Taleinndata er ikke tilgjengelig i eksterne vinduer. Åpne Kilo i et lokalt vindu for å bruke mikrofonen.",
+    "Taleinndata er ikke tilgjengelig i eksterne vinduer. Åpne Semafour i et lokalt vindu for å bruke mikrofonen.",
   "settings.models.speechToTextModel.title": "Tale-til-tekst-modell",
-  "settings.models.speechToTextModel.description": "Velg Kilo Gateway-transkripsjonsmodellen for taleinndata.",
+  "settings.models.speechToTextModel.description": "Velg Semafour Gateway-transkripsjonsmodellen for taleinndata.",
   "settings.experimental.nativeNotebookTools.title": "Innebygde notatbok-verktøy",
   "settings.experimental.nativeNotebookTools.description":
     "Aktiver eksperimentelle verktøy for å lese, redigere og kjøre VS Code-notatbøker",
@@ -951,7 +951,7 @@ export const dict = {
   "settings.experimental.mcpTimeout.description": "Tidsavbrudd for MCP-serverforespørsler i millisekunder",
   "settings.experimental.remote.title": "Remote-kontroll",
   "settings.experimental.remote.description":
-    "Aktiver Remote-kontroll av økter via Kilo Cloud. Dette vil også påvirke CLI-er på denne maskinen.",
+    "Aktiver Remote-kontroll av økter via Semafour Cloud. Dette vil også påvirke CLI-er på denne maskinen.",
   "settings.experimental.remote.current": "Nåværende status:",
   "settings.experimental.remote.startup": "Aktiver automatisk ved oppstart:",
   "settings.experimental.remote.active": "Aktiv",
@@ -974,7 +974,7 @@ export const dict = {
   "settings.indexing.kiloModel.title": "Kilo-modellforhåndsvalg",
   "settings.indexing.kiloModel.description": "Velg en støttet Kilo-hostet embedding-modell.",
   "settings.indexing.kiloSignIn.title": "Kilo-pålogging kreves",
-  "settings.indexing.kiloSignIn.description": "Logg inn på Kilo for å bruke hostede embeddings.",
+  "settings.indexing.kiloSignIn.description": "Logg inn på Semafour for å bruke hostede embeddings.",
   "settings.indexing.model.title": "Embedding-modell",
   "settings.indexing.model.description": "Overstyr standard embedding-modell for den valgte leverandøren.",
   "settings.indexing.vectorStore.title": "Vektordatabase",
@@ -1123,7 +1123,7 @@ export const dict = {
   "settings.agentBehaviour.claudeCompat.heading": "Claude Code-kompatibilitet",
   "settings.agentBehaviour.claudeCompat.title": "Last inn Claude Code-filer",
   "settings.agentBehaviour.claudeCompat.description":
-    "Last inn CLAUDE.md-instruksjoner og ferdigheter fra Claude Code-konfigurasjonsmappen din i økter. Aktiver dette hvis du vil at Kilo skal bruke dine Claude Code-instruksjoner og ferdigheter. Krever omstart.",
+    "Last inn CLAUDE.md-instruksjoner og ferdigheter fra Claude Code-konfigurasjonsmappen din i økter. Aktiver dette hvis du vil at Semafour skal bruke dine Claude Code-instruksjoner og ferdigheter. Krever omstart.",
   "settings.agentBehaviour.mcpDetail.command": "Kommando",
   "settings.agentBehaviour.mcpDetail.args": "Argumenter",
   "settings.agentBehaviour.mcpDetail.env": "Miljø",
@@ -1247,7 +1247,7 @@ export const dict = {
   "settings.context.memory.storage.enable": "Enable memory to create project memory files.",
   "settings.context.memory.inspect": "Inspiser",
   "chat.memory.project.disabled": "Prosjektminne deaktivert",
-  "chat.memory.project.empty": "This project doesn't have any memory yet. It will start showing after you use Kilo.",
+  "chat.memory.project.empty": "This project doesn't have any memory yet. It will start showing after you use Semafour.",
   "chat.memory.command.failed": "Minnekommando mislyktes",
   "chat.memory.updated": "Memory updated",
   "chat.memory.rebuild": "Memory index rebuilt",
@@ -1281,7 +1281,7 @@ export const dict = {
   "settings.display.username.title": "Brukernavn",
   "settings.display.username.description": "Egendefinert brukernavn i samtaler",
   "settings.display.fontSize.title": "Skriftstørrelse",
-  "settings.display.fontSize.description": "Juster skriftstørrelsen for Kilo webview UI uavhengig av VS Code.",
+  "settings.display.fontSize.description": "Juster skriftstørrelsen for Semafour webview UI uavhengig av VS Code.",
   "settings.display.reasoningDisplay.title": "Resonnementblokker",
   "settings.display.reasoningDisplay.description":
     "Velg hvordan resonnementblokker starter. Utvidet viser hele teksten, Forhåndsvisning begrenser den til en kort rullbar forhåndsvisning, og Overskrift viser bare tittelen og strømmingsindikatoren til du åpner den.",
@@ -1415,10 +1415,6 @@ export const dict = {
   "settings.saveBar.cancel": "Avbryt",
   "settings.saveBar.saving": "Lagrer…",
   "settings.saveBar.saveFailed": "Kunne ikke lagre innstillinger",
-  "notifications.action.next": "Neste",
-  "notifications.action.close": "Lukk",
-  "notifications.action.tryModel": "Prøv {{model}}",
-  "notifications.action.tryModelGeneric": "Prøv modell",
   "diffViewer.source.workspace.label": "Gren",
   "diffViewer.source.workspace.tooltip":
     "Alle endringer på denne grenen sammenlignet med basegrenen. Inkluderer ikke-committede filer (staged, unstaged, usporede) og lokale commits som ennå ikke er i basen.",
@@ -1429,7 +1425,7 @@ export const dict = {
   "diffViewer.source.unstaged.tooltip": "Filer endret i arbeidstreet, men ikke staget ennå, pluss usporet (nye) filer.",
   "diffViewer.source.session.label": "Økt",
   "diffViewer.source.session.tooltip":
-    "Filer endret av Kilo i løpet av gjeldende økt, basert på øyeblikksbilder per tur. Tilbakestilles når du starter en ny økt.",
+    "Filer endret av Semafour i løpet av gjeldende økt, basert på øyeblikksbilder per tur. Tilbakestilles når du starter en ny økt.",
   "diffViewer.group.session": "Økt",
   "diffViewer.group.git": "Git",
   "diffViewer.comment.postToGithub": "Publiser på GitHub",
@@ -1440,7 +1436,7 @@ export const dict = {
   "diffViewer.comment.openPR": "Åpne pull request",
   "diffViewer.comment.localChanges": "Lokale endringer",
   "diffViewer.comment.prChanges": "PR-endringer",
-  "diffViewer.comment.sendToKilo": "Send til Kilo",
+  "diffViewer.comment.sendToKilo": "Send til Semafour",
   "diffViewer.comment.sendToGithub": "Send til GitHub #{{number}}",
   "diffViewer.comment.chooseDestination": "Velg mål",
   "diffViewer.notice.snapshotsDisabled":

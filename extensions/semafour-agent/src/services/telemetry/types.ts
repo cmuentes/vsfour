@@ -1,5 +1,5 @@
 /**
- * Telemetry event names for the Kilo VS Code extension.
+ * Telemetry event names for the Semafour VS Code extension.
  * These are forwarded to the CLI server via POST /telemetry/capture.
  */
 export enum TelemetryEventName {

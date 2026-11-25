@@ -1231,7 +1231,7 @@
   white-space: nowrap;
 }
 
-/* Fix with Kilo plus jump-to-section, kept visible when the panel is narrow. */
+/* Fix with Semafour plus jump-to-section, kept visible when the panel is narrow. */
 .am-pr-summary-actions {
   margin-left: auto;
   gap: 2px;

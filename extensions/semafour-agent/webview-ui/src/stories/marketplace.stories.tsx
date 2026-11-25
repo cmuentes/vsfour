@@ -209,7 +209,7 @@ const MOCK_AGENTS: AgentMarketplaceItem[] = [
       options: { displayName: "Architect" },
       permission: { read: "allow", edit: "deny", bash: "deny", mcp: "deny", question: "allow" },
     },
-    author: "Kilo",
+    author: "Semafour",
     category: "development",
   },
   {
@@ -225,7 +225,7 @@ const MOCK_AGENTS: AgentMarketplaceItem[] = [
       options: { displayName: "Code Reviewer" },
       permission: { read: "allow", edit: "deny", bash: "allow", mcp: "deny", question: "allow" },
     },
-    author: "Kilo",
+    author: "Semafour",
     category: "development",
   },
   {
@@ -279,7 +279,7 @@ const MOCK_PLUGINS: PluginMarketplaceItem[] = [
     type: "plugin",
     id: "@acme/kilo-deploy",
     name: "Deploy Toolkit",
-    description: "Adds deployment commands and cloud provider integrations to Kilo.",
+    description: "Adds deployment commands and cloud provider integrations to Semafour.",
     url: "https://github.com/acme/kilo-deploy",
     content: "@acme/kilo-deploy",
     author: "Acme",

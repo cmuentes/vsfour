@@ -5,7 +5,7 @@ import { playwrightCommand } from "./settings"
 import { canonicalizePath, samePath } from "../../agent-manager/project/paths"
 
 /**
- * Manages the built-in Playwright MCP browser server for ordinary Kilo sessions.
+ * Manages the built-in Playwright MCP browser server for ordinary Semafour sessions.
  *
  * This is independent from the Agent Manager browser broker. It must not read
  * Agent Manager settings, and Agent Manager must not read its settings.
@@ -95,7 +95,7 @@ export class BrowserAutomationService implements vscode.Disposable {
     const outcome = task.then(
       () => undefined,
       (error) => {
-        console.warn("[Kilo New] BrowserAutomationService: readiness failed:", error)
+        console.warn("[Semafour New] BrowserAutomationService: readiness failed:", error)
         return { error }
       },
     )
@@ -103,7 +103,7 @@ export class BrowserAutomationService implements vscode.Disposable {
     const result = await Promise.race([outcome, limit.promise])
     if (result === "timeout") {
       console.warn(
-        "[Kilo New] BrowserAutomationService: readiness timed out, submitting without waiting for Playwright MCP",
+        "[Semafour New] BrowserAutomationService: readiness timed out, submitting without waiting for Playwright MCP",
       )
       return
     }
@@ -136,7 +136,7 @@ export class BrowserAutomationService implements vscode.Disposable {
       return
     }
     if (!vscode.workspace.isTrusted) {
-      console.warn("[Kilo New] BrowserAutomationService: Workspace is not trusted, skipping Playwright MCP")
+      console.warn("[Semafour New] BrowserAutomationService: Workspace is not trusted, skipping Playwright MCP")
       return
     }
     const dirs = this.directories()
@@ -199,7 +199,7 @@ export class BrowserAutomationService implements vscode.Disposable {
       }
     }
     if (this.registered.size > 0) return
-    if (failure) console.error("[Kilo New] BrowserAutomationService: Failed to register MCP server:", failure)
+    if (failure) console.error("[Semafour New] BrowserAutomationService: Failed to register MCP server:", failure)
   }
 
   private async unregister(dirs = [...this.registered]): Promise<void> {
@@ -213,7 +213,7 @@ export class BrowserAutomationService implements vscode.Disposable {
           )
           this.registered.delete(directory)
         } catch (error) {
-          console.error("[Kilo New] BrowserAutomationService: Failed to disconnect MCP server:", error)
+          console.error("[Semafour New] BrowserAutomationService: Failed to disconnect MCP server:", error)
         }
       }
     }

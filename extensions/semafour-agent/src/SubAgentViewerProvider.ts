@@ -38,8 +38,8 @@ export class SubAgentViewerProvider implements vscode.Disposable {
     })
 
     panel.iconPath = {
-      light: vscode.Uri.joinPath(this.extensionUri, "assets", "icons", "kilo-light.svg"),
-      dark: vscode.Uri.joinPath(this.extensionUri, "assets", "icons", "kilo-dark.svg"),
+      light: vscode.Uri.joinPath(this.extensionUri, "assets", "icons", "semafour-light.svg"),
+      dark: vscode.Uri.joinPath(this.extensionUri, "assets", "icons", "semafour-dark.svg"),
     }
 
     const provider = new KiloProvider(this.extensionUri, this.connectionService, this.context, {
@@ -70,10 +70,10 @@ export class SubAgentViewerProvider implements vscode.Disposable {
           .get({ sessionID, directory }, { throwOnError: true })
           .then(({ data: session }) => provider.registerSession(session))
           .catch((err: unknown) => {
-            console.error("[Kilo New] SubAgentViewerProvider: Failed to load session metadata:", err)
+            console.error("[Semafour New] SubAgentViewerProvider: Failed to load session metadata:", err)
           })
       } catch (err) {
-        console.error("[Kilo New] SubAgentViewerProvider: Failed to load session metadata:", err)
+        console.error("[Semafour New] SubAgentViewerProvider: Failed to load session metadata:", err)
       }
     })
 
@@ -88,7 +88,7 @@ export class SubAgentViewerProvider implements vscode.Disposable {
     this.providers.set(sessionID, provider)
 
     panel.onDidDispose(() => {
-      console.log("[Kilo New] Sub-agent viewer panel disposed:", sessionID)
+      console.log("[Semafour New] Sub-agent viewer panel disposed:", sessionID)
       closeDisposable.dispose()
       provider.dispose()
       this.panels.delete(sessionID)

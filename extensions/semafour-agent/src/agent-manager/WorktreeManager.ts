@@ -1045,20 +1045,20 @@ export class WorktreeManager {
   async ensureGitExclude(): Promise<void> {
     const target = await this.excludeTarget()
     const items = [
-      [".kilo/worktrees/", "Kilo Code agent worktrees"],
-      [".kilo/agent-manager.json", "Kilo Agent Manager state"],
-      [".kilo/setup-script", "Kilo Code worktree setup script"],
-      [".kilo/setup-script.sh", "Kilo Code worktree setup script"],
-      [".kilo/setup-script.ps1", "Kilo Code worktree setup script"],
-      [".kilo/setup-script.cmd", "Kilo Code worktree setup script"],
-      [".kilo/setup-script.bat", "Kilo Code worktree setup script"],
-      [".kilocode/worktrees/", "Kilo Code legacy agent worktrees"],
-      [".kilocode/agent-manager.json", "Kilo Agent Manager legacy state"],
-      [".kilocode/setup-script", "Kilo Code legacy worktree setup script"],
-      [".kilocode/setup-script.sh", "Kilo Code legacy worktree setup script"],
-      [".kilocode/setup-script.ps1", "Kilo Code legacy worktree setup script"],
-      [".kilocode/setup-script.cmd", "Kilo Code legacy worktree setup script"],
-      [".kilocode/setup-script.bat", "Kilo Code legacy worktree setup script"],
+      [".kilo/worktrees/", "Semafour agent worktrees"],
+      [".kilo/agent-manager.json", "Semafour Agent Manager state"],
+      [".kilo/setup-script", "Semafour worktree setup script"],
+      [".kilo/setup-script.sh", "Semafour worktree setup script"],
+      [".kilo/setup-script.ps1", "Semafour worktree setup script"],
+      [".kilo/setup-script.cmd", "Semafour worktree setup script"],
+      [".kilo/setup-script.bat", "Semafour worktree setup script"],
+      [".kilocode/worktrees/", "Semafour legacy agent worktrees"],
+      [".kilocode/agent-manager.json", "Semafour Agent Manager legacy state"],
+      [".kilocode/setup-script", "Semafour legacy worktree setup script"],
+      [".kilocode/setup-script.sh", "Semafour legacy worktree setup script"],
+      [".kilocode/setup-script.ps1", "Semafour legacy worktree setup script"],
+      [".kilocode/setup-script.cmd", "Semafour legacy worktree setup script"],
+      [".kilocode/setup-script.bat", "Semafour legacy worktree setup script"],
     ] as const
 
     for (const [entry, comment] of items) {
@@ -1294,13 +1294,13 @@ export class WorktreeManager {
     const cached = WorktreeManager.fetchCache.get(key)
     if (cached && Date.now() - cached < WorktreeManager.FETCH_CACHE_TTL) return
 
-    // Only fetch with the fixed SSH command Kilo injects. An inherited one
+    // Only fetch with the fixed SSH command Semafour injects. An inherited one
     // could be attacker-controlled, and dropping it would let ssh prompt.
     const env = nonInteractiveEnv()
     if (!isKiloOwnedSshCommand(env)) throw new Error("Refusing to fetch with an inherited GIT_SSH_COMMAND")
     // simple-git rejects guarded variables (any GIT_* key, EDITOR, VISUAL, ...)
     // passed through .env() unless they are listed in allowEnvironment. Allow
-    // only the keys Kilo sets and drop any other inherited GIT_* key, matching
+    // only the keys Semafour sets and drop any other inherited GIT_* key, matching
     // how simple-git strips them for every other call.
     const allow = ["GIT_TERMINAL_PROMPT", "GIT_SSH_COMMAND"]
     for (const key of Object.keys(env)) {

@@ -154,7 +154,7 @@ const ProvidersTab: Component = () => {
 
   function connectProvider(item: Provider) {
     if (item.id === KILO_PROVIDER_ID) {
-      // Route Kilo Gateway sign-in through the Profile view so the user sees
+      // Route Semafour Gateway sign-in through the Profile view so the user sees
       // the full device-auth UI (URL, QR, code, timer, cancel). Triggering
       // `startLogin()` from here alone would run the flow silently with no
       // way to recover if the browser is dismissed.
@@ -177,7 +177,7 @@ const ProvidersTab: Component = () => {
   return (
     <div>
       <Show when={!disabledIds().has(KILO_PROVIDER_ID)}>
-        {/* Kilo Gateway — always at the top, not editable */}
+        {/* Semafour Gateway — always at the top, not editable */}
         <Card>
           <div
             style={{
@@ -197,7 +197,7 @@ const ProvidersTab: Component = () => {
                   color: "var(--vscode-foreground)",
                 }}
               >
-                Kilo Gateway
+                Semafour Gateway
               </span>
               <Show
                 when={kiloLoggedIn() && !(kiloFailure() && providerFailureNeedsSignIn(kiloFailure()!))}
@@ -237,7 +237,7 @@ const ProvidersTab: Component = () => {
         </Card>
       </Show>
 
-      {/* Connected providers (excluding Kilo) */}
+      {/* Connected providers (excluding Semafour) */}
       <h4 style={{ "margin-top": "16px", "margin-bottom": "8px" }}>
         {language.t("settings.providers.section.connected")}
       </h4>

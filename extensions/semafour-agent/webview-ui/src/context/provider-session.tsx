@@ -3,7 +3,6 @@ import { IndexingProvider } from "./indexing"
 import { KiloEmbeddingModelsProvider } from "./kilo-embedding-models"
 import { ImageModelsProvider } from "./image-models"
 import { SpeechToTextModelsProvider } from "./speech-to-text-models"
-import { NotificationsProvider } from "./notifications"
 import { SessionProvider } from "./session"
 
 export const Session: ParentComponent = (props) => (
@@ -11,9 +10,7 @@ export const Session: ParentComponent = (props) => (
     <KiloEmbeddingModelsProvider>
       <ImageModelsProvider>
         <SpeechToTextModelsProvider>
-          <NotificationsProvider>
-            <SessionProvider>{props.children}</SessionProvider>
-          </NotificationsProvider>
+          <SessionProvider>{props.children}</SessionProvider>
         </SpeechToTextModelsProvider>
       </ImageModelsProvider>
     </KiloEmbeddingModelsProvider>

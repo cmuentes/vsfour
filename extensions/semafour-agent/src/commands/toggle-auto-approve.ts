@@ -79,7 +79,7 @@ export function registerToggleAutoApprove(
           await replyOnce(client, req.id, dir, () => generation === snapshot)
         }
       } catch (err) {
-        console.error("[Kilo New] toggleAutoApprove: failed to list pending permissions:", err)
+        console.error("[Semafour New] toggleAutoApprove: failed to list pending permissions:", err)
       }
     }
 

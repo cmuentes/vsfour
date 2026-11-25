@@ -43,8 +43,8 @@ const ProviderSelectDialog = () => {
     const disabled = new Set(config().disabled_providers ?? [])
     const connected = new Set(provider.connected())
     const all = Object.values(provider.providers())
-    const withKilo = all.some((item) => item.id === KILO_PROVIDER_ID) ? all : [kiloFallbackProvider(), ...all]
-    const available = withKilo.filter((item) => !disabled.has(item.id) && !connected.has(item.id))
+    const withSemafour = all.some((item) => item.id === KILO_PROVIDER_ID) ? all : [kiloFallbackProvider(), ...all]
+    const available = withSemafour.filter((item) => !disabled.has(item.id) && !connected.has(item.id))
     const failures = provider.failures()
 
     return [

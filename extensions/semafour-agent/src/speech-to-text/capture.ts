@@ -72,7 +72,7 @@ export async function startSpeechCapture(input: Input): Promise<boolean> {
     const file = path.join(os.tmpdir(), `kilo-stt-${process.pid}-${Date.now()}.m4a`)
     if (useMacCapture(process.platform, process.env)) {
       const result = await startMac(file, input).catch((err: unknown) => {
-        console.warn("[Kilo New] Native macOS speech capture failed, falling back to FFmpeg", err)
+        console.warn("[Semafour New] Native macOS speech capture failed, falling back to FFmpeg", err)
         return undefined
       })
       if (result) return !result.stopped
@@ -95,7 +95,7 @@ export async function stopSpeechCapture(requestId: string): Promise<Audio> {
   const size = await stat(state.file)
     .then((info) => info.size)
     .catch((err: unknown) => {
-      console.warn("[Kilo New] Failed to stat speech recording", err)
+      console.warn("[Semafour New] Failed to stat speech recording", err)
       return 0
     })
 

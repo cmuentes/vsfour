@@ -147,7 +147,7 @@ export class DiffViewerProvider implements vscode.Disposable {
   ) {
     this.sessionIdProvider = opts.sessionIdProvider ?? (() => undefined)
     this.sessionDirectoryProvider = opts.sessionDirectoryProvider ?? (() => undefined)
-    this.output = vscode.window.createOutputChannel("Kilo Diff Panel")
+    this.output = vscode.window.createOutputChannel("Semafour Diff Panel")
     this.prPolling = createDiffPRPolling({
       createPoller: opts.createPRPoller,
       onStatus: () => this.sendComments(),
@@ -252,8 +252,8 @@ export class DiffViewerProvider implements vscode.Disposable {
       },
     )
     panel.iconPath = {
-      light: vscode.Uri.joinPath(this.extensionUri, "assets", "icons", "kilo-light.svg"),
-      dark: vscode.Uri.joinPath(this.extensionUri, "assets", "icons", "kilo-dark.svg"),
+      light: vscode.Uri.joinPath(this.extensionUri, "assets", "icons", "semafour-light.svg"),
+      dark: vscode.Uri.joinPath(this.extensionUri, "assets", "icons", "semafour-dark.svg"),
     }
     panel.webview.html = this.getHtml(panel.webview)
     this.panel = panel

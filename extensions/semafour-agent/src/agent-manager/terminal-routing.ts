@@ -197,7 +197,7 @@ export class TerminalRouter {
     this.creates.set(manager, (this.creates.get(manager) ?? 0) + 1)
     try {
       // Join the shared backend connection instead of racing its synchronous
-      // client accessor when this is the first Kilo action in the window.
+      // client accessor when this is the first Semafour action in the window.
       await this.deps.getClientAsync()
       const created = await manager.create({ terminalId: createId, worktreeId, cwd, title, cols, rows })
       if (generation !== this.generation) {

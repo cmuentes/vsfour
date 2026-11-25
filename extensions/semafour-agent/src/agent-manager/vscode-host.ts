@@ -113,8 +113,8 @@ export class VscodeHost implements Host {
     }
 
     panel.iconPath = {
-      light: vscode.Uri.joinPath(this.extensionUri, "assets", "icons", "kilo-light.svg"),
-      dark: vscode.Uri.joinPath(this.extensionUri, "assets", "icons", "kilo-dark.svg"),
+      light: vscode.Uri.joinPath(this.extensionUri, "assets", "icons", "semafour-light.svg"),
+      dark: vscode.Uri.joinPath(this.extensionUri, "assets", "icons", "semafour-dark.svg"),
     }
 
     const port = this.connectionService.getServerInfo()?.port
@@ -277,7 +277,7 @@ export class VscodeHost implements Host {
       const res = await client.session.list({ directory: dir, roots: true }, { throwOnError: true })
       return res.data
     } catch (err) {
-      console.warn(`[Kilo New] Agent Manager: failed to list project sessions for ${dir}:`, err)
+      console.warn(`[Semafour New] Agent Manager: failed to list project sessions for ${dir}:`, err)
       return []
     }
   }
@@ -511,7 +511,7 @@ export class VscodeHost implements Host {
 
   revealInOS(path: string): void {
     if (vscode.env.remoteName) {
-      console.warn(`[Kilo New] Cannot reveal ${path} in the OS file manager on a remote workspace`)
+      console.warn(`[Semafour New] Cannot reveal ${path} in the OS file manager on a remote workspace`)
       return
     }
     void vscode.commands.executeCommand("revealFileInOS", vscode.Uri.file(path))

@@ -18,8 +18,8 @@ interface WelcomeEmptyStateProps {
 }
 
 /**
- * Square Kilo mark. Hover rotates the mark and crossfades to the yellow Lottie animation,
- * matching Kilo Cloud's header logo. The player mounts on first hover so the WASM renderer
+ * Square Semafour mark. Hover rotates the mark and crossfades to the yellow Lottie animation,
+ * matching Semafour Cloud's header logo. The player mounts on first hover so the WASM renderer
  * never delays the empty state; the static mark stays visible until the player can draw, so a
  * slow or failed load never leaves an empty square.
  */
@@ -27,7 +27,7 @@ export const KiloLogo = () => {
   const icons = (window as { ICONS_BASE_URI?: string }).ICONS_BASE_URI || ""
   const light =
     document.body.classList.contains("vscode-light") || document.body.classList.contains("vscode-high-contrast-light")
-  const file = light ? "kilo-light.svg" : "kilo-dark.svg"
+  const file = light ? "semafour-light.svg" : "semafour-dark.svg"
   const [hover, setHover] = createSignal(false)
   const [ready, setReady] = createSignal(false)
   const [mounted, setMounted] = createSignal(false)
@@ -49,7 +49,7 @@ export const KiloLogo = () => {
         </div>
       </Show>
       <div class="kilo-logo-layer kilo-logo-static">
-        <img src={`${icons}/${file}`} alt="Kilo Code" />
+        <img src={`${icons}/${file}`} alt="Semafour" />
       </div>
     </div>
   )

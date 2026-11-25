@@ -61,10 +61,10 @@ const panelTitleHandler = (panel: vscode.WebviewPanel) => (title: string) => {
 
 // Activated via "onStartupFinished" and "onUri" (package.json) so that commands, code actions,
 // keybindings, autocomplete, commit-message generation, and URI deep links all work immediately —
-// without requiring the user to open a Kilo sidebar or panel first. The CLI backend is NOT spawned here;
+// without requiring the user to open a Semafour sidebar or panel first. The CLI backend is NOT spawned here;
 // it starts lazily when a webview connects or when ensureBackendForAutocomplete() triggers it.
 export async function activate(context: vscode.ExtensionContext) {
-  console.log("Kilo Code extension is now active")
+  console.log("Semafour extension is now active")
   shuttingDown = false
 
   // Drives the "!kilo-code.new.isCursor" guards on the native view/title and
@@ -74,11 +74,11 @@ export async function activate(context: vscode.ExtensionContext) {
   const telemetry = TelemetryProxy.getInstance()
 
   await migrateIntegratedBrowserUseSystemChrome().catch((error: unknown) =>
-    console.warn("[Kilo New] Integrated Browser Chrome preference migration failed:", error),
+    console.warn("[Semafour New] Integrated Browser Chrome preference migration failed:", error),
   )
 
   const browserBroker = new BrowserBroker({
-    log: (...args) => console.warn("[Kilo New] BrowserBroker:", ...args),
+    log: (...args) => console.warn("[Semafour New] BrowserBroker:", ...args),
     enabled: () => vscode.workspace.getConfiguration("kilo-code.new.experimental").get("browserAutomation", false),
     trusted: () => vscode.workspace.isTrusted,
     useSystemChrome: () => integratedBrowserUseSystemChrome(),
@@ -94,7 +94,7 @@ export async function activate(context: vscode.ExtensionContext) {
     (dir): Promise<void> => browserAutomationService.ready(dir),
   )
 
-  // One MCP OAuth sign-in service for the whole extension (sidebar, Kilo tabs, Settings, Marketplace).
+  // One MCP OAuth sign-in service for the whole extension (sidebar, Semafour tabs, Settings, Marketplace).
   // Initialize it eagerly so its MCP OAuth URL subscriptions and `onUrl`
   // fallback are wired up exactly once, instead of racing whichever
   // KiloProvider happens to construct first.
@@ -127,7 +127,7 @@ export async function activate(context: vscode.ExtensionContext) {
     if (state === "connected") {
       void browserAutomationService
         .reregisterIfEnabled()
-        .catch((error) => console.warn("[Kilo New] Playwright MCP re-registration failed:", error))
+        .catch((error) => console.warn("[Semafour New] Playwright MCP re-registration failed:", error))
       const config = connectionService.getServerConfig()
       if (config) {
         telemetry.configure(config.baseUrl, config.password)
@@ -139,8 +139,8 @@ export async function activate(context: vscode.ExtensionContext) {
       }
       try {
         remoteService.setClient(connectionService.getClient())
-        console.log("[Kilo New] CLI connected, calling remoteService.refresh()")
-        remoteService.refresh().catch((err) => console.warn("[Kilo New] initial remote refresh failed:", err))
+        console.log("[Semafour New] CLI connected, calling remoteService.refresh()")
+        remoteService.refresh().catch((err) => console.warn("[Semafour New] initial remote refresh failed:", err))
       } catch {
         remoteService.setClient(null)
       }
@@ -160,7 +160,7 @@ export async function activate(context: vscode.ExtensionContext) {
   )
 
   for (const folder of vscode.workspace.workspaceFolders ?? []) {
-    void markWorkspace(folder.uri.fsPath, (msg) => console.warn(`[Kilo New] ${msg}`))
+    void markWorkspace(folder.uri.fsPath, (msg) => console.warn(`[Semafour New] ${msg}`))
   }
 
   // Track all open tab panel providers so toolbar button commands can target them.
@@ -175,12 +175,12 @@ export async function activate(context: vscode.ExtensionContext) {
     return undefined
   }
 
-  // Tracks the Kilo surface the user last worked in, so commands invoked from
+  // Tracks the Semafour surface the user last worked in, so commands invoked from
   // the Command Palette still know where to act after it takes focus away.
   const focus = new SurfaceFocus()
 
   // Keep the concrete chat when focus moves to the editor to select code.
-  // SurfaceFocus alone cannot distinguish multiple Kilo editor tabs.
+  // SurfaceFocus alone cannot distinguish multiple Semafour editor tabs.
   let chat: KiloProvider | AgentManagerProvider | undefined
 
   // Create the provider with shared service
@@ -194,7 +194,7 @@ export async function activate(context: vscode.ExtensionContext) {
   })
   provider.setRemoteService(remoteService)
 
-  // Editor-tab Integrated Browser for sidebar and Kilo editor-tab sessions. It
+  // Editor-tab Integrated Browser for sidebar and Semafour editor-tab sessions. It
   // registers its route owner before the Agent Manager so sidebar sessions are
   // claimed here (no project id) while Agent Manager worktree requests, which
   // carry a project id, still resolve to Agent Manager.
@@ -267,7 +267,7 @@ export async function activate(context: vscode.ExtensionContext) {
         if (!target) return
         target.postMessage({ type: "appendChatBoxMessage", text: formatBrowserFeedback([value]), browser: value })
       },
-      log: (...args) => console.warn("[Kilo New] BrowserTabProvider:", ...args),
+      log: (...args) => console.warn("[Semafour New] BrowserTabProvider:", ...args),
     },
   )
   context.subscriptions.push({ dispose: () => browserTabProvider.dispose() })
@@ -331,7 +331,7 @@ export async function activate(context: vscode.ExtensionContext) {
     }
     if (state.enabled === prior.enabled) return
     void vscode.window.showInformationMessage(
-      state.enabled ? "Keep Awake enabled. Kilo will prevent system sleep while agents work." : "Keep Awake disabled.",
+      state.enabled ? "Keep Awake enabled. Semafour will prevent system sleep while agents work." : "Keep Awake disabled.",
     )
   })
   context.subscriptions.push({ dispose: unsubscribeCaffeination })
@@ -342,20 +342,20 @@ export async function activate(context: vscode.ExtensionContext) {
     }
     if (context.globalState.get<boolean>("caffeination.confirmed") === true) return true
     const detail = [
-      "Keep Awake prevents system sleep while Kilo sessions are in progress, including some waits for approval. It does not keep the display on or disable screen locking. It turns off when this VS Code window reloads.",
+      "Keep Awake prevents system sleep while Semafour sessions are in progress, including some waits for approval. It does not keep the display on or disable screen locking. It turns off when this VS Code window reloads.",
       "Agents may continue to access files, network services, and available credentials while the computer is locked. Enable only if your organization's device policy permits it.",
       ...(process.platform === "linux"
         ? ["On Linux, this can also block manual suspend. Turn Keep Awake off before suspending."]
         : []),
     ].join("\n\n")
     const answer = await vscode.window.showWarningMessage(
-      "Keep this computer awake while Kilo agents work?",
+      "Keep this computer awake while Semafour agents work?",
       { modal: true, detail },
       "Enable Keep Awake",
     )
     if (answer !== "Enable Keep Awake") return false
     await context.globalState.update("caffeination.confirmed", true).then(undefined, (error: unknown) => {
-      console.warn("[Kilo New] Could not save Keep Awake confirmation:", error)
+      console.warn("[Semafour New] Could not save Keep Awake confirmation:", error)
     })
     return true
   })
@@ -371,7 +371,7 @@ export async function activate(context: vscode.ExtensionContext) {
       if (!extension.isActive) await extension.activate()
       return extension.exports?.getAPI(1).git.path
     },
-    log: (message) => console.warn(`[Kilo New] ${message}`),
+    log: (message) => console.warn(`[Semafour New] ${message}`),
   })
   const binary = process.platform === "win32" ? await git() : git
   const agentManagerHost = new VscodeHost(context.extensionUri, connectionService, context, remoteService, controls)
@@ -443,7 +443,7 @@ export async function activate(context: vscode.ExtensionContext) {
     },
     focused: () => vscode.window.state.focused,
     // Every surface already reports the session it displays, gated on its own
-    // visibility, so this covers the sidebar, Kilo editor tabs, and Agent
+    // visibility, so this covers the sidebar, Semafour editor tabs, and Agent
     // Manager without each one needing its own accessor.
     visible: (sessionID) => connectionService.isVisible(sessionID),
     os: showOSNotification,
@@ -518,7 +518,7 @@ export async function activate(context: vscode.ExtensionContext) {
         const tabProvider = attach(panel)
         panel.onDidDispose(
           () => {
-            console.log("[Kilo New] Tab panel restored from restart disposed")
+            console.log("[Semafour New] Tab panel restored from restart disposed")
             tabPanels.delete(panel)
             tabProvider.dispose()
           },
@@ -760,7 +760,7 @@ export async function activate(context: vscode.ExtensionContext) {
       })
     }),
     vscode.commands.registerCommand("kilo-code.new.toggleRemote", () => {
-      remoteService.toggle().catch((err) => console.error("[Kilo New] toggleRemote command failed:", err))
+      remoteService.toggle().catch((err) => console.error("[Semafour New] toggleRemote command failed:", err))
     }),
     vscode.commands.registerCommand("kilo-code.new.openInTab", () => {
       return openKiloInNewTab(context, tabPanels, attach)
@@ -780,7 +780,7 @@ export async function activate(context: vscode.ExtensionContext) {
         subAgentViewerProvider.openPanel(sessionID, title, directory)
       },
     ),
-    // One shortcut pair serves the sidebar, Kilo editor tabs, and Agent Manager.
+    // One shortcut pair serves the sidebar, Semafour editor tabs, and Agent Manager.
     // Every surface receives the action and acts only while it has focus, matching
     // cycleAgentMode, so one binding never depends on a shared focus context key.
     vscode.commands.registerCommand("kilo-code.new.agentManager.previousSession", () => {
@@ -811,7 +811,7 @@ export async function activate(context: vscode.ExtensionContext) {
       // diagnose() spawns git/gh probes and writes to the output channel; a rejection (disposed
       // channel, disposed context mid-probe) would otherwise be an invisible unhandled rejection.
       void agentManagerProvider.diagnose().catch((err: unknown) => {
-        console.error("[Kilo New] Agent Manager diagnostics failed:", err)
+        console.error("[Semafour New] Agent Manager diagnostics failed:", err)
       })
     }),
     vscode.commands.registerCommand("kilo-code.new.agentManager.search", () => {
@@ -879,7 +879,7 @@ export async function activate(context: vscode.ExtensionContext) {
         const sessionMatch = uri.path.match(/^\/kilocode\/s\/([a-zA-Z0-9_-]+)$/)
         const sessionId = sessionMatch?.[1]
         if (sessionId) {
-          console.log("[Kilo New] URI handler: opening cloud session:", sessionId)
+          console.log("[Semafour New] URI handler: opening cloud session:", sessionId)
           await vscode.commands.executeCommand(`${KiloProvider.viewType}.focus`)
           provider.openCloudSession(sessionId)
           return
@@ -890,7 +890,7 @@ export async function activate(context: vscode.ExtensionContext) {
         const modelID = params.get("model") || undefined
         const agent = params.get("agent") || undefined
         if (!modelID && !agent) return
-        console.log("[Kilo New] URI handler: applying linked Kilo selection:", { modelID, agent })
+        console.log("[Semafour New] URI handler: applying linked Semafour selection:", { modelID, agent })
         await vscode.commands.executeCommand(`${KiloProvider.viewType}.focus`)
         provider.selectKiloModel(modelID, agent)
       },
@@ -907,7 +907,7 @@ export async function activate(context: vscode.ExtensionContext) {
 
   context.subscriptions.push(
     vscode.commands.registerCommand("kilo-code.new.reload", () => {
-      provider.reload().catch((e) => console.error("[Kilo New] reload command failed:", e))
+      provider.reload().catch((e) => console.error("[Semafour New] reload command failed:", e))
     }),
   )
 
@@ -929,7 +929,7 @@ export async function activate(context: vscode.ExtensionContext) {
     dispose: () => {
       shuttingDown = true
       void caffeination?.dispose().catch((error: unknown) => {
-        console.warn("[Kilo New] Keep-awake cleanup failed:", error)
+        console.warn("[Semafour New] Keep-awake cleanup failed:", error)
       })
       unsubscribeStateChange()
       attention.dispose()
@@ -946,7 +946,7 @@ export async function deactivate() {
   shuttingDown = true
   const results = await Promise.allSettled([caffeination?.dispose(), agentManager?.shutdown()])
   for (const result of results) {
-    if (result.status === "rejected") console.warn("[Kilo New] Extension shutdown failed:", result.reason)
+    if (result.status === "rejected") console.warn("[Semafour New] Extension shutdown failed:", result.reason)
   }
   TelemetryProxy.getInstance().shutdown()
 }
@@ -974,15 +974,15 @@ function openKiloInNewTab(
   )
 
   panel.iconPath = {
-    light: vscode.Uri.joinPath(context.extensionUri, "assets", "icons", "kilo-light.svg"),
-    dark: vscode.Uri.joinPath(context.extensionUri, "assets", "icons", "kilo-dark.svg"),
+    light: vscode.Uri.joinPath(context.extensionUri, "assets", "icons", "semafour-light.svg"),
+    dark: vscode.Uri.joinPath(context.extensionUri, "assets", "icons", "semafour-dark.svg"),
   }
 
   const tabProvider = attach(panel)
 
   panel.onDidDispose(
     () => {
-      console.log("[Kilo New] Tab panel disposed")
+      console.log("[Semafour New] Tab panel disposed")
       tabPanels.delete(panel)
       tabProvider.dispose()
     },

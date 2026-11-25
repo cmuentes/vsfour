@@ -16,9 +16,9 @@ import { LINE_DIFF_TYPE } from "@kilocode/kilo-ui/pierre"
 import { WorkerPoolManager } from "@pierre/diffs/worker"
 import { ensureKiloDiffTheme, KILO_DIFF_THEME } from "@opencode-ai/ui/pierre/kilo-diff-theme"
 
-// Register the "Kilo" theme before any pool initializes. resolveThemes([theme])
+// Register the "Semafour" theme before any pool initializes. resolveThemes([theme])
 // runs on the main thread during initialize() and throws "resolveTheme: No valid
-// loader for Kilo" if the theme name was never registered. Registering here makes
+// loader for Semafour" if the theme name was never registered. Registering here makes
 // the worker self-sufficient rather than depending on the markdown context module
 // having been imported first.
 ensureKiloDiffTheme()
@@ -47,7 +47,7 @@ function createPool() {
     { workerFactory, poolSize: 2 },
     { theme: KILO_DIFF_THEME, lineDiffType: LINE_DIFF_TYPE, preferredHighlighter: ENGINE },
   )
-  void pool.initialize().catch((err) => console.warn("[Kilo New] Failed to initialize Pierre worker pool", err))
+  void pool.initialize().catch((err) => console.warn("[Semafour New] Failed to initialize Pierre worker pool", err))
   return pool
 }
 

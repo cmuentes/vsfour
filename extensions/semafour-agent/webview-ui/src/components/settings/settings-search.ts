@@ -1,5 +1,5 @@
 /**
- * Search for the Kilo Settings panel.
+ * Search for the Semafour Settings panel.
  *
  * Searchable settings are derived from the i18n `*.title` keys plus a small
  * group-to-tab map, so there is no hand-maintained list to keep in sync. Adding

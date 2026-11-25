@@ -173,7 +173,7 @@ export class AgentManagerProvider implements Disposable {
       openPanel: () => this.openPanel(true),
       log: (...args) => this.log(...args),
     })
-    this.outputChannel = host.createOutput("Kilo Agent Manager")
+    this.outputChannel = host.createOutput("Semafour Agent Manager")
     this.terminalManager = new SessionTerminalManager(
       (msg) => this.outputChannel.appendLine(`[SessionTerminal] ${msg}`),
       createTerminalHost(),

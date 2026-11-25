@@ -78,7 +78,7 @@ export interface ProjectSessionInfo extends SessionInfo {
 
 export type SessionUpdate = Partial<SessionInfo> & Pick<SessionInfo, "id">
 
-// Cloud session info (from Kilo cloud API)
+// Cloud session info (from Semafour cloud API)
 export interface CloudSessionInfo {
   session_id: string
   title: string | null

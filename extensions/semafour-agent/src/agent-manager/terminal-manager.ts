@@ -136,7 +136,7 @@ export class TerminalManager {
       cwd: params.cwd,
       title: params.title,
       // xterm's DOM renderer cannot draw the Unicode sextant glyphs used by
-      // Kilo's modern wordmark, so use the compatible logo in embedded tabs.
+      // Semafour's modern wordmark, so use the compatible logo in embedded tabs.
       env,
       size: initial,
     })

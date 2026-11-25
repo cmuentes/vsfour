@@ -129,8 +129,8 @@ export class BrowserTabProvider {
       },
     )
     panel.iconPath = {
-      light: vscode.Uri.joinPath(this.extensionUri, "assets", "icons", "kilo-light.svg"),
-      dark: vscode.Uri.joinPath(this.extensionUri, "assets", "icons", "kilo-dark.svg"),
+      light: vscode.Uri.joinPath(this.extensionUri, "assets", "icons", "semafour-light.svg"),
+      dark: vscode.Uri.joinPath(this.extensionUri, "assets", "icons", "semafour-dark.svg"),
     }
     panel.webview.html = this.html(panel.webview)
     const entry: Panel = { panel, sessionId, ready: false }
@@ -313,7 +313,7 @@ export class BrowserTabProvider {
       controlBrowserFailure(
         control,
         this.surface(entry),
-        "Browser automation is disabled. Enable it in Kilo Settings > Experimental.",
+        "Browser automation is disabled. Enable it in Semafour Settings > Experimental.",
       )
       return
     }

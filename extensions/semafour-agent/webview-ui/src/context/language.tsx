@@ -1,7 +1,7 @@
 /**
  * Language context
  * Provides i18n translations for kilo-ui components.
- * Merges UI translations from @opencode-ai/ui and Kilo overrides from @kilocode/kilo-i18n.
+ * Merges UI translations from @opencode-ai/ui and Semafour overrides from @kilocode/kilo-i18n.
  *
  * Locale priority: user override → VS Code display language → browser language → "en"
  */
@@ -57,7 +57,7 @@ function load(locale: Locale) {
     .then((module) => (cache[locale] ??= module.default(base)))
     .catch((err) => {
       delete loads[locale]
-      console.error("[Kilo New] Failed to load language", { locale, err })
+      console.error("[Semafour New] Failed to load language", { locale, err })
       return undefined
     }))
 }
@@ -152,7 +152,7 @@ export const LanguageProvider: ParentComponent<LanguageProviderProps> = (props) 
       value={{ locale, setLocale, userOverride, t: t as (key: string, params?: UiI18nParams) => string }}
     >
       {/* Shared UI formats dates and numbers with Intl from this value, so it
-          must be a BCP-47 tag (Kilo's "zht" is not one). */}
+          must be a BCP-47 tag (Semafour's "zht" is not one). */}
       <I18nProvider value={{ locale: () => localeToBcp47(locale()), t, plural }}>{props.children}</I18nProvider>
     </LanguageContext.Provider>
   )

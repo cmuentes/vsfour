@@ -7,7 +7,6 @@
  */
 
 import {
-  type Accessor,
   type Component,
   type JSX,
   For,
@@ -30,7 +29,6 @@ import { TranscriptRowView } from "./TranscriptRow"
 import { createRowHandoff } from "./transcript-row-handoff"
 import { RevertBanner } from "./RevertBanner"
 import { AccountSwitcher } from "../shared/AccountSwitcher"
-import { KiloNotifications } from "./KiloNotifications"
 import { TurnOutcome } from "../shared/TurnOutcome"
 import { QuestionDock } from "./QuestionDock"
 import { Virtualizer, type VirtualizerHandle } from "virtua/solid"
@@ -89,7 +87,6 @@ interface MessageListProps {
   introduction?: boolean
   /** Announce transcript changes as a live log. Disable for multi-session surfaces with concurrent streams. */
   announce?: boolean
-  sessionID?: Accessor<string | undefined>
 }
 
 /**
@@ -868,9 +865,6 @@ export const MessageList: Component<MessageListProps> = (props) => {
       <Show when={isEmpty()}>
         <div class="welcome-header" data-slot="welcome-header">
           <AccountSwitcher class="account-switcher-welcome" />
-          <Show when={!props.introduction || props.readonly}>
-            <KiloNotifications sessionID={props.sessionID} />
-          </Show>
         </div>
       </Show>
       <div

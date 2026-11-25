@@ -452,7 +452,7 @@ export function PRCommentForm(props: Props) {
                   if (event.isComposing || event.keyCode === 229) return
                   if (props.action === "diff") {
                     if (event.key !== "Enter" || event.shiftKey) return
-                    // Cmd/Ctrl+Enter saves the comment. Plain Enter sends it to Kilo,
+                    // Cmd/Ctrl+Enter saves the comment. Plain Enter sends it to Semafour,
                     // and GitHub is never published from the keyboard.
                     if (event.ctrlKey || event.metaKey) {
                       event.preventDefault()

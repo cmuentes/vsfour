@@ -252,7 +252,7 @@ export const examples: readonly Example[] = [
               id: "cold-start",
               sessions: [
                 {
-                  title: "Cut cold start time · Kilo Auto",
+                  title: "Cut cold start time · Semafour Auto",
                   id: "cold-start-a",
                   branch: "cold-start-a",
                   status: "finished",

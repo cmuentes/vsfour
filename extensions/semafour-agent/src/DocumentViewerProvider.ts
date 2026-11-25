@@ -74,8 +74,8 @@ export class DocumentViewerProvider implements vscode.Disposable {
       },
     )
     panel.iconPath = {
-      light: vscode.Uri.joinPath(this.extensionUri, "assets", "icons", "kilo-light.svg"),
-      dark: vscode.Uri.joinPath(this.extensionUri, "assets", "icons", "kilo-dark.svg"),
+      light: vscode.Uri.joinPath(this.extensionUri, "assets", "icons", "semafour-light.svg"),
+      dark: vscode.Uri.joinPath(this.extensionUri, "assets", "icons", "semafour-dark.svg"),
     }
     panel.webview.html = this.html(panel.webview)
     this.panel = panel
@@ -114,7 +114,7 @@ export class DocumentViewerProvider implements vscode.Disposable {
       if (resolved)
         vscode.env.clipboard
           .writeText(resolved)
-          .then(undefined, (err) => console.error("[Kilo New] DocumentViewerProvider: Failed to copy path:", err))
+          .then(undefined, (err) => console.error("[Semafour New] DocumentViewerProvider: Failed to copy path:", err))
       return
     }
     if (message.type === "document.close") this.panel?.dispose()

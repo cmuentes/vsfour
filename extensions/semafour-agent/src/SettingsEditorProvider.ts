@@ -8,8 +8,8 @@ import type { AgentManagerSettingsHandler } from "./kilo-provider/options"
 type PanelView = "settings" | "profile" | "indexing"
 
 const PANEL_TITLES: Record<PanelView, string> = {
-  settings: "Kilo Settings",
-  profile: "Kilo Profile",
+  settings: "Semafour Settings",
+  profile: "Semafour Profile",
   indexing: "Codebase Indexing",
 }
 
@@ -120,8 +120,8 @@ export class SettingsEditorProvider implements vscode.Disposable {
 
   private wirePanel(panel: vscode.WebviewPanel, view: PanelView, projectDirectory: string | null): void {
     panel.iconPath = {
-      light: vscode.Uri.joinPath(this.extensionUri, "assets", "icons", "kilo-light.svg"),
-      dark: vscode.Uri.joinPath(this.extensionUri, "assets", "icons", "kilo-dark.svg"),
+      light: vscode.Uri.joinPath(this.extensionUri, "assets", "icons", "semafour-light.svg"),
+      dark: vscode.Uri.joinPath(this.extensionUri, "assets", "icons", "semafour-dark.svg"),
     }
 
     // Create a dedicated KiloProvider for this panel so it has full
@@ -175,7 +175,7 @@ export class SettingsEditorProvider implements vscode.Disposable {
 
     const title = PANEL_TITLES[view]
     panel.onDidDispose(() => {
-      console.log(`[Kilo New] ${title} panel disposed`)
+      console.log(`[Semafour New] ${title} panel disposed`)
       closePanelDisposable.dispose()
       readyDisposable.dispose()
       tabDisposable.dispose()

@@ -4,7 +4,7 @@
  * Payload rules:
  * - Non-Kilo-Gateway providers: providerID, modelID, variant?, rating, previousRating? only.
  *   No session or message IDs — they can't be correlated to upstream data.
- * - Kilo Gateway providers: add sessionID, messageID, parentMessageID. The
+ * - Semafour Gateway providers: add sessionID, messageID, parentMessageID. The
  *   gateway can join parentMessageID against its `x-kilo-request` header logs.
  */
 

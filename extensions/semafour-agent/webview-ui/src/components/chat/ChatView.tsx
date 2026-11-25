@@ -440,7 +440,6 @@ export const ChatView: Component<ChatViewProps> = (props) => {
                 emptyState={props.emptyState}
                 introduction={props.introduction}
                 announce={isSidebar()}
-                sessionID={pendingSessionID}
               />
             </div>
           </div>

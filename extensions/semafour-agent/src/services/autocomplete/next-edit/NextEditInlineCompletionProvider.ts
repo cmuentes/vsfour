@@ -11,7 +11,7 @@ const INLINE_COMPLETION_ACCEPTED_COMMAND = "kilo-code.new.autocomplete.nextEdit.
 const DEFAULT_DEBOUNCE_MS = 250
 
 export interface NextEditProviderDeps {
-  /** Routes Mercury calls through the local Kilo gateway (handles auth + BYOK). */
+  /** Routes Mercury calls through the local Semafour gateway (handles auth + BYOK). */
   connectionService: KiloConnectionService
   /** Optional source of recently-viewed snippets (kilocode's VisibleCodeTracker can adapt to this). */
   getRecentlyViewedSnippets?: (document: vscode.TextDocument) => MercuryRecentSnippet[]
