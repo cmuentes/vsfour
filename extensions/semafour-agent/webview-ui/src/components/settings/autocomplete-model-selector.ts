@@ -1,5 +1,6 @@
 import { AUTOCOMPLETE_MODELS, getAutocompleteModel } from "../../../../src/shared/autocomplete-models"
 import type { EnrichedModel } from "../../context/provider"
+import { isSmall } from "../shared/model-selector-utils"
 
 /**
  * Resolve the (provider, model) pair to the dropdown's value. Returns
@@ -8,9 +9,12 @@ import type { EnrichedModel } from "../../context/provider"
  * `DEFAULT_AUTOCOMPLETE_MODEL` separately.
  */
 export function getAutocompleteSelection(provider?: string, modelID?: string) {
-  if (!provider && !modelID) return null
+  if (!provider || !modelID || provider === "kilo") return null
   const model = getAutocompleteModel(provider, modelID)
-  return { providerID: model.providerID, modelID: model.modelID }
+  if (model.providerID === provider && model.modelID === modelID) {
+    return { providerID: model.providerID, modelID: model.modelID }
+  }
+  return { providerID: provider, modelID }
 }
 
 export const AUTOCOMPLETE_SELECTOR_MODELS: EnrichedModel[] = AUTOCOMPLETE_MODELS.map((m) => ({
@@ -19,3 +23,14 @@ export const AUTOCOMPLETE_SELECTOR_MODELS: EnrichedModel[] = AUTOCOMPLETE_MODELS
   providerID: m.providerID,
   providerName: m.provider,
 }))
+
+export function autocompleteSelectorModels(models: readonly EnrichedModel[], connected: readonly string[]) {
+  const live = new Set(connected)
+  const presets = AUTOCOMPLETE_SELECTOR_MODELS.filter((item) => item.providerID !== "kilo" && live.has(item.providerID))
+  const seen = new Set(presets.map((item) => `${item.providerID}/${item.id}`))
+  const rest = models.filter((item) => {
+    if (item.providerID === "kilo" || !live.has(item.providerID) || isSmall(item)) return false
+    return !seen.has(`${item.providerID}/${item.id}`)
+  })
+  return [...presets, ...rest]
+}

@@ -1,5 +1,4 @@
 import * as vscode from "vscode"
-import { validAutocompleteModel, validAutocompleteProvider } from "../../shared/autocomplete-models"
 
 type Message = {
   type: string
@@ -43,15 +42,9 @@ export function watchAutocompleteConfig(post: Post): vscode.Disposable {
 }
 
 export function validAutocompleteSetting(key: string, value: unknown) {
-  if (key === "model") {
-    // Allow clearing back to the server-side default.
+  if (key === "model" || key === "provider") {
     if (value === null || value === undefined) return true
-    return validAutocompleteModel(value)
-  }
-
-  if (key === "provider") {
-    if (value === null || value === undefined) return true
-    return validAutocompleteProvider(value)
+    return typeof value === "string" && value.trim().length > 0
   }
 
   if (key === "enableAutoTrigger") return typeof value === "boolean"

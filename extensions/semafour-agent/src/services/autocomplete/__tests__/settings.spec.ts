@@ -79,8 +79,8 @@ describe("autocomplete settings", () => {
   it("rejects unsupported autocomplete updates", async () => {
     const { validAutocompleteSetting } = await import("../settings")
 
-    expect(validAutocompleteSetting("model", "other/model")).toBe(false)
-    expect(validAutocompleteSetting("provider", "openrouter")).toBe(false)
+    expect(validAutocompleteSetting("model", "other/model")).toBe(true)
+    expect(validAutocompleteSetting("provider", "openrouter")).toBe(true)
   })
 
   it("rejects non-boolean toggle updates", async () => {

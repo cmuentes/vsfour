@@ -1,11 +1,52 @@
 import { ResponseMetaData } from "./types"
 import type { KiloConnectionService } from "../cli-backend"
-import { getAutocompleteModel, getAutocompleteModelById } from "../../shared/autocomplete-models"
+import {
+  getAutocompleteModel,
+  getAutocompleteModelById,
+  type AutocompleteModelDef,
+} from "../../shared/autocomplete-models"
+
+export function resolveAutocomplete(provider?: string, model?: string): AutocompleteModelDef {
+  const pid = provider?.trim()
+  const mid = model?.trim()
+  const info = getAutocompleteModel(pid, mid)
+  if (pid && mid && pid !== "kilo" && (info.providerID !== pid || info.modelID !== mid)) {
+    return {
+      id: `${pid}/${mid}`,
+      modelID: mid,
+      label: mid,
+      providerID: pid,
+      provider: pid,
+      requestModel: mid,
+      temperature: 0.2,
+    } as AutocompleteModelDef
+  }
+  return info
+}
+
+export function modelById(id: string): AutocompleteModelDef {
+  const info = getAutocompleteModelById(id)
+  if (info.id === id) return info
+  const slash = id.indexOf("/")
+  if (slash <= 0) return info
+  const providerID = id.slice(0, slash)
+  const modelID = id.slice(slash + 1)
+  if (!providerID || !modelID || providerID === "kilo") return info
+  return {
+    id,
+    modelID,
+    label: modelID,
+    providerID,
+    provider: providerID,
+    requestModel: modelID,
+    temperature: 0.2,
+  } as AutocompleteModelDef
+}
 
 const FIM_MAX_TOKENS = 256
 
 export function fimModel(provider?: string, model?: string) {
-  const info = getAutocompleteModel(provider, model)
+  const info = resolveAutocomplete(provider, model)
   if (info.kind !== "edit") return info
   return getAutocompleteModelById(info.fimModelID)
 }
@@ -25,7 +66,7 @@ export async function generateFim(
   signal?: AbortSignal,
 ): Promise<ResponseMetaData> {
   const client = await connectionService.getClientAsync()
-  const info = getAutocompleteModelById(modelId)
+  const info = modelById(modelId)
   let cost = 0
   let inputTokens = 0
   let outputTokens = 0

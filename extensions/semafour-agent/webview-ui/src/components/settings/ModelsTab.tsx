@@ -20,7 +20,7 @@ import {
   selectedSpeechToTextModel,
 } from "../speech-to-text/availability"
 import { speechToTextModelOptions } from "../speech-to-text/model-selector"
-import { AUTOCOMPLETE_SELECTOR_MODELS, getAutocompleteSelection } from "./autocomplete-model-selector"
+import { autocompleteSelectorModels, getAutocompleteSelection } from "./autocomplete-model-selector"
 import { preserveVariant } from "../../context/session-variant-store"
 
 const ModelsTab: Component = () => {
@@ -114,6 +114,8 @@ const ModelsTab: Component = () => {
       })
     }
   }
+
+  const autocompleteModels = createMemo(() => autocompleteSelectorModels(provider.models(), provider.connected()))
 
   function handleAutocompleteModelSelect(providerID: string, modelID: string) {
     if (!providerID || !modelID) {
@@ -213,7 +215,7 @@ const ModelsTab: Component = () => {
             value={getAutocompleteSelection(autocompleteProvider(), autocompleteModel())}
             onSelect={handleAutocompleteModelSelect}
             placement="bottom-start"
-            models={AUTOCOMPLETE_SELECTOR_MODELS}
+            models={autocompleteModels()}
             favorites={false}
             allowClear
             clearLabel={language.t("settings.providers.notSet")}

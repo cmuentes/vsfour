@@ -11,8 +11,8 @@ import { disposeLog } from "./next-edit/log"
 import { NextEditSuggestionManager } from "./next-edit/NextEditSuggestionManager"
 import { toAllowedMercuryRecentSnippets } from "./next-edit/recentSnippetsAdapter"
 import type { KiloConnectionService } from "../cli-backend"
-import { hasValidCredentials, fimModel as notebookModel } from "./fim"
-import { DEFAULT_AUTOCOMPLETE_MODEL, getAutocompleteModel } from "../../shared/autocomplete-models"
+import { hasValidCredentials, fimModel as notebookModel, resolveAutocomplete } from "./fim"
+import { DEFAULT_AUTOCOMPLETE_MODEL } from "../../shared/autocomplete-models"
 
 const CONFIG_SECTION = "kilo-code.new.autocomplete"
 
@@ -33,7 +33,7 @@ export interface AutocompleteServiceSettings {
 
 function readSettings(): AutocompleteServiceSettings {
   const config = vscode.workspace.getConfiguration(CONFIG_SECTION)
-  const info = getAutocompleteModel(config.get<string>("provider"), config.get<string>("model"))
+  const info = resolveAutocomplete(config.get<string>("provider"), config.get<string>("model"))
   return {
     enableAutoTrigger: config.get<boolean>("enableAutoTrigger") ?? true,
     enableSmartInlineTaskKeybinding: config.get<boolean>("enableSmartInlineTaskKeybinding") ?? true,
@@ -118,7 +118,7 @@ export class AutocompleteServiceManager {
       connectionService,
       suggestionManager: this.nextEditSuggestionManager,
       getModelSelection: () => {
-        const info = getAutocompleteModel(this.settings?.provider, this.settings?.model)
+        const info = resolveAutocomplete(this.settings?.provider, this.settings?.model)
         return { providerId: info.providerID, modelId: info.modelID }
       },
       isFileAllowed: async (fsPath) => {
@@ -145,7 +145,7 @@ export class AutocompleteServiceManager {
               : TelemetryEventName.AUTOCOMPLETE_LLM_REQUEST_COMPLETED
         TelemetryProxy.capture(eventName, {
           mode: "next-edit",
-          model: getAutocompleteModel(this.settings?.provider, this.settings?.model).id,
+          model: resolveAutocomplete(this.settings?.provider, this.settings?.model).id,
           latencyMs: event.latencyMs,
           inputTokens: event.inputTokens,
           outputTokens: event.outputTokens,
@@ -206,7 +206,7 @@ export class AutocompleteServiceManager {
    */
   private async ensureInlineCompletionProviderRegistration() {
     const shouldBeRegistered = (this.settings?.enableAutoTrigger ?? false) && !this.isSnoozed()
-    const info = getAutocompleteModel(this.settings?.provider, this.settings?.model)
+    const info = resolveAutocomplete(this.settings?.provider, this.settings?.model)
     const desiredKind: "classic" | "next-edit" = info.kind === "edit" ? "next-edit" : "classic"
 
     // Mode change while still enabled requires a swap: tear down the old
@@ -390,12 +390,12 @@ export class AutocompleteServiceManager {
   }
 
   private getCurrentModelName(): string {
-    const info = getAutocompleteModel(this.settings?.provider, this.settings?.model)
+    const info = resolveAutocomplete(this.settings?.provider, this.settings?.model)
     return info.label
   }
 
   private getCurrentProviderName(): string {
-    const info = getAutocompleteModel(this.settings?.provider, this.settings?.model)
+    const info = resolveAutocomplete(this.settings?.provider, this.settings?.model)
     return info.provider
   }
 
