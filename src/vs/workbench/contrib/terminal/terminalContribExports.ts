@@ -5,6 +5,7 @@
 
 import type { IConfigurationNode } from '../../../platform/configuration/common/configurationRegistry.js';
 import { TerminalAccessibilityCommandId, defaultTerminalAccessibilityCommandsToSkipShell } from '../terminalContrib/accessibility/common/terminal.accessibility.js';
+import { defaultTerminalAddToChatCommandsToSkipShell } from '../terminalContrib/addToChat/common/terminalAddToChat.js';
 import { terminalAccessibilityConfiguration } from '../terminalContrib/accessibility/common/terminalAccessibilityConfiguration.js';
 import { terminalAutoRepliesConfiguration } from '../terminalContrib/autoReplies/common/terminalAutoRepliesConfiguration.js';
 import { TerminalChatCommandId, TerminalChatContextKeyStrings } from '../terminalContrib/chat/browser/terminalChat.js';
@@ -88,6 +89,7 @@ export const terminalContribConfiguration: IConfigurationNode['properties'] = {
 // Export commands to skip shell from terminalContrib - this is an exception to the eslint rule
 // since they need to be included in the terminal module
 export const defaultTerminalContribCommandsToSkipShell = [
+	...defaultTerminalAddToChatCommandsToSkipShell,
 	...defaultTerminalAccessibilityCommandsToSkipShell,
 	...defaultTerminalFindCommandToSkipShell,
 	...defaultTerminalHistoryCommandsToSkipShell,
