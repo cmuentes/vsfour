@@ -34,6 +34,36 @@
   padding: 6px;
 }
 
+.active-editor-pill {
+  display: flex;
+  min-width: 0;
+  max-width: 240px;
+  width: fit-content;
+}
+
+.session-actions-row > .active-editor-pill {
+  flex: 0 1 auto;
+}
+
+.active-editor-pill-button {
+  all: unset;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  max-width: 100%;
+  padding: 2px 8px 2px 4px;
+  border: 1px solid var(--vscode-panel-border);
+  border-radius: 999px;
+  background: var(--vscode-editorWidget-background, var(--vscode-input-background));
+  color: var(--text-weak, var(--vscode-descriptionForeground));
+  cursor: pointer;
+}
+
+.active-editor-pill-button:focus-visible {
+  outline: 1px solid var(--border-focus, var(--vscode-focusBorder));
+}
+
 .prompt-review-comments--message {
   margin: 0 0 6px;
 }

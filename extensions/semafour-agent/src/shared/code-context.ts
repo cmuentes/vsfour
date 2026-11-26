@@ -23,7 +23,7 @@ export function formatCodeContexts(contexts: CodeContext[]): string {
   return contexts.map(formatCodeContext).join("\n\n")
 }
 
-function isSameCodeContext(a: CodeContext, b: CodeContext): boolean {
+export function isSameCodeContext(a: CodeContext, b: CodeContext): boolean {
   return a.filePath === b.filePath && a.startLine === b.startLine && a.endLine === b.endLine && a.text === b.text
 }
 

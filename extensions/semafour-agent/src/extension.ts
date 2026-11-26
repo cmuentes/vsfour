@@ -33,6 +33,7 @@ import {
 import { TelemetryEventName, TelemetryProxy } from "./services/telemetry"
 import { registerCommitMessageService } from "./services/commit-message"
 import { registerCodeActions, registerTerminalActions, KiloCodeActionProvider } from "./services/code-actions"
+import { createActiveEditorTracker } from "./services/active-editor/create"
 import { closeTaskTarget, SurfaceFocus } from "./commands/close-task-target"
 import { registerToggleAutoApprove } from "./commands/toggle-auto-approve"
 import { registerHeapSnapshot } from "./commands/heap-snapshot"
@@ -183,6 +184,9 @@ export async function activate(context: vscode.ExtensionContext) {
   // SurfaceFocus alone cannot distinguish multiple Semafour editor tabs.
   let chat: KiloProvider | AgentManagerProvider | undefined
 
+  const activeEditor = createActiveEditorTracker()
+  context.subscriptions.push(activeEditor)
+
   // Create the provider with shared service
   const provider = new KiloProvider(context.extensionUri, connectionService, context, {
     focusContext: "kilo-code.new.sidebarFocused",
@@ -193,6 +197,7 @@ export async function activate(context: vscode.ExtensionContext) {
     onHidden: () => focus.lost("sidebar"),
   })
   provider.setRemoteService(remoteService)
+  provider.setActiveEditorTracker(activeEditor)
 
   // Editor-tab Integrated Browser for sidebar and Semafour editor-tab sessions. It
   // registers its route owner before the Agent Manager so sidebar sessions are
@@ -495,6 +500,7 @@ export async function activate(context: vscode.ExtensionContext) {
       },
     })
     tabProvider.setRemoteService(remoteService)
+    tabProvider.setActiveEditorTracker(activeEditor)
     tabProvider.setAutoApproveController(autoApprove)
     tabProvider.setContinueInWorktreeHandler((sessionId, progress) =>
       agentManagerProvider.continueFromSidebar(sessionId, progress),

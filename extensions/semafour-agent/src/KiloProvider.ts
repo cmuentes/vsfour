@@ -74,6 +74,8 @@ import { handleFileSearch, type SearchRoot } from "./kilo-provider/file-search"
 import { handleSessionSearch } from "./kilo-provider/session-search"
 import { handleFilePicker } from "./kilo-provider/file-picker"
 import { watchFontSizeConfig } from "./kilo-provider/font-size"
+import { watchActiveEditorContext } from "./kilo-provider/active-editor-bridge"
+import type { ActiveEditorContextTracker } from "./services/active-editor/tracker"
 import { getTerminalContents } from "./services/terminal/context"
 import { disposeGitChangesTarget } from "./kilo-provider/git-changes-target"
 import { interceptMessage } from "./kilo-provider/git-changes-request"
@@ -578,6 +580,8 @@ export class KiloProvider implements vscode.WebviewViewProvider, TelemetryProper
   private shortcutHintsConfigDisposable: vscode.Disposable | null = null
   private workspaceFoldersDisposable: vscode.Disposable | null = null
   private shortcutContextDisposable: vscode.Disposable | null = null
+  private activeEditorDisposable: vscode.Disposable | null = null
+  private activeEditorTracker: ActiveEditorContextTracker | null = null
   private telemetryStateDisposable: vscode.Disposable | null = null
   private viewStateDisposable: vscode.Disposable | null = null
   private visibilityDisposable: vscode.Disposable | null = null
@@ -1232,6 +1236,18 @@ export class KiloProvider implements vscode.WebviewViewProvider, TelemetryProper
     this.flushPendingKiloModel()
   }
 
+  public setActiveEditorTracker(tracker: ActiveEditorContextTracker): void {
+    this.activeEditorDisposable?.dispose()
+    this.activeEditorTracker = tracker
+    this.activeEditorDisposable = watchActiveEditorContext(tracker, (msg) => this.postMessage(msg))
+  }
+
+  private postActiveEditor(): void {
+    const tracker = this.activeEditorTracker
+    if (!tracker) return
+    this.postMessage({ type: "activeEditorContextUpdate", context: tracker.current() })
+  }
+
   public setContinueInWorktreeHandler(
     handler: (sessionId: string, progress: (status: string, detail?: string, error?: string) => void) => Promise<void>,
   ): void {
@@ -1290,6 +1306,7 @@ export class KiloProvider implements vscode.WebviewViewProvider, TelemetryProper
     this.workspaceFoldersDisposable = vscode.workspace.onDidChangeWorkspaceFolders(() => this.sendWorkspaceScope())
     this.shortcutContextDisposable?.dispose()
     this.shortcutContextDisposable = watchShortcutContext(this.extensionContext, (msg) => this.postMessage(msg))
+    if (this.activeEditorTracker) this.setActiveEditorTracker(this.activeEditorTracker)
     this.telemetryStateDisposable?.dispose()
     this.telemetryStateDisposable = watchTelemetryState((msg) => this.postMessage(msg))
     this.webviewMessageDisposable = webview.onDidReceiveMessage(async (message) => {
@@ -1381,6 +1398,7 @@ export class KiloProvider implements vscode.WebviewViewProvider, TelemetryProper
             this.postMessage(mapSSEEventToWebviewMessage(event, event.properties.sessionID))
           }
           this.postMessage({ type: "webviewActiveChanged", active: this.active })
+          this.postActiveEditor()
           this.visibleTaskStreams.clear()
           this.flushPendingKiloModel()
           await this.syncWebviewState("webviewReady")
@@ -2251,6 +2269,7 @@ export class KiloProvider implements vscode.WebviewViewProvider, TelemetryProper
       this.postMessage(buildThroughputSettingMessage())
       this.postMessage(buildAutoApprovalReasonSettingMessage())
       this.postMessage(buildShortcutContextMessage(this.extensionContext))
+      this.postActiveEditor()
       this.postMessage({ type: "extensionDataReady" })
 
       console.log("[Semafour New] KiloProvider: ✅ initializeConnection completed successfully")
@@ -6429,6 +6448,7 @@ export class KiloProvider implements vscode.WebviewViewProvider, TelemetryProper
     this.shortcutHintsConfigDisposable?.dispose()
     this.workspaceFoldersDisposable?.dispose()
     this.shortcutContextDisposable?.dispose()
+    this.activeEditorDisposable?.dispose()
     this.telemetryStateDisposable?.dispose()
     this.autoApproveBridge?.dispose()
     this.visibleTaskStreams.clear()

@@ -17,6 +17,7 @@ import { DropdownMenu } from "@kilocode/kilo-ui/dropdown-menu"
 import { TaskHeader } from "./TaskHeader"
 import { MessageList } from "./MessageList"
 import { PromptInput } from "./PromptInput"
+import { ActiveEditorPill } from "./ActiveEditorPill"
 import type { ManagerContext } from "../../utils/shortcut-hint"
 import { PermissionDock } from "./PermissionDock"
 import { SessionDock } from "./SessionDock"
@@ -28,6 +29,7 @@ import { useVSCode } from "../../context/vscode"
 import { useLanguage } from "../../context/language"
 import { useWorktreeMode } from "../../context/worktree-mode"
 import { useServer } from "../../context/server"
+import { useActiveEditor } from "../../context/active-editor"
 import { TranscriptSearchProvider } from "../../context/transcript-search"
 import { isPromptBlocked, isSuggesting, isQuestioning } from "./prompt-input-utils"
 import { taskChildren } from "./background-agents"
@@ -68,6 +70,7 @@ export const ChatView: Component<ChatViewProps> = (props) => {
   const session = useSession()
   const data = useData()
   const vscode = useVSCode()
+  const editor = useActiveEditor()
   const language = useLanguage()
   const worktreeMode = useWorktreeMode()
   const server = useServer()
@@ -355,6 +358,9 @@ export const ChatView: Component<ChatViewProps> = (props) => {
                 </DropdownMenu.Portal>
               </DropdownMenu>
             </div>
+          </Show>
+          <Show when={editor.current()}>
+            {(current) => <ActiveEditorPill editor={current()} sessionID={id()} />}
           </Show>
           <Show when={canMoveToWorktree(hasChat)}>
             <>
