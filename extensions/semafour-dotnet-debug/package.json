@@ -1,0 +1,92 @@
+{
+  "name": "semafour-dotnet-debug",
+  "displayName": ".NET Core Debug (Semafour)",
+  "description": "Lightweight .NET Core / ASP.NET Core debugger for VS Code powered by netcoredbg over the Debug Adapter Protocol.",
+  "version": "0.1.0",
+  "publisher": "kilocode",
+  "license": "MIT",
+  "engines": {
+    "vscode": "*"
+  },
+  "categories": [
+    "Debuggers"
+  ],
+  "keywords": [
+    "dotnet",
+    ".net",
+    "netcore",
+    "aspnetcore",
+    "debugger",
+    "netcoredbg",
+    "coreclr"
+  ],
+  "activationEvents": [
+    "onDebugResolve:coreclr",
+    "onDebugInitialConfigurations"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "debuggers": [
+      {
+        "type": "coreclr",
+        "label": ".NET Core (Semafour)"
+      }
+    ],
+    "configurationAttributes": {
+      "coreclr": {
+        "launch": {
+          "properties": {
+            "program": {
+              "type": "string",
+              "description": "Absolute path to the .dll to debug. Resolved automatically from the .csproj when omitted."
+            },
+            "project": {
+              "type": "string",
+              "description": "Path to the .csproj file. Defaults to the first .csproj found in the workspace folder."
+            },
+            "args": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Command line arguments passed to the program."
+            },
+            "cwd": {
+              "type": "string",
+              "description": "Working directory for the debugged program. Defaults to the project directory."
+            },
+            "env": {
+              "type": "object",
+              "description": "Environment variables passed to the program. Takes precedence over values from launchSettings.json."
+            },
+            "noDebug": {
+              "type": "boolean",
+              "description": "Run the program without waiting for the debugger."
+            },
+            "preLaunchTask": {
+              "type": "string",
+              "description": "Name of a task to run before launching. When omitted, 'dotnet build' is run automatically."
+            }
+          }
+        }
+      }
+    }
+  },
+  "scripts": {
+    "fetch-debugger": "node scripts/fetch-netcoredbg.mjs",
+    "compile": "tsc -p .",
+    "watch": "tsc -p . --watch"
+  },
+  "devDependencies": {
+    "@types/node": "24.x"
+  },
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/microsoft/vscode.git"
+  }
+}
